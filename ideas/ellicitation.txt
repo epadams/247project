@@ -1,0 +1,12 @@
+simple side, easy for user, perhaps one click
+families and business people
+like google of flights, don't show "most popular" on front page
+do group purchase
+information, passport details
+
+real portia:
+hotels, hotel rooms, capacity
+(not as important) rental services, rental cars
+build out a uml with it all
+store in json
+treat pets like infants (maybe interface or abstract)

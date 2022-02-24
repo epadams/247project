@@ -1,0 +1,6 @@
+use sinngletons when reading and writing to json
+use layered structure, UI -> Facade/System -> Flights/Booking -> Flight
+use uuid for json files for user ids (UUID myId == UUID.randomUUID();)
+
+
+add json stuff, ui, application/system, etc to UML
