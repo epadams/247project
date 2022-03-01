@@ -1,6 +1,31 @@
 use sinngletons when reading and writing to json
 use layered structure, UI -> Facade/System -> Flights/Booking -> Flight
 use uuid for json files for user ids (UUID myId == UUID.randomUUID();)
-
-
 add json stuff, ui, application/system, etc to UML
+shouldnt modify passed in paramaters, for sorts pass in and make a clone
+make a larger transportation class that airplane/flying will inheirit from
+
+LAYERED ARCHITECTURE:
+presentation: interface, scanner print, while(notquit)
+logic: flightsystem, bookflight, adduser, viewflights
+database: flight, user
+dbreader
+db: jsons
+should only have system.out.println in view/presentation layer
+
+OTHER:
+implement json layout/format and how they link in design document
+References: link to spreadsheet, lucid chart, etc
+Environment: java console, interact with json files, etc
+UI: write in a text file or code it, make it user friendly, intuitive, etc
+flights.json (maybe planes.json that shows open and empty seats, seats and availability)
+reservations.json
+users.json (travellers, like having 1 user hold all data such as passports for family booking) (also use uuids for users)
+hotels.json (have rooms, availability on each day)
+plane and seating arrangements, like 17C
+Start UI with asking if the user is a guest or to login, then display search, etc
+think about 2 way and multiple connections
+for connecting flights: either have another flight within a flight, or have an ArrayList hold the connecting flights
+maybe make a database class to hold json data and move data to each respective class
+IN UI: NO LOGIC 
+IN CLASSES: NO PRINTLN, NO INTERACTION WITH USER
