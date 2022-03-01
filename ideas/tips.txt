@@ -29,3 +29,17 @@ for connecting flights: either have another flight within a flight, or have an A
 maybe make a database class to hold json data and move data to each respective class
 IN UI: NO LOGIC 
 IN CLASSES: NO PRINTLN, NO INTERACTION WITH USER
+
+
+JSON IDEAS:
+Storing family/friends in json:
+Could do "friends" : [{},{},etc]
+
+Storing flights:
+Could do "flights" : [{},{},etc]
+
+flights.json: [id, depature, arrival, time]
+booking.json: [id, flights[{id, seat}], hotels[{id, room, datecheckin, datecheckout}]], etc]
+
+
+remove pets from uml
