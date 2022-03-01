@@ -16,3 +16,9 @@ Start UI with asking if the user is a guest or to login, then display search, et
 think about 2 way and multiple connections
 
 for connecting flights: either have another flight within a flight, or have an ArrayList hold the connecting flights
+
+maybe make a database class to hold json data and move data to each respective class
+
+
+IN UI: NO LOGIC 
+IN CLASSES: NO PRINTLN, NO INTERACTION WITH USER
