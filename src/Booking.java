@@ -41,4 +41,8 @@ public class Booking {
   public void setNumTickets(int numTickets) {
 
   }
+
+  public void purchaseAddLuggageStorage() {
+
+  }
 }
