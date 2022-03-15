@@ -1,9 +1,9 @@
 [
     {
-        "UUID":"UUID",
-        "roomNumber":"RoomNumber",
-        "Availability":"isAvailible?",
-        "Smoking":"SmokingRoom?",
-        "numberOfBeds":"SO MANY BEDS"
+        "UUID":"",
+        "roomNumber":"",
+        "Availability":"",
+        "Smoking":"",
+        "numberOfBeds":""
     }
 ]
