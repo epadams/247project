@@ -58,27 +58,27 @@ public class RegisteredUser { //need to extend User
     }
 
     private String getUsername() {
-
+        return "";
     }
 
     private String getPassword() {
-
+        return "";
     }
 
     private String getEmail() {
-
+        return "";
     }
 
     public int getAge() {
-
+        return 0;
     }
 
     public String getAddress() {
-
+        return "";
     }
 
     private ArrayList<Passport> getPassports() {
-
+        return passports;
     }
 
     public void BookFlight() {
@@ -94,15 +94,15 @@ public class RegisteredUser { //need to extend User
     }
 
     public String printFlightHistory() {
-
+        return "";
     }
 
     public String printRefunds() {
-
+        return "";
     }
 
     public String printFlightTicket() {
-
+        return "";
     }
 
     public void logout() {
@@ -110,6 +110,6 @@ public class RegisteredUser { //need to extend User
     }
 
     public void deleteAccount() {
-        
+
     }
 }
