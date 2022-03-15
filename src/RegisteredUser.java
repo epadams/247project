@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class RegisteredUser { //need to extend User
+public class RegisteredUser extends User{ //need to extend User
     private String username;
     private String password;
     private String email;
