@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-public class Writer {
+public class JWriter {
   private ArrayList<String> data;
 
   public void writeToFile() {

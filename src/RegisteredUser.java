@@ -16,7 +16,7 @@ public class RegisteredUser extends User { // need to extend User
     private ArrayList<String> refunds;
 
     public RegisteredUser() {
-
+        
     }
 
     public RegisteredUser(String username, String password, String email, int age) {
@@ -28,55 +28,55 @@ public class RegisteredUser extends User { // need to extend User
     }
 
     public void setUsername(String username) {
-
+        this.username = username;
     }
 
     public void setPassword(String password) {
-
+        this.password = password;
     }
 
     public void setEmail(String email) {
-
+        this.email = email;
     }
 
     public void setFirstName(String firstName) {
-
+        this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-
+        this.lastName = lastName;
     }
 
     public void setAge(int age) {
-
+        this.age = age;
     }
 
     public void setAddress(String address) {
-
+        this.address = address;
     }
 
     public void addPassport(Passport passport) {
-
+        //TODO
     }
 
     private String getUsername() {
-        return "";
+        return username;
     }
 
     private String getPassword() {
-        return "";
+        return password;
     }
 
     private String getEmail() {
-        return "";
+        return email;
     }
 
     public int getAge() {
-        return 0;
+        return age;
     }
 
     public String getAddress() {
-        return "";
+        return address;
     }
 
     private ArrayList<Passport> getPassports() {
