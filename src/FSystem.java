@@ -2,8 +2,8 @@ package src;
 
 public class FSystem {
   private User user;
-  private Reader dataReader;
-  private Writer dataWriter;
+  private JReader dataReader;
+  private JWriter dataWriter;
 
   public FSystem() {
 
