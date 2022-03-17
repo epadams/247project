@@ -8,21 +8,22 @@ public class Hotel extends Booking {
   private int numOfRooms;
   private String location;
 
-  Hotel() {
+  public Hotel() {
 
   }
 
-  Hotel(ArrayList<Room> rooms, Date startDate, Date endDate, int numOfRooms) {
+  public Hotel(ArrayList<Room> rooms, Date startDate, Date endDate, int numOfRooms) {
 
   }
 
   public ArrayList<Room> getRooms() {
     // return arraylist of rooms
+    return this.rooms;
   }
 
   public int getNumOfRooms() {
     // return length of the array list
-    return 0;
+    return this.numOfRooms;
   }
 
   // setters

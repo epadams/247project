@@ -3,13 +3,13 @@ package src;
 import java.util.ArrayList;
 
 public abstract class User {
-  private ArrayList<Preference> preferences;
+  private ArrayList<Preferences> preferences;
 
-  public void addPreference(Preference preference) {
+  public void addPreference(Preferences preference) {
 
   }
 
-  public void addPreferences(ArrayList<Preference> preferences) {
+  public void addPreferences(ArrayList<Preferences> preferences) {
     this.preferences = preferences;
   }
 }

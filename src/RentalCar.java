@@ -16,15 +16,15 @@ public class RentalCar extends Booking {
     }
 
     public CarType getType() {
-
+      return this.type;
     }
 
     public Date getStartDate() {
-
+      return this.startDate;
     }
 
     public Date getEndDate() {
-
+      return this.endDate;
     }
 
     public void setType(CarType type) {
