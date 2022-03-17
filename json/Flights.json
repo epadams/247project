@@ -1,12 +1,67 @@
 [
     {
         "UUID":"66bf9c12-4557-41e6-a243-58105abecb5f",
-        "flightName":"",
-        "departureTime":"",
-        "arrivalTime":"",
-        "placeOfDeparture":"",
-        "placeOfArrival":"",
-        "Airline":"",
-        "Type":""
+        "flightName":"Flight1",
+        "departureTime":"6:00 am",
+        "arrivalTime":"7:30 am",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"ATL - Atlanta",
+        "Airline":"Delta",
+        "Type":"One-way"
+    },
+
+    {
+        "UUID":"35410857-7b95-40dc-8aae-d79f37ed2eca",
+        "flightName":"Flight2",
+        "departureTime":"6:30 am",
+        "arrivalTime":"7:54 am",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"ORD - Chicago",
+        "Airline":"United",
+        "Type":"Round Trip"
+    },
+
+    {
+        "UUID":"a88c6d18-3725-4a47-a490-a766773202d5",
+        "flightName":"Flight3",
+        "departureTime":"8:31 pm",
+        "arrivalTime":"11:58 pm",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"ORD - Chicago",
+        "Airline":"American",
+        "Type":"Layover"
+    },
+    
+    {
+        "UUID":"cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
+        "flightName":"Flight4",
+        "departureTime":"10:33 am",
+        "arrivalTime":"11:59 am",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"DCA - Washington DC",
+        "Airline":"American",
+        "Type":"One Way"
+    },
+
+    {
+        "UUID":"c01bb245-b3a8-415b-be12-31057eb30e1f",
+        "flightName":"Flight5",
+        "departureTime":"7:32 am",
+        "arrivalTime":"8:59 am",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"DCA - Washington DC",
+        "Airline":"American",
+        "Type":"One Way"
+    },
+
+    {
+        "UUID":"3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
+        "flightName":"Flight6",
+        "departureTime":"2:45 pm",
+        "arrivalTime":"4:12 pm",
+        "placeOfDeparture":"CAE - Columbia",
+        "placeOfArrival":"DCA - Washington DC",
+        "Airline":"United",
+        "Type":"Round Trip"
     }
 ]

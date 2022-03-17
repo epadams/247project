@@ -30,15 +30,15 @@ public class Room {
     }
 
     public void setNumOfBeds(int numOfBeds) {
-
+        this.numOfBeds = numOfBeds;
     }
 
     public void setSmoking(boolean smoking) {
-
+        this.smoking = smoking;
     }
 
     public void setVacancy(boolean vacancy) {
-
+        this.vacancy = vacancy;
     }
 
     public Date getStartDate() {
@@ -50,10 +50,10 @@ public class Room {
     }
 
     public void serStartDate(Date startDate) {
-
+        this.startDate = startDate;
     }
 
     public void setEndDate(Date endDate) {
-
+        this.endDate = endDate;
     }
 }

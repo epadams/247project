@@ -2,7 +2,7 @@ package src;
 
 import java.util.ArrayList;
 
-public class Reader {
+public class JReader {
   private ArrayList<String> data;
 
   public void readFromFile() {
