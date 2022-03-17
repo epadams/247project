@@ -1,3 +1,5 @@
+package src;
+
 public class System {
   private User user;
   private Reader dataReader;
@@ -7,7 +9,7 @@ public class System {
 
   }
 
-  public void createAccount (String username, String password, String email) {
+  public void createAccount(String username, String password, String email) {
 
   }
 

@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Date;
 
 public class Room {
@@ -27,7 +29,7 @@ public class Room {
         return true;
     }
 
-    public void setNumOfBeds(int numOfBeds){
+    public void setNumOfBeds(int numOfBeds) {
 
     }
 

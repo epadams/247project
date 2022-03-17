@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Date;
 
 public class RentalCar extends Booking {
@@ -5,7 +7,7 @@ public class RentalCar extends Booking {
     private Date startDate;
     private Date endDate;
 
-    public RentalCar(){
+    public RentalCar() {
 
     }
 
