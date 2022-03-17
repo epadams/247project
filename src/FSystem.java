@@ -1,11 +1,11 @@
 package src;
 
-public class System {
+public class FSystem {
   private User user;
   private Reader dataReader;
   private Writer dataWriter;
 
-  public System() {
+  public FSystem() {
 
   }
 
