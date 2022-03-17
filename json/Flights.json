@@ -1,12 +1,12 @@
 [
     {
         "UUID":"66bf9c12-4557-41e6-a243-58105abecb5f",
-        "flightName":"",
-        "departureTime":"",
-        "arrivalTime":"",
-        "placeOfDeparture":"",
-        "placeOfArrival":"",
-        "Airline":"",
-        "Type":""
+        "flightName":"Flight1",
+        "departureTime":"6:00 am",
+        "arrivalTime":"8:00 am",
+        "placeOfDeparture":"COLA",
+        "placeOfArrival":"ATL",
+        "Airline":"Delta",
+        "Type":"One-way"
     }
 ]

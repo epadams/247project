@@ -3,6 +3,7 @@
         "UUID":"",
         "rowNum":"",
         "aisleNum":"",
-        "availability":""
+        "availability":"",
+        "seatType":""
     }
 ]
