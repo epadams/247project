@@ -12,7 +12,9 @@ public class RentalCar extends Booking {
     }
 
     public RentalCar(CarType type, Date startDate, Date endDate) {
-
+      this.type = type;
+      this.startDate = startDate;
+      this.endDate = endDate;
     }
 
     public CarType getType() {
@@ -28,14 +30,14 @@ public class RentalCar extends Booking {
     }
 
     public void setType(CarType type) {
-
+      this.type = type;
     }
 
     public void setStartDate(Date startDate) {
-
+      this.startDate = startDate;
     }
 
     public void setEndDate(Date endDate) {
-
+      this.endDate = endDate;
     }
 }
