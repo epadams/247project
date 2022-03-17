@@ -28,7 +28,7 @@ public class RentalCar extends Booking {
     }
 
     public void setType(CarType type) {
-
+      
     }
 
     public void setStartDate(Date startDate) {
