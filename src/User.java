@@ -1,8 +1,10 @@
 package src;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User {
+    private UUID id;
     private String username;
     private String password;
     private String email;
@@ -19,12 +21,22 @@ public class User {
         
     }
 
-    public User(String username, String password, String email, int age) {
-
+    public User(UUID id, String username, String password, String email, int age) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.age = age;
     }
 
-    public User(String username, String password, String email, int age, String address, Passport passport) {
-
+    public User(UUID id, String username, String password, String email, int age, String address, Passport passport) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.age = age;
+        this.address = address;
+        this.addPassport(passport);
     }
 
     public void setUsername(String username) {
@@ -55,20 +67,29 @@ public class User {
         this.address = address;
     }
 
+    // TODO check if a passport currently exists to avoid duplication
     public void addPassport(Passport passport) {
-        //TODO
+        this.passports.add(passport);
     }
 
     private String getUsername() {
-        return username;
+        return this.username;
     }
 
     private String getPassword() {
-        return password;
+        return this.password;
     }
 
     private String getEmail() {
-        return email;
+        return this.email;
+    }
+
+    public String getFirstName () {
+        return this.firstName;
+    }
+
+    public String getLastName () {
+        return this.lastName;
     }
 
     public int getAge() {
@@ -80,13 +101,14 @@ public class User {
     }
 
     private ArrayList<Passport> getPassports() {
-        return passports;
+        return this.passports;
     }
 
     public void BookFlight() {
 
     }
 
+    // TODO Change to string or some kind of return, this should not print anything here
     public void ViewFlights() {
 
     }
@@ -95,12 +117,12 @@ public class User {
 
     }
 
-    public String printFlightHistory() {
-        return "";
+    public ArrayList<Flight> printFlightHistory() {
+        return this.flightHistory;
     }
 
-    public String printRefunds() {
-        return "";
+    public ArrayList<String> getRefunds() {
+        return this.refunds;
     }
 
     public String printFlightTicket() {
