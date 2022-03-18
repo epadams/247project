@@ -72,7 +72,7 @@ public class User {
         this.passports.add(passport);
     }
 
-    private String getUsername() {
+    public String getUserName() {
         return this.username;
     }
 
