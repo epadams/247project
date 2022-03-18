@@ -6,7 +6,6 @@ To compile on the command line, change to the src/ directory and use the followi
 
 ```
 javac -cp ../lib/json-simple-1.1.1.jar *.java
-
 ```
 To run, use:
 
