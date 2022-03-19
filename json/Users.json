@@ -1,9 +1,9 @@
 [
   {
-    "UUID":"",
-    "username":"",
-    "password":"",
-    "email":"",
-    "age":
+    "UUID":"6ef03f85-a967-4ca5-8906-a0abcfd9fce3",
+    "username":"testuser",
+    "password":"abcdefg",
+    "email":"testemail@email.com",
+    "age": 20
   }
 ]
