@@ -1,4 +1,3 @@
-
 public class Taxi extends Booking {
   private int travelDistance;
 

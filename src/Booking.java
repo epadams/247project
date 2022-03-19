@@ -1,4 +1,3 @@
-
 public class Booking {
   private User user;
   private int price;

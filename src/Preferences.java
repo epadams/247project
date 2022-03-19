@@ -1,5 +1,3 @@
-
-
 public class Preferences {
     private boolean medAccom;
     private String originAirportCode;

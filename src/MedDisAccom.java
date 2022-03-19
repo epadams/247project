@@ -1,5 +1,4 @@
-
 public enum MedDisAccom{
-YES,
-NO
+  YES,
+  NO
 }

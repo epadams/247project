@@ -1,6 +1,5 @@
-
 public enum SeatType {
-    BUSINESS,
-    ECONOMY,
-    FIRST_CLASS
+  BUSINESS,
+  ECONOMY,
+  FIRST_CLASS
 }

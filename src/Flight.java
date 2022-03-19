@@ -1,4 +1,3 @@
-
 import java.sql.Time;
 
 public class Flight extends Booking {
