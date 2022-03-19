@@ -1,4 +1,3 @@
-package src;
 
 public enum SeatType {
     BUSINESS,

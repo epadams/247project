@@ -1,4 +1,3 @@
-package src;
 
 public enum SeatLocation {
     WINDOW_SEAT,

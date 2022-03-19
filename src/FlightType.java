@@ -1,4 +1,3 @@
-package src;
 
 /**
  * An enum of all possible Flight Types
