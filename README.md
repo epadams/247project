@@ -10,5 +10,5 @@ javac -cp ../lib/json-simple-1.1.1.jar *.java
 To run, use:
 
 ```
-java MainDriver
+java -cp ../lib/json-simple-1.1.1.jar: MainDriver
 ```
