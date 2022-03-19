@@ -1,12 +1,11 @@
 package src;
 
 public class FSystem {
-  private User user;
-  private JReader dataReader;
-  private JWriter dataWriter;
+  private Users users;
+  private User currentUser;
 
   public FSystem() {
-
+    users = Users.getInstance();
   }
 
   public void createAccount(String username, String password, String email) {
@@ -16,4 +15,10 @@ public class FSystem {
   public void login(String username, String password) {
 
   }
+
+  public User getCurrentUser() {
+    return currentUser;
+  }
+
+
 }

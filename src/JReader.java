@@ -14,6 +14,7 @@ public class JReader extends DataConstants {
     try {
       FileReader reader = new FileReader(USER_FILE_NAME);
       // JSONParser parser = new JSONParser();
+      //
       JSONArray usersJSON = (JSONArray) new JSONParser().parse(reader);
 
       for (int i = 0; i < usersJSON.size(); i++) {
