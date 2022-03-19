@@ -4,6 +4,10 @@
     "username":"testuser",
     "password":"abcdefg",
     "email":"testemail@email.com",
-    "age": 20
+    "firstName":"John",
+    "lastName":"Doe",
+    "age": 20,
+    "address":"1250 Testing Drive",
+    "frequentFlyer":false
   }
 ]

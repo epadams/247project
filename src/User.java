@@ -10,8 +10,8 @@ public class User {
     private String lastName;
     private int age;
     private String address;
+    private boolean frequentFlyer;
     private ArrayList<Passport> passports;
-    private boolean frequentFLyer;
     private ArrayList<Flight> flightHistory;
     private ArrayList<String> refunds;
 
@@ -25,18 +25,30 @@ public class User {
         this.password = password;
         this.email = email;
         this.age = age;
+        this.firstName = "";
+        this.lastName = "";
+        this.address = "";
+        this.frequentFlyer = false;
     }
 
-    public User(UUID id, String username, String password, String email, int age, String address, Passport passport) {
+    public User(UUID id, String username, String password, String email, String firstName,
+        String lastName, int age, String address, boolean frequentFlyer) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.address = address;
-        this.addPassport(passport);
+        this.frequentFlyer = frequentFlyer;
     }
 
+    
+    public User(UUID id, String username, String password, String email, String firstName,
+        String lastName, int age, String address, boolean frequentFlyer, Passport passport) {
+
+    }
     public void setUsername(String username) {
         this.username = username;
     }
@@ -74,11 +86,11 @@ public class User {
         return this.username;
     }
 
-    private String getPassword() {
+    public String getPassword() {
         return this.password;
     }
 
-    private String getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -91,15 +103,19 @@ public class User {
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
-    private ArrayList<Passport> getPassports() {
+    public ArrayList<Passport> getPassports() {
         return this.passports;
+    }
+
+    public boolean getFreqFlyerStatus() {
+      return this.frequentFlyer;
     }
 
     public void BookFlight() {
@@ -133,5 +149,17 @@ public class User {
 
     public void deleteAccount() {
 
+    }
+
+    // DEBUGGING ONLY
+    public String toString() {
+      return "ID: " + this.id + "\nUsername: " + this.username + "\nPassword: "
+          + this.password + "\nFirst Name: " + this.firstName + "\nLast Name: "
+          + this.lastName + "\nAge: " + this.age + "\nAddress: "
+          + this.address + "\nFrequent Flyer: " + this.frequentFlyer;
+    }
+
+    public UUID getId() {
+      return this.id;
     }
 }
