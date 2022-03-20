@@ -4,11 +4,6 @@ public class FSystem {
 
   public FSystem() {
     users = Users.getInstance();
-    // TODO remove this test statement
-    System.out.println(users.getUsers().get(0).toString());
-    logout();
-    createAccount("testUser2", "a2df", "test2@email.com", 20);
-    System.out.println(users.getUsers().get(1).toString());
   }
 
   public void createAccount(String username, String password, String email, int age) {
@@ -16,7 +11,9 @@ public class FSystem {
   }
 
   public void login(String username, String password) {
-
+    if (!users.haveUser(username)) return;
+    if (!users.getUser(username).getPassword().equals(password)) return;
+    currentUser = users.getUser(username);
   }
 
   public void logout() {
@@ -27,5 +24,7 @@ public class FSystem {
     return currentUser;
   }
 
-
+  public Users getUsers() {
+    return this.users;
+  }
 }

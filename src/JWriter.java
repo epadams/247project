@@ -29,7 +29,11 @@ public class JWriter extends DataConstants {
     userDetails.put(USER_USERNAME, user.getUserName());
     userDetails.put(USER_PASSWORD, user.getPassword());
     userDetails.put(USER_EMAIL, user.getEmail());
+    userDetails.put(USER_FIRST_NAME, user.getFirstName());
+    userDetails.put(USER_LAST_NAME, user.getLastName());
     userDetails.put(USER_AGE, user.getAge());
+    userDetails.put(USER_ADDRESS, user.getAddress());
+    userDetails.put(USER_FREQFLYER, user.getFreqFlyerStatus());
 
     return userDetails;
   }

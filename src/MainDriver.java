@@ -6,8 +6,10 @@ public class MainDriver {
   }
 
   public void run() {
-    System.out.println("hello");
     fsystem.getCurrentUser();
+    fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
+    System.out.println(fsystem.getUsers().printAllUsers());
+    fsystem.logout();
   }
 
   public static void main(String[] args) {

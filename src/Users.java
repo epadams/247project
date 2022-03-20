@@ -40,20 +40,18 @@ public class Users {
 
   public void addUser(String username, String password, String email, int age) {
     if (haveUser(username)) return;
-    
-    // TODO change id to be insde construction
-    UUID id = UUID.randomUUID();
-    userList.add(new User(id, username, password, email, age));
+    userList.add(new User(UUID.randomUUID(), username, password, email, age));
   }
 
-  // TODO
   public void saveUsers() {
-
+    JWriter.saveUsers();
   }
-
-  // TODO add tostring
   
-  public String toString() {
-    return "";
+  public String printAllUsers() {
+    String ret = "";
+    for (User user : userList) {
+      ret += user.toString();
+    }
+    return ret;
   }
 }
