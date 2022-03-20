@@ -6,16 +6,17 @@ public class Flight extends Booking {
   private String destination;
   private FlightType flightType;
   private int travelTime;
-  private boolean roundTrip;
-  private boolean hasLayover;
 
   Flight() {
 
   }
 
-  Flight(String departure, String destination, FlightType flightType, int travelTime, boolean roundTrip,
-      boolean hasLayover) {
-
+  Flight(String departure, String destination, FlightType flightType, int travelTime) {
+    this.departure = departure;
+    this.departureTime = departureTime;
+    this.destination = destination;
+    this.flightType = flightType;
+    this.travelTime = travelTime;
   }
 
   public void setDestination(String destination) {
@@ -50,20 +51,11 @@ public class Flight extends Booking {
     return this.travelTime;
   }
 
-  public void setRoundTrip(boolean roundTrip) {
-    this.roundTrip = roundTrip;
+  public void setFlightType(FlightType flightType) {
+    this.flightType = flightType;
   }
 
-  public boolean getRoundTrip() {
-    return this.roundTrip;
+  public FlightType getFlightType() {
+    return this.flightType;
   }
-
-  public void setHasLayover(boolean layover) {
-    this.hasLayover = layover;
-  }
-
-  public boolean getHasLayover() {
-    return this.hasLayover;
-  }
-
 }

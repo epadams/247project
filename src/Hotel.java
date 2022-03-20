@@ -3,27 +3,34 @@ import java.util.ArrayList;
 
 public class Hotel extends Booking {
   private ArrayList<Room> rooms;
-  private int numOfRooms;
   private String location;
 
   public Hotel() {
-
+    this.rooms = new ArrayList<Room>();
   }
 
-  public Hotel(ArrayList<Room> rooms, Date startDate, Date endDate, int numOfRooms) {
+  public Hotel(ArrayList<Room> rooms, String location) {
+    this.rooms = rooms;
+    this.location = location;
+  }
 
+  public void setRooms() {
+    this.rooms = rooms;
   }
 
   public ArrayList<Room> getRooms() {
-    // return arraylist of rooms
     return this.rooms;
   }
 
   public int getNumOfRooms() {
-    // return length of the array list
-    return this.numOfRooms;
+    return this.rooms.size();
   }
 
-  // setters
+  public void setLocation(String location) {
+    this.location = location;
+  }
 
+  public String getLocation() {
+    return this.location;
+  }
 }

@@ -1,57 +1,59 @@
 import java.util.Date;
 
 public class Room {
-    private int numOfBeds;
-    private boolean smoking;
-    private boolean vacancy;
-    private Date startDate;
-    private Date endDate;
+  private int numOfBeds;
+  private boolean smoking;
+  private boolean vacancy;
+  private Date startDate;
+  private Date endDate;
 
-    public Room() {
+  public Room() {
 
-    }
+  }
 
-    public Room(int numOfBeds, boolean smoking, boolean vacancy) {
+  public Room(int numOfBeds, boolean smoking, boolean vacancy) {
+    this.numOfBeds = numOfBeds;
+    this.smoking = smoking;
+    this.vacancy = vacancy;
+  }
 
-    }
+  public int getNumOfBeds() {
+      return this.numOfBeds;
+  }
 
-    public int getNumOfBeds() {
-        return 0;
-    }
+  public boolean getSmoking() {
+      return this.smoking;
+  }
 
-    public boolean getSmoking() {
-        return true;
-    }
+  public boolean getVacancy(Date startDate, Date endDate) {
+      return this.vacancy;
+  }
 
-    public boolean getVacancy(Date startDate, Date endDate) {
-        return true;
-    }
+  public void setNumOfBeds(int numOfBeds) {
+      this.numOfBeds = numOfBeds;
+  }
 
-    public void setNumOfBeds(int numOfBeds) {
-        this.numOfBeds = numOfBeds;
-    }
+  public void setSmoking(boolean smoking) {
+      this.smoking = smoking;
+  }
 
-    public void setSmoking(boolean smoking) {
-        this.smoking = smoking;
-    }
+  public void setVacancy(boolean vacancy) {
+      this.vacancy = vacancy;
+  }
 
-    public void setVacancy(boolean vacancy) {
-        this.vacancy = vacancy;
-    }
+  public Date getStartDate() {
+      return this.startDate;
+  }
 
-    public Date getStartDate() {
-        return new Date();
-    }
+  public Date getEndDate() {
+      return this.endDate;
+  }
 
-    public Date getEndDate() {
-        return new Date();
-    }
+  public void setStartDate(Date startDate) {
+      this.startDate = startDate;
+  }
 
-    public void serStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
+  public void setEndDate(Date endDate) {
+      this.endDate = endDate;
+  }
 }

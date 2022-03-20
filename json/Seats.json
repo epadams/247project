@@ -4,62 +4,62 @@
         "rowNum":"1",
         "aisleNum":"A",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"76ff68b1-fdee-412f-b70a-ba4e05996bc2",
         "rowNum":"1",
         "aisleNum":"D",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"ce2721f9-32bd-459a-b809-5d1f80275704",
         "rowNum":"1",
         "aisleNum":"G",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"94cf34ba-54b8-4e4f-a34c-7bbac7373b82",
         "rowNum":"1",
         "aisleNum":"J",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"5e3f4de9-2fcc-44ba-97dc-04bbfd952f5b",
         "rowNum":"2",
         "aisleNum":"A",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"35ed6513-d961-4f08-9685-0d30ad70a2c3",
         "rowNum":"2",
         "aisleNum":"D",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"e23b0663-317e-497d-9454-631f52d9fe57",
         "rowNum":"2",
         "aisleNum":"G",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"4d51d1bb-3db5-412b-bb74-79450ac45e87",
         "rowNum":"2",
         "aisleNum":"J",
         "availability":"true",
-        "seatType":"First Class",
+        "seatType":"First Class"
     },
     {
         "UUID":"0e06360c-8254-4327-bebe-65a3bd26f664",
         "rowNum":"3",
         "aisleNum":"A",
         "availability":"true",
-        "seatType":"Business",
+        "seatType":"Business"
     }
 ]
