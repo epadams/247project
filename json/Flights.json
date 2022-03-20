@@ -9,7 +9,6 @@
         "Airline":"Delta",
         "Type":"One-way"
     },
-
     {
         "UUID":"35410857-7b95-40dc-8aae-d79f37ed2eca",
         "flightName":"Flight2",
@@ -20,7 +19,6 @@
         "Airline":"United",
         "Type":"Round Trip"
     },
-
     {
         "UUID":"a88c6d18-3725-4a47-a490-a766773202d5",
         "flightName":"Flight3",
@@ -31,7 +29,6 @@
         "Airline":"American",
         "Type":"Layover"
     },
-    
     {
         "UUID":"cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
         "flightName":"Flight4",
@@ -42,7 +39,6 @@
         "Airline":"American",
         "Type":"One Way"
     },
-
     {
         "UUID":"c01bb245-b3a8-415b-be12-31057eb30e1f",
         "flightName":"Flight5",
@@ -53,7 +49,6 @@
         "Airline":"American",
         "Type":"One Way"
     },
-
     {
         "UUID":"3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
         "flightName":"Flight6",
