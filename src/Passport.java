@@ -15,7 +15,14 @@ public class Passport {
     }
 
     public Passport(String firstName, String lastName, int passportNum, Date dateOfBirth, String placeOfBirth, Date issueDate, Date expirationDate, char sex) {
-
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.passportNum = passportNum;
+      this.dateOfBirth = dateOfBirth;
+      this.placeOfBirth = placeOfBirth;
+      this.issueDate = issueDate;
+      this.expirationDate = expirationDate;
+      this.sex = sex;
     }
 
     public void setFirstName(String firstName) {
@@ -51,38 +58,37 @@ public class Passport {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
     public int getPassportNum() {
-        return passportNum;
+        return this.passportNum;
     }
 
     public Date getDateOfBirth() {
-        return dateOfBirth;
+        return this.dateOfBirth;
     }
 
     public String getPlaceOfBirth() {
-        return placeOfBirth;
+        return this.placeOfBirth;
     }
 
     public Date getIssueDate() {
-        return issueDate;
+        return this.issueDate;
     }
 
     public Date getExpirationDate() {
-        return expirationDate;
+        return this.expirationDate;
     }
 
     public char getSex() {
-        return sex;
+        return this.sex;
     }
 
     public String toString() {
         return "";
     }
-
 }
