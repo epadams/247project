@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.io.FileReader;
+import java.sql.Time;
 import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -36,27 +37,33 @@ public class JReader extends DataConstants {
     return null;
   }
 
-  public static ArrayList<Flight> getFlightList() {
-    ArrayList<Flight> flights = new ArrayList<Flight>();
+  public static ArrayList<Flight> getFlights() {
+    ArrayList<Flight> flight = new ArrayList<Flight>();
     try {
       FileReader reader = new FileReader(USER_FILE_NAME);
       JSONArray flightsJSON = (JSONArray) new JSONParser().parse(reader);
 
-      //TODO update to include all elements of json (Ask ethan)
-      //TODO update JWriter for flights
+      // TODO update to include all elements of json (Ask ethan)
+      // TODO update JWriter for flights
       for(int i = 0;i < flightsJSON.size();i++) {
-        //JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
-        //UUID id =  UUID.fromString((String) flightsJSON.get(USER_ID));
-        // String flightName = (String) flightsJSON.get(USER_FLIGHTNAME);
-        // String departureTime = (String) flightsJSON.get(USER_DEPARTURETIME);       //Commented until JWriter is updated
-        // String arrivalTime = (String) flightsJSON.get(USER_ARRIVALTIME);
-        // String placeOfDeparture = (String) flightsJSON.get(USER_PLACEOFDEPARTURE);
-        // String placeOfArrival = (String) flightsJSON.get(USER_PLACEOFARRIVAL);
-        // String airline = (String) flightsJSON.get(USER_AIRLINE);
-        // String type = (String) flightsJSON.get(USER_TYPE);
-        //flights.add(new Flight(id,flightName,departueTime,arrivalTime,placeOfDeparture,placeOfArrival,airline,type));
+        JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
+        UUID id =  UUID.fromString((String) flightsJSON.get(FLIGHT_ID));
+        String flightName = (String) flightsJSON.get(FLIGHT_FLIGHTNAME);
+        Time departureTime = (Time) flightsJSON.get(FLIGHT_DEPARTURETIME);       //Commented until JWriter is updated
+        Time arrivalTime = (Time) flightsJSON.get(FLIGHT_ARRIVALTIME);
+        String departure = (String) flightsJSON.get(FLIGHT_DEPARTURE);
+        String destination = (String) flightsJSON.get(FLIGHT_PLACEOFARRIVAL);
+        String airline = (String) flightsJSON.get(FLIGHT_AIRLINE);
+        FlightType flightType = (FlightType) flightsJSON.get(FLIGHT_FLIGHTTYPE);
+        flight.add(new Flight(id,flightName,airline,departure,destination,departureTime,arrivalTime,flightType));
       }
-      return flightList;
+      return flight;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
 
   // TODO fix getHotels and getRooms
   public static ArrayList<Hotel> getHotels() {
