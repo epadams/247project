@@ -1,4 +1,5 @@
 import java.sql.Time;
+import java.util.ArrayList;
 
 public class Flight extends Booking {
   private String departure;
@@ -6,9 +7,10 @@ public class Flight extends Booking {
   private String destination;
   private FlightType flightType;
   private int travelTime;
+  private ArrayList<Flight> flights; 
 
   Flight() {
-
+    
   }
 
   Flight(String departure, String destination, FlightType flightType, int travelTime) {

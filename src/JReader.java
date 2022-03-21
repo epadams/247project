@@ -38,4 +38,31 @@ public class JReader extends DataConstants {
     }
     return null;
   }
+
+  public static ArrayList<Flight> getFlightList() {
+    ArrayList<Flight> flights = new ArrayList<Flight>();
+    try {
+      FileReader reader = new FileReader(USER_FILE_NAME);
+      JSONArray flightsJSON = (JSONArray) new JSONParser().parse(reader);
+
+      //TODO update to include all elements of json (Ask ethan)
+      //TODO update JWriter for flights
+      for(int i = 0;i < flightsJSON.size();i++) {
+        //JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
+        //UUID id =  UUID.fromString((String) flightsJSON.get(USER_ID));
+        // String flightName = (String) flightsJSON.get(USER_FLIGHTNAME);
+        // String departureTime = (String) flightsJSON.get(USER_DEPARTURETIME);       //Commented until JWriter is updated
+        // String arrivalTime = (String) flightsJSON.get(USER_ARRIVALTIME);
+        // String placeOfDeparture = (String) flightsJSON.get(USER_PLACEOFDEPARTURE);
+        // String placeOfArrival = (String) flightsJSON.get(USER_PLACEOFARRIVAL);
+        // String airline = (String) flightsJSON.get(USER_AIRLINE);
+        // String type = (String) flightsJSON.get(USER_TYPE);
+        //flights.add(new Flight(id,flightName,departueTime,arrivalTime,placeOfDeparture,placeOfArrival,airline,type));
+      }
+      return flightList;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
 }

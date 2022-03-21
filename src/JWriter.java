@@ -37,4 +37,34 @@ public class JWriter extends DataConstants {
 
     return userDetails;
   }
-}
+
+  public static void saveFlight() {
+    // Flight flights = flights.getInstance();                //commented until methods are created 
+    // ArrayList<Flight> flightList = Flight.getFlights();
+    JSONArray JSONFlights = new JSONArray();
+
+    for(int i = 0;i<flightList.size();i++){
+      JSONFlights.add(getFlightJSON(flightList.get(i)));
+    }
+    try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+      file.write(JSONFlights.toJSONString());
+      file.flush();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  public static JSONObject getFlightJSON(Flight flights){
+    JSONObject flightDetails = new JSONObject();
+    // flightDetails.put(USER_ID, flights.getID().toString());
+    // flightDetails.put(USER_FLIGHTNAME, flights.getFlightName().toString());
+    // flightDetails.put(USER_DEPARTURETIME, flights.getDepartureTime().toString());
+    // flightDetails.put(USER_ARRIVALTIME, flights.getArrivalTime().toString());            //commented till updated 
+    // flightDetails.put(USER_PLACEOFDEPARTURE, flights.getPlaceOFDeparture().toString());
+    // flightDetails.put(USER_PLACEOFARRIVAL, flights.getPlaceOfArrival().toString());
+    // flightDetails.put(USER_AIRLINE, flights.getAirline().toString());
+    // flightDetails.put(USER_TYPE, flights.getType().toString());
+
+    return flightDetails;
+  }
+  }
+
