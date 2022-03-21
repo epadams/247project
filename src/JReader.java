@@ -12,10 +12,8 @@ public class JReader extends DataConstants {
     ArrayList<User> users = new ArrayList<User>();
     try {
       FileReader reader = new FileReader(USER_FILE_NAME);
-      // JSONParser parser = new JSONParser();
       JSONArray usersJSON = (JSONArray) new JSONParser().parse(reader);
 
-      // TODO update to include all elements of json
       for (int i = 0; i < usersJSON.size(); i++) {
         JSONObject userJSON = (JSONObject) usersJSON.get(i);
         UUID id =  UUID.fromString((String) userJSON.get(USER_ID));
@@ -28,7 +26,6 @@ public class JReader extends DataConstants {
         String address = (String) userJSON.get(USER_ADDRESS);
         boolean frequentFlyer = (boolean) userJSON.get(USER_FREQFLYER);
 
-        // users.add(new User(id, username, password, email, age));
         users.add(new User(id, username, password, email, firstName, lastName, age,
               address, frequentFlyer));
       }
@@ -60,6 +57,38 @@ public class JReader extends DataConstants {
         //flights.add(new Flight(id,flightName,departueTime,arrivalTime,placeOfDeparture,placeOfArrival,airline,type));
       }
       return flightList;
+
+  // TODO fix getHotels and getRooms
+  public static ArrayList<Hotel> getHotels() {
+    ArrayList<Hotel> hotels = new ArrayList<Hotel>();
+    try {
+      FileReader reader = new FileReader(HOTEL_FILE_NAME);
+      JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(reader);
+
+      for (int i = 0; i < hotelsJSON.size(); i++) {
+        JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
+        UUID id =  UUID.fromString((String) hotelJSON.get(HOTEL_ID));
+        String hotelName = (String) hotelJSON.get(HOTEL_NAME);
+        String location = (String) hotelJSON.get(HOTEL_LOCATION);
+        ArrayList<Room> rooms = getRooms();
+        hotels.add(new Hotel(id, hotelName, location, rooms));
+      }
+      return hotels;
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public static ArrayList<Room> getRooms() {
+    ArrayList<Room> rooms = new ArrayList<Room>();
+    try {
+      FileReader reader = new FileReader(ROOM_FILE_NAME);
+      JSONArray roomsJSON = (JSONArray) new JSONParser().parse(reader);
+
+      for (int i = 0; i < roomsJSON.size(); i++) {
+
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }

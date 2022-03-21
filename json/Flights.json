@@ -6,8 +6,9 @@
         "arrivalTime":"7:30 am",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"ATL - Atlanta",
-        "Airline":"Delta",
-        "Type":"One-way"
+        "airline":"Delta",
+        "type":"One-way",
+        "seats":[]
     },
     {
         "UUID":"35410857-7b95-40dc-8aae-d79f37ed2eca",
@@ -16,8 +17,9 @@
         "arrivalTime":"7:54 am",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"ORD - Chicago",
-        "Airline":"United",
-        "Type":"Round Trip"
+        "airline":"United",
+        "type":"Round Trip",
+        "seats":[]
     },
     {
         "UUID":"a88c6d18-3725-4a47-a490-a766773202d5",
@@ -26,8 +28,9 @@
         "arrivalTime":"11:58 pm",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"ORD - Chicago",
-        "Airline":"American",
-        "Type":"Layover"
+        "airline":"American",
+        "type":"Layover",
+        "seats":[]
     },
     {
         "UUID":"cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
@@ -36,8 +39,9 @@
         "arrivalTime":"11:59 am",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"DCA - Washington DC",
-        "Airline":"American",
-        "Type":"One Way"
+        "airline":"American",
+        "type":"One Way",
+        "seats":[]
     },
     {
         "UUID":"c01bb245-b3a8-415b-be12-31057eb30e1f",
@@ -46,8 +50,9 @@
         "arrivalTime":"8:59 am",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"DCA - Washington DC",
-        "Airline":"American",
-        "Type":"One Way"
+        "airline":"American",
+        "type":"One Way",
+        "seats":[]
     },
     {
         "UUID":"3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
@@ -56,7 +61,8 @@
         "arrivalTime":"4:12 pm",
         "placeOfDeparture":"CAE - Columbia",
         "placeOfArrival":"DCA - Washington DC",
-        "Airline":"United",
-        "Type":"Round Trip"
+        "airline":"United",
+        "type":"Round Trip",
+        "seats":[]
     }
 ]
