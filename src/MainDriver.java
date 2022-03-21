@@ -7,6 +7,7 @@ public class MainDriver {
     fsystem = new FSystem();
   }
 
+  // TODO break this up into multiple methods
   public void run() {
     displayLogin();
     Scanner keyboard = new Scanner(System.in);
@@ -25,21 +26,27 @@ public class MainDriver {
     while (run) {
       displayMenu();
       switch (keyboard.nextInt()) {
+        // Search Flights
         case 1:
           System.out.println("case 1");
           break;
+        // Search Hotels
         case 2:
           System.out.println("case 2");
           break;
+        // View Booked Flights
         case 3:
           System.out.println("case 3");
           break;
+        // View Booked Hotels
         case 4:
           System.out.println("case 4");
           break;
+        // View Account Info
         case 5:
           System.out.println("case 5");
           break;
+        // Logout
         case 6:
           fsystem.logout();
           run = false;
@@ -49,7 +56,7 @@ public class MainDriver {
     }
     keyboard.close();
 
-    // debug
+    // debugging
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
