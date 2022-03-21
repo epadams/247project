@@ -25,4 +25,15 @@ public abstract class DataConstants {
   protected static final String ROOM_NUM_BED = "numberOfBeds";
   protected static final String ROOM_SMOKING = "smoking";
   protected static final String ROOM_AVAILABILITY = "availability";
+
+  // Flights constants
+  protected static final String FLIGHT_FILE_NAME = "../json/Flights.json";
+  protected static final String FLIGHT_ID = "UUID";
+  protected static final String FLIGHT_FLIGHTNAME = "flightName";
+  protected static final String FLIGHT_DEPARTURETIME = "departureTime";
+  protected static final String FLIGHT_ARRIVALTIME = "arrivalTime";
+  protected static final String FLIGHT_DEPARTURE = "placeOFDeparture";
+  protected static final String FLIGHT_DESTINATION = "placeOfArrival";
+  protected static final String FLIGHT_AIRLINE = "airline";
+  protected static final String FLIGHT_FLIGHTTYPE = "flightType";
 }

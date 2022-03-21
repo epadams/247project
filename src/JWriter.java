@@ -40,7 +40,7 @@ public class JWriter extends DataConstants {
 
   public static void saveFlight() {
      Flights flight = Flights.getInstance();                //commented until methods are created 
-     ArrayList<Flight> flightList = Flights.getFlights(); //TODO fix
+     ArrayList<Flight> flightList = flight.getFlights(); //TODO fix
     JSONArray jsonFlights = new JSONArray();
 
     for(int i = 0;i<flightList.size();i++){

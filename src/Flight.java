@@ -1,5 +1,7 @@
 import java.util.UUID;
 import java.sql.Time;
+import java.util.UUID;
+import java.util.ArrayList;
 
 
 public class Flight extends Booking {
@@ -12,6 +14,7 @@ public class Flight extends Booking {
   private Time arrivalTime;
   private FlightType flightType;
   private int travelTime;
+  
   
   
 
@@ -90,4 +93,5 @@ public class Flight extends Booking {
   public String getAirline() {
     return this.airline;
   }
+
 }

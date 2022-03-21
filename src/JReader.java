@@ -40,21 +40,22 @@ public class JReader extends DataConstants {
   public static ArrayList<Flight> getFlights() {
     ArrayList<Flight> flight = new ArrayList<Flight>();
     try {
-      FileReader reader = new FileReader(USER_FILE_NAME);
+      FileReader reader = new FileReader(FLIGHT_FILE_NAME);
       JSONArray flightsJSON = (JSONArray) new JSONParser().parse(reader);
 
       // TODO update to include all elements of json (Ask ethan)
       // TODO update JWriter for flights
       for(int i = 0;i < flightsJSON.size();i++) {
         JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
-        UUID id =  UUID.fromString((String) flightsJSON.get(FLIGHT_ID));
-        String flightName = (String) flightsJSON.get(FLIGHT_FLIGHTNAME);
-        Time departureTime = (Time) flightsJSON.get(FLIGHT_DEPARTURETIME);       //Commented until JWriter is updated
-        Time arrivalTime = (Time) flightsJSON.get(FLIGHT_ARRIVALTIME);
-        String departure = (String) flightsJSON.get(FLIGHT_DEPARTURE);
-        String destination = (String) flightsJSON.get(FLIGHT_PLACEOFARRIVAL);
-        String airline = (String) flightsJSON.get(FLIGHT_AIRLINE);
-        FlightType flightType = (FlightType) flightsJSON.get(FLIGHT_FLIGHTTYPE);
+        UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
+        String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
+        Time departureTime = (Time) flightJSON.get(FLIGHT_DEPARTURETIME);       //Commented until JWriter is updated
+        Time arrivalTime = (Time) flightJSON.get(FLIGHT_ARRIVALTIME);
+        String departure = (String) flightJSON.get(FLIGHT_DEPARTURE);
+        String destination = (String) flightJSON.get(FLIGHT_DESTINATION);
+        String airline = (String) flightJSON.get(FLIGHT_AIRLINE);
+        FlightType flightType = (FlightType) flightJSON.get(FLIGHT_FLIGHTTYPE);
+        //ArrayList<Seat> seats = getSeat();
         flight.add(new Flight(id,flightName,airline,departure,destination,departureTime,arrivalTime,flightType));
       }
       return flight;
