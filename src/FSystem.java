@@ -3,6 +3,7 @@ public class FSystem {
   private User currentUser;
 
   public FSystem() {
+    currentUser = null;
     users = Users.getInstance();
   }
 
