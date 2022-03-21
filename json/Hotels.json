@@ -3,6 +3,6 @@
     "UUID":"",
     "hotelName":"",
     "Location":"",
-    "numOfRooms":""
+    "rooms":[]
   }
 ]

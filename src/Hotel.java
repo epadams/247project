@@ -12,11 +12,11 @@ public class Hotel extends Booking {
     this.rooms = new ArrayList<Room>();
   }
 
-  public Hotel(UUID id, ArrayList<Room> rooms, String hotelName, String location) {
+  public Hotel(UUID id, String hotelName, String location, ArrayList<Room> rooms) {
     this.id = id;
-    this.rooms = rooms;
     this.hotelName = hotelName;
     this.location = location;
+    this.rooms = rooms;
   }
 
   public UUID getUUID() {

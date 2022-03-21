@@ -2,8 +2,8 @@
   {
     "UUID":"",
     "roomNumber":"",
-    "Availability":"",
     "Smoking":"",
-    "numberOfBeds":""
+    "numberOfBeds":"",
+    "bookedDates":[]
   }
 ]

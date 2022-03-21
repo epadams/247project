@@ -4,9 +4,8 @@
     "medicalAccommodation":false,
     "originAirportCode":"",
     "seatType":"",
-    "NumberBaggage":"",
-    "Airline":"",
-    "SeatLocation":"",
+    "numberBaggage":"",
+    "airline":"",
     "flightType":""
   }
 ]

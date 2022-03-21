@@ -1,10 +1,9 @@
 [
-    {
-        "UUID": "" ,
-        "Make":"",
-        "Model":"",
-        "Cost":"",
-        "startDate":"",
-        "endDate":""
-    }
+  {
+    "UUID": "" ,
+    "name":"",
+    "cost":,
+    "startDate":"",
+    "endDate":""
+  }
 ]
