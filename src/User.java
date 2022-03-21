@@ -118,12 +118,12 @@ public class User {
       return this.frequentFlyer;
     }
 
-    public void BookFlight() {
+    public void bookFlight() {
 
     }
 
     // TODO Change to string or some kind of return, this should not print anything here
-    public void ViewFlights() {
+    public void viewFlights() {
 
     }
 

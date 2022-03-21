@@ -1,6 +1,8 @@
 import java.util.Date;
+import java.util.UUID;
 
 public class RentalCar extends Booking {
+  private String name;
   private CarType type;
   private Date startDate;
   private Date endDate;
@@ -9,10 +11,19 @@ public class RentalCar extends Booking {
 
   }
 
-  public RentalCar(CarType type, Date startDate, Date endDate) {
+  public RentalCar(String name, CarType type, Date startDate, Date endDate) {
+    this.name = name;
     this.type = type;
     this.startDate = startDate;
     this.endDate = endDate;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+  public String getName() {
+    return this.name;
   }
 
   public CarType getType() {
