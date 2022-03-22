@@ -30,7 +30,7 @@
         "placeOfArrival":"ORD - Chicago",
         "airline":"American",
         "type":"Layover",
-        "seats":[]
+        "seats":["1e7614e6-3de9-4c27-8057-4b0735f62455","9c40f47d-de27-4007-8961-4d5ce13a8c2d","da959ed4-0b0a-4fe2-8325-398fac2488ef","bf44f117-b7e5-4b19-aaa3-fd7d8d267e48","11fa7588-7a7c-40f8-bb06-9e14238ba813","0f695317-ca6c-4dc3-ae70-e3f2c71558be","b468a26d-449f-4e66-93c2-1d35c59c6e35","7cdaf976-2565-43bc-8fe3-e31830a6cd9d","7ace4c57-e777-4b0d-8362-ae69b56b2cd6"]
     },
     {
         "UUID":"cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
