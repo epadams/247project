@@ -1,3 +1,14 @@
+package src;
+
+/*
+ * TODO
+ * make it possible to add users
+ * get users
+ * save users
+ * see if a user exists
+ * etc
+ */
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -15,7 +26,7 @@ public class Users {
     }
     return users;
   }
-  
+
   public boolean haveUser(String username) {
     for (User user : userList) {
       if (user.getUserName().equals(username)) {
@@ -39,14 +50,15 @@ public class Users {
   }
 
   public void addUser(String username, String password, String email, int age) {
-    if (haveUser(username)) return;
+    if (haveUser(username))
+      return;
     userList.add(new User(UUID.randomUUID(), username, password, email, age));
   }
 
   public void saveUsers() {
     JWriter.saveUsers();
   }
-  
+
   public String printAllUsers() {
     String ret = "";
     for (User user : userList) {

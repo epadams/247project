@@ -2,6 +2,10 @@ import java.util.Date;
 import java.util.ArrayList;
 
 public class Room {
+  private int numOfBeds;
+  private boolean smoking;
+  private boolean vacancy;
+  private ArrayList<Date> bookedDates;
   private int roomNumber;
   private int numOfBeds;
   private boolean smoking;
@@ -41,9 +45,10 @@ public class Room {
   public void setSmoking(boolean smoking) {
     this.smoking = smoking;
   }
-  
+
   public void addBookedDate(Date date) {
-    if (haveBookedDate(date)) return;
+    if (haveBookedDate(date))
+      return;
     this.bookedDates.add(date);
   }
 
