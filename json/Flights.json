@@ -19,7 +19,7 @@
         "placeOfArrival":"ORD - Chicago",
         "airline":"United",
         "type":"Round Trip",
-        "seats":[]
+        "seats":["696e58a1-95ab-4003-8c24-1afd7c9d18c0","66490c9d-95e8-463e-9e88-011f53381649","999fda45-b083-40c7-b91d-86db84c40428","88d446ce-ac94-4ff1-8826-bc9934e38831","969d6265-e627-4389-91be-6c71aa36bdd6","34d3a69d-370a-41e5-8cc9-fd661eeac355","78a3a4f1-a2fc-4bec-9c9c-99df2bb0ceee","d980367e-4959-4f25-b293-4323376c0f62","32b5bc80-c488-4f88-8adb-7bdd6d80698e"]
     },
     {
         "UUID":"a88c6d18-3725-4a47-a490-a766773202d5",
