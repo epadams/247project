@@ -55,4 +55,13 @@ public class Flights {
     }
     return ret;
   }
+
+  public Flight searchFlights(String flightName) {
+    for (Flight flight : flightList) {
+      if (flight.getFlightName().equals(flightName)) {
+        return flight;
+      }
+    }
+    return null;
+  }
 }
