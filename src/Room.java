@@ -7,9 +7,6 @@ public class Room {
   private boolean vacancy;
   private ArrayList<Date> bookedDates;
   private int roomNumber;
-  private int numOfBeds;
-  private boolean smoking;
-  private ArrayList<Date> bookedDates;
 
   public Room() {
     this.bookedDates = new ArrayList<Date>();

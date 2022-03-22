@@ -1,7 +1,6 @@
 import java.util.UUID;
-// import java.sql.Time;
-import java.util.UUID;
 import java.util.ArrayList;
+// import java.sql.Time;
 
 /**
  * A class flight that extends booking 
@@ -12,27 +11,28 @@ public class Flight extends Booking {
   private String airline;
   private String departure;
   private String destination;
-  private int departureTime;
-  private int arrivalTime;
+  private String departureTime;
+  private String arrivalTime;
   private FlightType flightType;
   private ArrayList<Seat> seats;
   
   public Flight() {
-    
+
   }
-/**
- * sets the id,flightname,airline,departure,destination, departuretime,arrivaltime, and flightype to the params passed
- * @param id
- * @param flightName
- * @param airline
- * @param departure
- * @param destination
- * @param departureTime
- * @param arrivalTime
- * @param flightType
- */
+
+  /**
+   * sets the id,flightname,airline,departure,destination, departuretime,arrivaltime, and flightype to the params passed
+   * @param id
+   * @param flightName
+   * @param airline
+   * @param departure
+   * @param destination
+   * @param departureTime
+   * @param arrivalTime
+   * @param flightType
+   */
   public Flight(UUID id, String flightName, String airline, String departure,
-      String destination, int departureTime, int arrivalTime,
+      String destination, String departureTime, String arrivalTime,
       FlightType flightType, ArrayList<Seat> seats) {
     this.id = id;
     this.flightName = flightName;
@@ -44,6 +44,7 @@ public class Flight extends Booking {
     this.flightType = flightType;
     this.seats = seats;
   }
+
   /**
    * gets the UUID
    * @return this.id
@@ -51,12 +52,14 @@ public class Flight extends Booking {
   public UUID getUUID() {
     return this.id;
   }
+
   /**
    * sets the destination to the destination passed
    */
   public void setDestination(String destination) {
     this.destination = destination;
   }
+
   /**
    * get the destination 
    * @return this.destination 
@@ -64,6 +67,7 @@ public class Flight extends Booking {
   public String getDestination() {
     return this.destination;
   }
+
   /**
    * set teh place of departure to the place of departure passed
    * @param departure
@@ -71,6 +75,7 @@ public class Flight extends Booking {
   public void setDeparture(String departure) {
     this.departure = departure;
   }
+
   /**
    * gets the place of departure 
    * @return this.departure
@@ -83,40 +88,34 @@ public class Flight extends Booking {
    * sets the departure time to the time that is passed 
    * @param time
    */
-  public void setDepartureTime(Time time) {
-    this.departureTime = time;
+  public void setDepartureTime(String depatureTime) {
+    this.departureTime = depatureTime;
   }
+
   /**
    * gets the departure time
    * @return this.departureTime
    */
-  public Time getDepartureTime() {
+  public String getDepartureTime() {
     return this.departureTime;
   }
+
   /**
    * sets the arrival time to the arrival time passed
    * @param arrivalTime
    */
-  public void setArrivalTime(Time arrivalTime) {
+  public void setArrivalTime(String arrivalTime) {
     this.arrivalTime = arrivalTime;
   }   
+
   /**
    * gets the arrival time
    * @return this.arrivalTime
    */
-
-  public void setDepartureTime(int time) {
-    this.departureTime = time;
-  }
-
-
-  public void setArrivalTime(int arrivalTime) {
-    this.arrivalTime = arrivalTime;
-  }
-
-  public int getArrivalTime() {
+  public String getArrivalTime() {
     return this.arrivalTime;
   }
+
   /**
    * sets the flight type based on the flight type passed
    * @param flightType
@@ -124,6 +123,7 @@ public class Flight extends Booking {
   public void setFlightType(FlightType flightType) {
     this.flightType = flightType;
   }
+
   /**
    * gets the flight type
    * @return this.flightType
@@ -131,6 +131,7 @@ public class Flight extends Booking {
   public FlightType getFlightType() {
     return this.flightType;
   }
+
   /**
    * sets the flight name based on the flight name passed
    * @param flightName
@@ -138,6 +139,7 @@ public class Flight extends Booking {
   public void setFlightName(String flightName) {
     this.flightName = flightName;
   }
+
   /**
    * gets the flight name
    * @return this.flightName
@@ -145,6 +147,7 @@ public class Flight extends Booking {
   public String getFlightName() {
     return this.flightName;
   }
+
   /**
    * setst the airline based on the airline passed 
    * @param airline
@@ -152,6 +155,7 @@ public class Flight extends Booking {
   public void setAirline(String airline) {
     this.airline = airline;
   }
+
   /**
    * gets the airline
    * @return this.airline

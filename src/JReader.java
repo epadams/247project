@@ -8,7 +8,6 @@ import org.json.simple.parser.JSONParser;
 
 public class JReader extends DataConstants {
 
-
   public static ArrayList<User> getUsers() {
     ArrayList<User> users = new ArrayList<User>();
     try {
@@ -57,12 +56,8 @@ public class JReader extends DataConstants {
 
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
-        Time departureTime = (Time) flightJSON.get(FLIGHT_DEPARTURETIME);       
-        Time arrivalTime = (Time) flightJSON.get(FLIGHT_ARRIVALTIME);
-
-        // change time casting
-        int arrivalTime = ((Long) flightJSON.get(FLIGHT_ARRIVALTIME)).intValue();
-        int departureTime = ((Long) flightJSON.get(FLIGHT_DEPARTURE)).intValue();
+        String arrivalTime = (String) flightJSON.get(FLIGHT_ARRIVALTIME);
+        String departureTime = (String) flightJSON.get(FLIGHT_DEPARTURETIME);
         String departure = (String) flightJSON.get(FLIGHT_DEPARTURE);
         String destination = (String) flightJSON.get(FLIGHT_DESTINATION);
         String airline = (String) flightJSON.get(FLIGHT_AIRLINE);
