@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.io.FileReader;
-import java.sql.Time;
+// import java.sql.Time;
 import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -46,14 +46,14 @@ public class JReader extends DataConstants {
         JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
         
         // Getting seat UUIDs
-        ArrayList<Seat> seats = new ArrayList<Seat>();
+        ArrayList<UUID> seats = new ArrayList<UUID>();
         JSONArray seatArray = (JSONArray) flightJSON.get(FLIGHT_SEATS);
         if (seatArray != null) {
           for (int j = 0; j < seatArray.size(); j++) {
             UUID seatID = UUID.fromString((String) seatArray.get(j));
+            seats.add(seatID);
           }
         }
-
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
         String arrivalTime = (String) flightJSON.get(FLIGHT_ARRIVALTIME);
@@ -61,7 +61,7 @@ public class JReader extends DataConstants {
         String departure = (String) flightJSON.get(FLIGHT_DEPARTURE);
         String destination = (String) flightJSON.get(FLIGHT_DESTINATION);
         String airline = (String) flightJSON.get(FLIGHT_AIRLINE);
-        FlightType flightType = (FlightType) flightJSON.get(FLIGHT_FLIGHTTYPE);
+        String flightType = (String) flightJSON.get(FLIGHT_FLIGHTTYPE);
         flight.add(new Flight(id, flightName, airline, departure, destination,
               departureTime, arrivalTime, flightType, seats));
       }
@@ -102,7 +102,6 @@ public class JReader extends DataConstants {
     try {
       FileReader reader = new FileReader(HOTEL_FILE_NAME);
       JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(reader);
-
       for (int i = 0; i < hotelsJSON.size(); i++) {
         JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
         UUID id =  UUID.fromString((String) hotelJSON.get(HOTEL_ID));
@@ -123,9 +122,7 @@ public class JReader extends DataConstants {
     try {
       FileReader reader = new FileReader(ROOM_FILE_NAME);
       JSONArray roomsJSON = (JSONArray) new JSONParser().parse(reader);
-
       for (int i = 0; i < roomsJSON.size(); i++) {
-
       }
     } catch (Exception e) {
       e.printStackTrace();

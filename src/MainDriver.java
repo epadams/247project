@@ -9,10 +9,13 @@ public class MainDriver {
 
   // TODO break this up into multiple methods
   public void run() {
-    displayLogin();
     Scanner keyboard = new Scanner(System.in);
-    System.out.println(fsystem.getUsers().printAllUsers());
-    // System.out.println(fsystem.getFlights().printAllFlights());
+    System.out.println(fsystem.getFlights().printAllFlights());
+    // debugging
+    // fsystem.getCurrentUser();
+    // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
+    // System.out.println(fsystem.getUsers().printAllUsers());
+    displayLogin();
     switch (keyboard.nextInt()) {
       case 1:
         System.out.println("Login"); // Move to Login
@@ -52,15 +55,11 @@ public class MainDriver {
         case 6:
           fsystem.logout();
           run = false;
-          System.exit(0);
           break;
       }
     }
     keyboard.close();
 
-    // debugging
-    // fsystem.getCurrentUser();
-    // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
   }
 
   public void displayLogin() {

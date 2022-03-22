@@ -6,7 +6,7 @@ public class FSystem {
   public FSystem() {
     currentUser = null;
     users = Users.getInstance();
-    // flights = Flights.getInstance(); 
+    flights = Flights.getInstance(); 
   }
 
   public void createAccount(String username, String password, String email, int age) {

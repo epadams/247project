@@ -32,7 +32,7 @@ public abstract class DataConstants {
   protected static final String FLIGHT_FLIGHTNAME = "flightName";
   protected static final String FLIGHT_DEPARTURETIME = "departureTime";
   protected static final String FLIGHT_ARRIVALTIME = "arrivalTime";
-  protected static final String FLIGHT_DEPARTURE = "placeOFDeparture";
+  protected static final String FLIGHT_DEPARTURE = "placeOfDeparture";
   protected static final String FLIGHT_DESTINATION = "placeOfArrival";
   protected static final String FLIGHT_AIRLINE = "airline";
   protected static final String FLIGHT_FLIGHTTYPE = "type";

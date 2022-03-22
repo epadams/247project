@@ -13,8 +13,8 @@ public class Flight extends Booking {
   private String destination;
   private String departureTime;
   private String arrivalTime;
-  private FlightType flightType;
-  private ArrayList<Seat> seats;
+  private String flightType;
+  private ArrayList<UUID> seats;
   
   public Flight() {
 
@@ -33,7 +33,7 @@ public class Flight extends Booking {
    */
   public Flight(UUID id, String flightName, String airline, String departure,
       String destination, String departureTime, String arrivalTime,
-      FlightType flightType, ArrayList<Seat> seats) {
+      String flightType, ArrayList<UUID> seats) {
     this.id = id;
     this.flightName = flightName;
     this.airline = airline;
@@ -120,7 +120,7 @@ public class Flight extends Booking {
    * sets the flight type based on the flight type passed
    * @param flightType
    */
-  public void setFlightType(FlightType flightType) {
+  public void setFlightType(String flightType) {
     this.flightType = flightType;
   }
 
@@ -128,7 +128,7 @@ public class Flight extends Booking {
    * gets the flight type
    * @return this.flightType
    */
-  public FlightType getFlightType() {
+  public String getFlightType() {
     return this.flightType;
   }
 
@@ -169,6 +169,6 @@ public class Flight extends Booking {
       + "\nDeparture Time: " + this.departureTime + "\nArrival Time: "
       + this.arrivalTime + "\nPlace of Departure: " + this.departure
       + "\nPlace of Arrival: " + this.destination + "\nAirline: "
-      + this.airline + "\nType: " + this.flightType;
+      + this.airline + "\nType: " + this.flightType + "\n";
   }
 }
