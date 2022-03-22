@@ -1,12 +1,11 @@
 [
-    {
-        "UUID":"",
-        "medicalAccomidation":"",
-        "originAirportCode":"",
-        "seatType":"",
-        "NumberBaggage":"",
-        "Airline":"",
-        "SeatLocation":"",
-        "flightType":""
-    }
+  {
+    "UUID":"",
+    "medicalAccommodation":false,
+    "originAirportCode":"",
+    "seatType":"",
+    "numberBaggage":"",
+    "airline":"",
+    "flightType":""
+  }
 ]

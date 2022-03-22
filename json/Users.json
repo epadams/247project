@@ -1,9 +1,13 @@
 [
-    {
-        "UUID":"",
-        "Username":"",
-        "Password":"",
-        "Email":"",
-        "Passports":""
-    }
+  {
+    "UUID":"6ef03f85-a967-4ca5-8906-a0abcfd9fce3",
+    "username":"testuser",
+    "password":"abcdefg",
+    "email":"testemail@email.com",
+    "firstName":"John",
+    "lastName":"Doe",
+    "age": 20,
+    "address":"1250 Testing Drive",
+    "frequentFlyer":false
+  }
 ]

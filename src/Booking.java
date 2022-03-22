@@ -1,5 +1,3 @@
-package src;
-
 public class Booking {
   private User user;
   private int price;
@@ -7,7 +5,7 @@ public class Booking {
   private String ticket;
 
   public void purchase() {
-
+    
   }
 
   public void purchaseForOtherUser() {

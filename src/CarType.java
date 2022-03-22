@@ -1,5 +1,3 @@
-package src;
-
 /**
  * An enum of all possible Car Types
  */

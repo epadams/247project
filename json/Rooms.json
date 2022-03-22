@@ -1,9 +1,9 @@
 [
-    {
-        "UUID":"",
-        "roomNumber":"",
-        "Availability":"",
-        "Smoking":"",
-        "numberOfBeds":""
-    }
+  {
+    "UUID":"",
+    "roomNumber":"",
+    "Smoking":"",
+    "numberOfBeds":"",
+    "bookedDates":[]
+  }
 ]

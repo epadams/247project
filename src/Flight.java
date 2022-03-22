@@ -1,23 +1,41 @@
-package src;
-
+import java.util.UUID;
 import java.sql.Time;
+import java.util.UUID;
+import java.util.ArrayList;
+
 
 public class Flight extends Booking {
+  private UUID id;
+  private String flightName;
+  private String airline;
   private String departure;
-  private Time departureTime;
   private String destination;
+  private Time departureTime;
+  private Time arrivalTime;
   private FlightType flightType;
   private int travelTime;
-  private boolean roundTrip;
-  private boolean hasLayover;
+  
+  
+  
 
   Flight() {
-
+    
   }
 
-  Flight(String departure, String destination, FlightType flightType, int travelTime, boolean roundTrip,
-      boolean hasLayover) {
+  public Flight(UUID id, String flightName, String airline, String departure,
+      String destination, Time departureTime, Time arrivalTime, FlightType flightType) {
+    this.id = id;
+    this.flightName = flightName;
+    this.airline = airline;
+    this.departure = departure;
+    this.destination = destination;
+    this.departureTime = departureTime;
+    this.arrivalTime = arrivalTime;
+    this.flightType = flightType;
+  }
 
+  public UUID getUUID() {
+    return this.id;
   }
 
   public void setDestination(String destination) {
@@ -44,28 +62,36 @@ public class Flight extends Booking {
     return this.departureTime;
   }
 
-  public void setTravelTime(int travelTime) {
-    this.travelTime = travelTime;
+  public void setArrivalTime(Time arrivalTime) {
+    this.arrivalTime = arrivalTime;
   }
 
-  public int getTravelTime() {
-    return this.travelTime;
+  public Time getArrivalTime() {
+    return this.arrivalTime;
   }
 
-  public void setRoundTrip(boolean roundTrip) {
-    this.roundTrip = roundTrip;
+  public void setFlightType(FlightType flightType) {
+    this.flightType = flightType;
   }
 
-  public boolean getRoundTrip() {
-    return this.roundTrip;
+  public FlightType getFlightType() {
+    return this.flightType;
   }
 
-  public void setHasLayover(boolean layover) {
-    this.hasLayover = layover;
+  public void setFlightName(String flightName) {
+    this.flightName = flightName;
   }
 
-  public boolean getHasLayover() {
-    return this.hasLayover;
+  public String getFlightName() {
+    return this.flightName;
+  }
+
+  public void setAirline(String airline) {
+    this.airline = airline;
+  }
+
+  public String getAirline() {
+    return this.airline;
   }
 
 }

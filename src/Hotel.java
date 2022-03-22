@@ -2,38 +2,54 @@ package src;
 
 import java.util.*;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Hotel extends Booking {
+  private UUID id;
   private ArrayList<Room> rooms;
-  private int numOfRooms;
+  private String hotelName;
   private String location;
 
   public Hotel() {
-
+    this.rooms = new ArrayList<Room>();
   }
 
-  public Hotel(ArrayList<Room> rooms, Date startDate, Date endDate, int numOfRooms) {
+  public Hotel(UUID id, String hotelName, String location, ArrayList<Room> rooms) {
+    this.id = id;
+    this.hotelName = hotelName;
+    this.location = location;
+    this.rooms = rooms;
+  }
 
+  public UUID getUUID() {
+    return this.id;
+  }
+
+  public void setRooms() {
+    this.rooms = rooms;
   }
 
   public ArrayList<Room> getRooms() {
-    // return arraylist of rooms
     return this.rooms;
   }
 
   public int getNumOfRooms() {
-    // return length of the array list
-    return this.numOfRooms;
+    return this.rooms.size();
   }
 
-  public ArrayList<Room> roomVacancySearch(Date startDate, Date endDate) {
-    ArrayList<Room> validRooms = new ArrayList<Room>();
-    Date desiredStart = startDate;
-    Date desiredEnd = endDate;
-
-    return validRooms;
+  public void setHotelName(String hotelName) {
+    this.hotelName = hotelName;
   }
 
-  // setters
+  public String getHotelName() {
+    return this.hotelName;
+  }
 
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public String getLocation() {
+    return this.location;
+  }
 }

@@ -1,8 +1,8 @@
 [
-    {
-        "UUID":"",
-        "serviceName":"",
-        "BasePrice":"",
-        "costPerMile":""
-    }
+  {
+    "UUID":"",
+    "serviceName":"",
+    "basePrice":"",
+    "costPerMile":""
+  }
 ]
