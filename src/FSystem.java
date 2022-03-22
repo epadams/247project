@@ -1,10 +1,12 @@
 public class FSystem {
   private Users users;
   private User currentUser;
+  private Flights flights;
 
   public FSystem() {
     currentUser = null;
     users = Users.getInstance();
+    // flights = Flights.getInstance(); 
   }
 
   public void createAccount(String username, String password, String email, int age) {
@@ -27,5 +29,9 @@ public class FSystem {
 
   public Users getUsers() {
     return this.users;
+  }
+
+  public Flights getFlights() {
+    return this.flights;
   }
 }

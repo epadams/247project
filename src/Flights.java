@@ -6,7 +6,7 @@ public class Flights {
   private ArrayList<Flight> flightList;
 
   private Flights() {
-    // flightList = JReader.getFlights();
+    flightList = JReader.getFlights();
   }
 
   public static Flights getInstance() {

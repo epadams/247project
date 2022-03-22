@@ -11,6 +11,8 @@ public class MainDriver {
   public void run() {
     displayLogin();
     Scanner keyboard = new Scanner(System.in);
+    System.out.println(fsystem.getUsers().printAllUsers());
+    // System.out.println(fsystem.getFlights().printAllFlights());
     switch (keyboard.nextInt()) {
       case 1:
         System.out.println("Login"); // Move to Login
@@ -59,7 +61,6 @@ public class MainDriver {
     // debugging
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
-    // System.out.println(fsystem.getUsers().printAllUsers());
   }
 
   public void displayLogin() {

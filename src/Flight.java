@@ -1,5 +1,5 @@
 import java.util.UUID;
-import java.sql.Time;
+// import java.sql.Time;
 import java.util.UUID;
 import java.util.ArrayList;
 
@@ -12,15 +12,12 @@ public class Flight extends Booking {
   private String airline;
   private String departure;
   private String destination;
-  private Time departureTime;
-  private Time arrivalTime;
+  private int departureTime;
+  private int arrivalTime;
   private FlightType flightType;
-  private int travelTime;
+  private ArrayList<Seat> seats;
   
-  
-  
-
-  Flight() {
+  public Flight() {
     
   }
 /**
@@ -35,7 +32,8 @@ public class Flight extends Booking {
  * @param flightType
  */
   public Flight(UUID id, String flightName, String airline, String departure,
-      String destination, Time departureTime, Time arrivalTime, FlightType flightType) {
+      String destination, int departureTime, int arrivalTime,
+      FlightType flightType, ArrayList<Seat> seats) {
     this.id = id;
     this.flightName = flightName;
     this.airline = airline;
@@ -44,6 +42,7 @@ public class Flight extends Booking {
     this.departureTime = departureTime;
     this.arrivalTime = arrivalTime;
     this.flightType = flightType;
+    this.seats = seats;
   }
   /**
    * gets the UUID
@@ -79,6 +78,7 @@ public class Flight extends Booking {
   public String getDeparture() {
     return this.departure;
   }
+
   /**
    * sets the departure time to the time that is passed 
    * @param time
@@ -104,7 +104,17 @@ public class Flight extends Booking {
    * gets the arrival time
    * @return this.arrivalTime
    */
-  public Time getArrivalTime() {
+
+  public void setDepartureTime(int time) {
+    this.departureTime = time;
+  }
+
+
+  public void setArrivalTime(int arrivalTime) {
+    this.arrivalTime = arrivalTime;
+  }
+
+  public int getArrivalTime() {
     return this.arrivalTime;
   }
   /**
@@ -150,4 +160,11 @@ public class Flight extends Booking {
     return this.airline;
   }
 
+  public String toString() {
+    return "ID: " + this.id + "\nFlight Name: " + this.flightName
+      + "\nDeparture Time: " + this.departureTime + "\nArrival Time: "
+      + this.arrivalTime + "\nPlace of Departure: " + this.departure
+      + "\nPlace of Arrival: " + this.destination + "\nAirline: "
+      + this.airline + "\nType: " + this.flightType;
+  }
 }
