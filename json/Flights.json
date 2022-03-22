@@ -52,7 +52,7 @@
         "placeOfArrival":"DCA - Washington DC",
         "airline":"American",
         "type":"One Way",
-        "seats":[]
+        "seats":["077c1a14-e337-4441-96e7-8452da68113f","3531aa21-2f45-4724-ae61-fdd624d57b14","f7e37871-0b2b-4f48-9408-66a17002a7fd","af2098ec-0ac9-4934-b126-6cb8c1acb745","c789c602-ce6c-4bae-b6e4-cfb1c1d22b8d","5513eca5-b4b9-42af-98d2-586d62680b16","9cd8e7b4-ee01-4a61-8590-19690ab4b5b7","04ecdd7c-805b-4ab7-a364-213df78897f3","512db1c1-7a30-4fd5-a478-ce3ad25107b5"]
     },
     {
         "UUID":"3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
