@@ -14,15 +14,16 @@ public class Passport {
 
     }
 
-    public Passport(String firstName, String lastName, int passportNum, Date dateOfBirth, String placeOfBirth, Date issueDate, Date expirationDate, char sex) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.passportNum = passportNum;
-      this.dateOfBirth = dateOfBirth;
-      this.placeOfBirth = placeOfBirth;
-      this.issueDate = issueDate;
-      this.expirationDate = expirationDate;
-      this.sex = sex;
+    public Passport(String firstName, String lastName, int passportNum, Date dateOfBirth, String placeOfBirth,
+            Date issueDate, Date expirationDate, char sex) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportNum = passportNum;
+        this.dateOfBirth = dateOfBirth;
+        this.placeOfBirth = placeOfBirth;
+        this.issueDate = issueDate;
+        this.expirationDate = expirationDate;
+        this.sex = sex;
     }
 
     public void setFirstName(String firstName) {
@@ -64,6 +65,7 @@ public class Passport {
     public String getLastName() {
         return this.lastName;
     }
+
     public int getPassportNum() {
         return this.passportNum;
     }
@@ -89,6 +91,9 @@ public class Passport {
     }
 
     public String toString() {
-        return "";
+        return "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nPassport Number: "
+                + this.passportNum + "\nDate of Birth: " + this.dateOfBirth.toString() + "\nPlace of Birth: "
+                + this.placeOfBirth + "\nIssue Date: " + this.issueDate.toString() + "\nExpiration Date: "
+                + this.expirationDate.toString() + "\nSex: " + this.sex;
     }
 }
