@@ -43,13 +43,12 @@ public class JReader extends DataConstants {
       FileReader reader = new FileReader(FLIGHT_FILE_NAME);
       JSONArray flightsJSON = (JSONArray) new JSONParser().parse(reader);
 
-      // TODO update to include all elements of json (Ask ethan)
       // TODO update JWriter for flights
       for(int i = 0;i < flightsJSON.size();i++) {
         JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
-        Time departureTime = (Time) flightJSON.get(FLIGHT_DEPARTURETIME);       //Commented until JWriter is updated
+        Time departureTime = (Time) flightJSON.get(FLIGHT_DEPARTURETIME);       
         Time arrivalTime = (Time) flightJSON.get(FLIGHT_ARRIVALTIME);
         String departure = (String) flightJSON.get(FLIGHT_DEPARTURE);
         String destination = (String) flightJSON.get(FLIGHT_DESTINATION);
