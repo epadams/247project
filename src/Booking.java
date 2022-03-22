@@ -5,7 +5,7 @@ public class Booking {
   private String ticket;
 
   public void purchase() {
-
+    
   }
 
   public void purchaseForOtherUser() {
