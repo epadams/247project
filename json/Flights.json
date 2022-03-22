@@ -8,7 +8,7 @@
         "placeOfArrival":"ATL - Atlanta",
         "airline":"Delta",
         "type":"One-way",
-        "seats":[]
+        "seats":["ba37f124-43ec-49ba-856b-f81c5a75866a","76ff68b1-fdee-412f-b70a-ba4e05996bc2","ce2721f9-32bd-459a-b809-5d1f80275704","3b943e91-61d5-4c86-9f20-559d17ef7357","5e3f4de9-2fcc-44ba-97dc-04bbfd952f5b","35ed6513-d961-4f08-9685-0d30ad70a2c3","e23b0663-317e-497d-9454-631f52d9fe57","4d51d1bb-3db5-412b-bb74-79450ac45e87","0e06360c-8254-4327-bebe-65a3bd26f664"]
     },
     {
         "UUID":"35410857-7b95-40dc-8aae-d79f37ed2eca",
