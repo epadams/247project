@@ -1,6 +1,6 @@
 package src;
 
-import java.sql.Date;
+import java.util.*;
 import java.util.ArrayList;
 
 public class Hotel extends Booking {
@@ -24,6 +24,14 @@ public class Hotel extends Booking {
   public int getNumOfRooms() {
     // return length of the array list
     return this.numOfRooms;
+  }
+
+  public ArrayList<Room> roomVacancySearch(Date startDate, Date endDate) {
+    ArrayList<Room> validRooms = new ArrayList<Room>();
+    Date desiredStart = startDate;
+    Date desiredEnd = endDate;
+
+    return validRooms;
   }
 
   // setters

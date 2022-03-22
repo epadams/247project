@@ -1,13 +1,13 @@
 package src;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Room {
     private int numOfBeds;
     private boolean smoking;
     private boolean vacancy;
-    private Date startDate;
-    private Date endDate;
+    private ArrayList<Date> bookedDates;
 
     public Room() {
 
@@ -49,11 +49,12 @@ public class Room {
         return new Date();
     }
 
-    public void serStartDate(Date startDate) {
+    public void setStartDate(Date startDate) {
 
     }
 
     public void setEndDate(Date endDate) {
 
     }
+
 }

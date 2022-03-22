@@ -1,3 +1,5 @@
+package src;
+
 /*
  * TODO
  * make it possible to add users
