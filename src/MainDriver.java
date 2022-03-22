@@ -64,11 +64,12 @@ public class MainDriver {
 
   public void displayLogin() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
-      + "\n3: Continue as guest");
+        + "\n3: Continue as guest");
   }
 
   public void displayMenu() {
-    System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
+    System.out.println(
+        "******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
   }
 
   public static void main(String[] args) {

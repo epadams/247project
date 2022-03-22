@@ -1,11 +1,11 @@
 public class Booking {
   private User user;
-  private int price;
+  private double price;
   private int numTickets;
   private String ticket;
 
   public void purchase() {
-    
+
   }
 
   public void purchaseForOtherUser() {
@@ -33,11 +33,11 @@ public class Booking {
   }
 
   public double getPrice() {
-    return 0.0;
+    return (price * numTickets);
   }
 
   public void setNumTickets(int numTickets) {
-
+    this.numTickets = numTickets;
   }
 
   public void purchaseAddLuggageStorage() {
