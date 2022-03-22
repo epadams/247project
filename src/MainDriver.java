@@ -13,13 +13,13 @@ public class MainDriver {
     Scanner keyboard = new Scanner(System.in);
     switch (keyboard.nextInt()) {
       case 1:
-        System.out.println("login case 1");
+        System.out.println("Login"); // Move to Login
         break;
       case 2:
-        System.out.println("login case 2");
+        System.out.println("Create Account");
         break;
       case 3:
-        System.out.println("login case 3");
+        System.out.println("Continue As Guest");
         break;
     }
     boolean run = true;
@@ -70,6 +70,16 @@ public class MainDriver {
   public void displayMenu() {
     System.out.println(
         "******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
+  }
+
+  public void Login() {
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println("******** Login ********\nPlease Enter Your Username");
+    String usrnm = keyboard.nextLine();
+    System.out.println("\nPlease Enter Your Password");
+    String pass = keyboard.nextLine();
+    fsystem.login(usrnm, pass); // What does this do?
+
   }
 
   public static void main(String[] args) {
