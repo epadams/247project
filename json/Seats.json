@@ -386,5 +386,70 @@
         "aisleNum":"C",
         "availability":"true",
         "seatType":"Economy Class"
+    },
+
+
+    {
+        "UUID":"92d201b6-10a0-4385-b127-794e90a2b799",
+        "rowNum":"1",
+        "aisleNum":"A",
+        "availability":"true",
+        "seatType":"First Class"
+    },
+    {
+        "UUID":"2c4d13a0-3f82-4b33-9958-6761b6585f64",
+        "rowNum":"1",
+        "aisleNum":"B",
+        "availability":"true",
+        "seatType":"First Class"
+    },
+    {
+        "UUID":"aed7d2c6-6ead-44c1-b8b5-8a6b3c52e45b",
+        "rowNum":"1",
+        "aisleNum":"C",
+        "availability":"true",
+        "seatType":"First Class"
+    },
+    {
+        "UUID":"27b1f535-d3e5-4bc5-9726-28e86df7d1e0",
+        "rowNum":"2",
+        "aisleNum":"A",
+        "availability":"true",
+        "seatType":"Business Class"
+    },
+    {
+        "UUID":"e8817868-061e-489d-b6c2-da43389bc6ee",
+        "rowNum":"2",
+        "aisleNum":"B",
+        "availability":"true",
+        "seatType":"Business Class"
+    },
+    {
+        "UUID":"a2f1abd8-2ef3-4144-8284-57c545ecb2eb",
+        "rowNum":"2",
+        "aisleNum":"C",
+        "availability":"true",
+        "seatType":"Business Class"
+    },
+    {
+        "UUID":"1a8791f4-a48c-4624-9c2e-225ee528801b",
+        "rowNum":"3",
+        "aisleNum":"A",
+        "availability":"true",
+        "seatType":"Economy Class"
+    },
+    {
+        "UUID":"dd90065c-f147-44b1-b855-44c1604dbbd6",
+        "rowNum":"3",
+        "aisleNum":"B",
+        "availability":"true",
+        "seatType":"Economy Class"
+    },
+    {
+        "UUID":"dc517e66-2e9a-451a-a718-480265970c8d",
+        "rowNum":"3",
+        "aisleNum":"C",
+        "availability":"true",
+        "seatType":"Economy Class"
     }
 ]
