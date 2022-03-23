@@ -18,7 +18,7 @@ public class MainDriver {
     displayLogin();
     boolean run = true;
     while (run) {
-      displayMenu();
+      // displayMenu(); display menu is automatically displayed after the user Logs in
     }
     keyboard.close();
 
@@ -73,6 +73,16 @@ public class MainDriver {
 
   public void displayGuestMenu() {
     System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
+    switch (keyboard.nextInt()) {
+      // Search Flights
+      case 1:
+        displaySearchFlights();
+        break;
+      // Search Hotels
+      case 2:
+        displaySearchHotels();
+        break;
+    }
   }
 
   public void displayCreateAccount() {
@@ -89,7 +99,7 @@ public class MainDriver {
     System.out.println("Would you like to set your preferences now?\n'yes' or 'no'");
     String prefres = keyboard.nextLine();
     if (prefres.toLowerCase().equals("yes")) {
-      // TODO go to set preferences
+      displayPreferenceSelection();
     } else
       System.out.println("You can set your preferences later in 'Account information'");
   }
@@ -103,22 +113,69 @@ public class MainDriver {
     System.out.println("\nPlease Enter Your Password");
     String pass = keyboard.nextLine();
     fsystem.login(usrnm, pass); // What does this do?
+    displayMenu();
   }
 
   public void displaySearchFlights() {
     System.out.println(
         "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Preferences\n3: Change Preferences");
+    switch (keyboard.nextInt()) {
+      // Search Flights
+      case 1:
+        displaySearchAllFlights();
+        break;
+      // Search Flights w/ Preferences
+      case 2:
+        displaySearchFlightsPref();
+        break;
+      // Change Preferences
+      case 3:
+        displayPreferenceSelection();
+        break;
+    }
 
   }
 
   public void displaySearchHotels() {
     System.out.println(
-        "******** Search Hotels ********\n1: Search all Hotels\n2: Search Based on Preferences\n3: Change Preferences");
+        "******** Search Hotels ********\n1: Search all Hotels\n2: Search Based on Preferences\n3: Change Hotel Preferences");
+    switch (keyboard.nextInt()) {
+      // Search Hotels
+      case 1:
+        displaySearchAllHotels();
+        break;
+      // Search Flights w/ Preferences
+      case 2:
+        displaySearchHotelPref();
+        break;
+      // Change Preferences
+      case 3:
+        displayHotelPreferenceSelection();
+        break;
+    }
   }
 
   public void displayAccountInformationMenu() {
     System.out.println(
         "******** Account Information ********\n1: See/Change Username, Password, Email\n2: See/Change Preferences\n3: Add Passport Information\n4: View History");
+    switch (keyboard.nextInt()) {
+      // username password email
+      case 1:
+        displayChangeLoginInfo();
+        break;
+      // change preferenece
+      case 2:
+        displayPreferenceSelection();
+        break;
+      // add passport info
+      case 3:
+        displayAddPassportInfo();
+        break;
+      // View flight history
+      case 4:
+        displayFlightHistory();
+        break;
+    }
   }
 
   public void displayPreferenceSelection() {
@@ -142,6 +199,7 @@ public class MainDriver {
     String airportOriginCodePref = keyboard.nextLine();
 
     // TODO Store these preferences
+    displayMenu();
   }
 
   public void displayHotelPreferenceSelection() {
@@ -159,6 +217,7 @@ public class MainDriver {
     String checkoutDate = keyboard.nextLine();
 
     // TODO store these preferences
+    displayMenu();
 
   }
 
@@ -230,6 +289,10 @@ public class MainDriver {
 
   public void displayBookedHotels() {
     System.out.println("DISPLAY BOOKED HOTELS HERE");
+  }
+
+  public void displayFlightHistory() {
+    System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
 
   public static void main(String[] args) {
