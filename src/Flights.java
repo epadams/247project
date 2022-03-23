@@ -75,9 +75,9 @@ public class Flights {
     return null;
   }
 
-  public Flight searchID(UUID id){
+  public Flight searchFlightID(UUID id){
     for(Flight identity : flightList){
-      if(identity.getUUID().equals(id)){                  //Used .equals here check behind to make sure this is the best way
+      if(identity.getUUID().equals(id)){                  //Used .equals here check behind to make sure this is the best way (Added note: maybe use .compareTo)
         return identity;
       }
     }

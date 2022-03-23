@@ -1,3 +1,4 @@
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -53,5 +54,57 @@ public class RentalCars {
       ret += rentalCar.toString();
     }
     return ret;
+  }
+  /**
+   * search for rental car name
+   * @param name
+   * @return car
+   */
+  public RentalCar searchCarName(String name){
+    for(RentalCar car : rentalCarList){
+      if(car.getName().contains(name)){
+        return car;
+      }
+    }
+    return null;
+  }
+/**
+ * search for the rental car type
+ * @param type
+ * @return cartype
+ */
+  public RentalCar searchCarType(CarType type){
+    for(RentalCar cartype : rentalCarList){
+      if(cartype.getType().equals(type)){             //check .equals if it is best for this
+        return cartype;
+      }
+    }
+    return null;
+  }
+/**
+ * search for the start date of rental car
+ * @param startDate
+ * @return start
+ */
+  public RentalCar searchStartDate(Date startDate){
+    for(RentalCar start : rentalCarList){
+      if(start.getStartDate().equals(startDate)){
+        return start;
+      }
+    }
+    return null;
+  }
+/**
+ * search for the end date of rental car
+ * @param endDate
+ * @return end
+ */
+  public RentalCar seachEndDate(Date endDate){
+    for(RentalCar end : rentalCarList){
+      if(end.getEndDate().equals(endDate)){
+        return end;
+      }
+    }
+    return null;
   }
 }

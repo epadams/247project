@@ -54,4 +54,56 @@ public class Taxis {
     }
     return ret;
   }
+  /**
+   * search for the taxi UUID
+   * @param id
+   * @return identity 
+   */
+  public Taxi searchTaxiID(UUID id){
+    for(Taxi identity : taxiList){
+      if(identity.getUUID().equals(id)){
+        return identity;
+      }
+    }
+    return null;
+  }
+  /**
+   * search for the taxi service name
+   * @param serviceName
+   * @return name
+   */
+  public Taxi searchServiceName(String serviceName){
+    for(Taxi name : taxiList){
+      if(name.getServiceName().contains(serviceName)){
+        return name;
+      }
+    }
+    return null;
+  }
+  /**
+   * search for base price of taxi
+   * @param basePrice
+   * @return price
+   */
+  public Taxi searchBasePrice(double basePrice){
+    for(Taxi price : taxiList){
+      if(price.getBasePrice() == basePrice){
+        return price;
+      }
+    }
+    return null;
+  }
+  /**
+   * search for cost per mile for taxi 
+   * @param costPerMile
+   * @return cost
+   */
+  public Taxi searchCostPerMile(double costPerMile){
+    for(Taxi cost : taxiList){
+      if(cost.getCostPerMile() == costPerMile){
+        return cost;
+      }
+    }
+    return null;
+  }
 }

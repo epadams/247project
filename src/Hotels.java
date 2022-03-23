@@ -54,6 +54,54 @@ public class Hotels {
     }
     return ret;
   }
+  /**
+   * search for Hotel UUID
+   * @param id
+   * @return identity 
+   */
+  public Hotel searchHotelID(UUID id){
+    for(Hotel identity : hotelList){
+      if(identity.getUUID().equals(id)){
+        return identity;
+      }
+    }
+    return null;
+  }
+  /**
+   * search for hotel name
+   * @param hotelName
+   * @return name
+   */
+  public Hotel searchHotelName(String hotelName){
+    for(Hotel name : hotelList){
+      if(name.getHotelName().contains(hotelName)){
+        return name;
+      }
+    }
+    return null;
+  }
+  /**
+   * search for hotel location 
+   * @param hotelLocation
+   * @return location
+   */
+  public Hotel searchHotelLocation(String hotelLocation){
+    for(Hotel location : hotelList){
+      if(location.getLocation().contains(hotelLocation)){
+        return location;
+      }
+    }
+    return null;
+  }
 
-  
+  // public Hotel searchNumberOfRoom(int numOfRooms){
+  //   for(Hotel rooms : hotelList){
+  //     if(rooms.getNumOfRooms() == (numOfRooms)){       //I dont really know about this method tbh
+  //       return rooms;
+  //     }
+  //   }
+  //   return null;
+  // }
+
+  //maybe add searchRooms method
 }
