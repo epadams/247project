@@ -1,5 +1,3 @@
-package src;
-
 import java.util.Scanner;
 
 public class MainDriver {
@@ -12,8 +10,8 @@ public class MainDriver {
   // TODO break this up into multiple methods
   public void run() {
     Scanner keyboard = new Scanner(System.in);
-    System.out.println(fsystem.getFlights().printAllFlights());
     // debugging
+    // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
@@ -21,7 +19,6 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       case 1:
         System.out.println("Login"); // Move to Login
-        // displayLogin();
         break;
       case 2:
         System.out.println("Create Account");
