@@ -16,48 +16,9 @@ public class MainDriver {
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
     displayLogin();
-    switch (keyboard.nextInt()) {
-      case 1:
-        System.out.println("Login"); // Move to Login
-        break;
-      case 2:
-        System.out.println("Create Account");
-        break;
-      case 3:
-        System.out.println("Continue As Guest");
-        // displayGuestMenu();
-        break;
-    }
     boolean run = true;
     while (run) {
       displayMenu();
-      switch (keyboard.nextInt()) {
-        // Search Flights
-        case 1:
-          System.out.println("case 1");
-          break;
-        // Search Hotels
-        case 2:
-          System.out.println("case 2");
-          break;
-        // View Booked Flights
-        case 3:
-          System.out.println("case 3");
-          break;
-        // View Booked Hotels
-        case 4:
-          System.out.println("case 4");
-          break;
-        // View Account Info
-        case 5:
-          System.out.println("case 5");
-          break;
-        // Logout
-        case 6:
-          fsystem.logout();
-          run = false;
-          break;
-      }
     }
     keyboard.close();
 
@@ -66,11 +27,48 @@ public class MainDriver {
   public void displayLogin() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
         + "\n3: Continue as guest");
+    switch (keyboard.nextInt()) {
+      case 1:
+        Login(); // Move to Login
+        break;
+      case 2:
+        displayCreateAccount(); // Create account
+        break;
+      case 3:
+        displayGuestMenu(); // Display guest menu
+        break;
+    }
+
   }
 
   public void displayMenu() {
     System.out.println(
         "******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
+    switch (keyboard.nextInt()) {
+      // Search Flights
+      case 1:
+        displaySearchFlights();
+        break;
+      // Search Hotels
+      case 2:
+        displaySearchHotels();
+        break;
+      // View Booked Flights
+      case 3:
+        displayBookedFlights();
+        break;
+      // View Booked Hotels
+      case 4:
+        displayBookedHotels();
+        break;
+      // View Account Info
+      case 5:
+        displayAccountInformationMenu();
+        break;
+      // Logout
+      case 6:
+        fsystem.logout();
+    }
   }
 
   public void displayGuestMenu() {
@@ -184,7 +182,7 @@ public class MainDriver {
     // TODO display 3ish Hotels, based off preferences
   }
 
-  public void displayBookignHistory() {
+  public void displayBookingHistory() {
     System.out.println("----- Display Booking History -----");
     // TODO display booking history
   }
@@ -224,6 +222,14 @@ public class MainDriver {
     System.out.println(
         "----- Thank YOU For Booking With Us! -----\nWhat else can we do for you?\n1: View History/Recently Booked\n2: Search Flights\n3:Search Hotels");
     // TODO Send to desired location
+  }
+
+  public void displayBookedFlights() {
+    System.out.println("DISPLAY BOOKED FLIGHTS HERE");
+  }
+
+  public void displayBookedHotels() {
+    System.out.println("DISPLAY BOOKED HOTELS HERE");
   }
 
   public static void main(String[] args) {
