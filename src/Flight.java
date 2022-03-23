@@ -163,7 +163,9 @@ public class Flight extends Booking {
   public String getAirline() {
     return this.airline;
   }
-
+  /**Prints the flight information 
+   * @return String with id,flightname,depaturetime,arrivaltime,place of departure, place of arrival, airline, flightype
+   */
   public String toString() {
     return "ID: " + this.id + "\nFlight Name: " + this.flightName
       + "\nDeparture Time: " + this.departureTime + "\nArrival Time: "
