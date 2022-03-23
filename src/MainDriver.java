@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class MainDriver {
   private FSystem fsystem;
+  Scanner keyboard = new Scanner(System.in);
 
   public MainDriver() {
     fsystem = new FSystem();
@@ -9,7 +10,6 @@ public class MainDriver {
 
   // TODO break this up into multiple methods
   public void run() {
-    Scanner keyboard = new Scanner(System.in);
     // debugging
     // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
@@ -78,7 +78,6 @@ public class MainDriver {
   }
 
   public void displayCreateAccount() {
-    Scanner keyboard = new Scanner(System.in);
     System.out.println("******** Create Account ********\nPlease Enter Your Username");
     String usrnm = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
@@ -101,7 +100,6 @@ public class MainDriver {
    * User Decides to Login
    */
   public void Login() {
-    Scanner keyboard = new Scanner(System.in);
     System.out.println("******** Login ********\nPlease Enter Your Username");
     String usrnm = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
@@ -126,7 +124,6 @@ public class MainDriver {
   }
 
   public void displayPreferenceSelection() {
-    Scanner keyboard = new Scanner(System.in);
     System.out.println(
         "******** Setting Your Preferences ********\n----- Flight Type -----\nEnter: 'One Way' 'Layover' or 'Round Trip'");
     String flightPref = keyboard.nextLine();
@@ -150,7 +147,6 @@ public class MainDriver {
   }
 
   public void displayHotelPreferenceSelection() {
-    Scanner keyboard = new Scanner(System.in);
     System.out.println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
     int bedCountPref = keyboard.nextInt();
     System.out.println("----- Bed Type -----\nEnter: 'Twin' 'Queen' or 'King'");
@@ -194,7 +190,7 @@ public class MainDriver {
   }
 
   public void displayChangeLoginInfo() {
-    Scanner keyboard = new Scanner(System.in);
+
     System.out.println("----- Username/Password/Email Change -----");
     System.out.println("\n----- Username -----\nEnter: A new username or 'NEXT' to skip'");
     String newUsername = keyboard.nextLine();
@@ -207,7 +203,6 @@ public class MainDriver {
   }
 
   public void displayAddPassportInfo() {
-    Scanner keyboard = new Scanner(System.in);
     System.out.println("----- Adding Passport Information -----");
     System.out.println("\n----- First Name -----\nEnter: Your First Name'");
     String passfirstName = keyboard.nextLine();
