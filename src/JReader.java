@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.io.FileReader;
 // import java.sql.Time;
 import java.util.UUID;
+import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -73,12 +74,20 @@ public class JReader extends DataConstants {
         // Getting seat UUIDs
         ArrayList<UUID> seats = new ArrayList<UUID>();
         JSONArray seatArray = (JSONArray) flightJSON.get(FLIGHT_SEATS);
+        /*
+        Iterator i = seatArray.iterator();
+        while (i.hasNext()) {
+          JSONObject seat = (JSONObject) i.next();
+
+        }
+        */
         if (seatArray != null) {
           for (int j = 0; j < seatArray.size(); j++) {
             UUID seatID = UUID.fromString((String) seatArray.get(j));
             seats.add(seatID);
           }
         }
+
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
         String arrivalTime = (String) flightJSON.get(FLIGHT_ARRIVALTIME);
@@ -89,6 +98,7 @@ public class JReader extends DataConstants {
         String flightType = (String) flightJSON.get(FLIGHT_FLIGHTTYPE);
         flight.add(new Flight(id, flightName, airline, departure, destination,
               departureTime, arrivalTime, flightType, seats));
+
       }
       return flight;
     } catch (Exception e) {
@@ -121,6 +131,7 @@ public class JReader extends DataConstants {
   }
 */
 
+/*
   // TODO fix getHotels and getRooms
   public static ArrayList<Hotel> getHotels() {
     ArrayList<Hotel> hotels = new ArrayList<Hotel>();
@@ -141,6 +152,7 @@ public class JReader extends DataConstants {
     }
     return null;
   }
+*/
 
   public static ArrayList<Room> getRooms() {
     ArrayList<Room> rooms = new ArrayList<Room>();

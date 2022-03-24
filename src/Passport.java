@@ -1,21 +1,24 @@
-import java.util.Date;
+// import java.util.Date;
+import java.util.UUID;
 
 public class Passport {
+    private UUID id;
     private String firstName;
     private String lastName;
     private int passportNum;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String placeOfBirth;
-    private Date issueDate;
-    private Date expirationDate;
+    private String issueDate;
+    private String expirationDate;
     private char sex;
 
     public Passport() {
 
     }
 
-    public Passport(String firstName, String lastName, int passportNum, Date dateOfBirth, String placeOfBirth,
-            Date issueDate, Date expirationDate, char sex) {
+    public Passport(UUID id, String firstName, String lastName, int passportNum, String dateOfBirth, String placeOfBirth,
+            String issueDate, String expirationDate, char sex) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportNum = passportNum;
@@ -26,6 +29,9 @@ public class Passport {
         this.sex = sex;
     }
 
+    public UUID getUUID() {
+        return this.id;
+    }
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -38,7 +44,7 @@ public class Passport {
         this.passportNum = passportNum;
     }
 
-    public void setDateofBirth(Date dateofBirth) {
+    public void setDateofBirth(String dateofBirth) {
         this.dateOfBirth = dateofBirth;
     }
 
@@ -46,11 +52,11 @@ public class Passport {
         this.placeOfBirth = placeOfBirth;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(String expirationDate) {
         this.expirationDate = expirationDate;
     }
 
@@ -70,7 +76,7 @@ public class Passport {
         return this.passportNum;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return this.dateOfBirth;
     }
 
@@ -78,11 +84,11 @@ public class Passport {
         return this.placeOfBirth;
     }
 
-    public Date getIssueDate() {
+    public String getIssueDate() {
         return this.issueDate;
     }
 
-    public Date getExpirationDate() {
+    public String getExpirationDate() {
         return this.expirationDate;
     }
 

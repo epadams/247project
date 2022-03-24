@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Hotel extends Booking {
+public class Hotel {
   private UUID id;
   private ArrayList<Room> rooms;
   private String hotelName;
