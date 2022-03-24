@@ -24,10 +24,9 @@ public class MainDriver {
 
   public void displayLoginMenu() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
-        + "\n3: Continue as guest");
+        + "\n3: Continue as guest\n4:QUIT");
     switch (keyboard.nextInt()) {
       case 1:
-        keyboard.nextLine();
         login();
         break;
       case 2:
@@ -38,13 +37,15 @@ public class MainDriver {
         keyboard.nextLine();
         displayGuestMenu();
         break;
+      case 4:
+        System.exit(0);
     }
   }
 
   public void displayMenu() {
     boolean logout = false;
     while (!logout) {
-      System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights" 
+      System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights"
           + "\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
       switch (keyboard.nextInt()) {
         // Search Flights
@@ -81,21 +82,18 @@ public class MainDriver {
   }
 
   public void displayGuestMenu() {
-    boolean run = true;
-    while (run) {
-      System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
-      switch (keyboard.nextInt()) {
-        // Search Flights
-        case 1:
-          keyboard.nextLine();
-          displaySearchFlights();
-          break;
-        // Search Hotels
-        case 2:
-          keyboard.nextLine();
-          displaySearchHotels();
-          break;
-      }
+    System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
+    switch (keyboard.nextInt()) {
+      // Search Flights
+      case 1:
+        keyboard.nextLine();
+        displaySearchFlights();
+        break;
+      // Search Hotels
+      case 2:
+        keyboard.nextLine();
+        displaySearchHotels();
+        break;
     }
   }
 
@@ -124,6 +122,7 @@ public class MainDriver {
    * User Decides to Login
    */
   public void login() {
+    keyboard.nextLine();
     System.out.println("******** Login ********\nPlease Enter Your Username");
     String username = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
@@ -225,8 +224,14 @@ public class MainDriver {
     keyboard.nextLine();
     System.out.println("----- Medical Accomidation Seating -----\nEnter: 'Yes' or 'No'");
     String medicalAccomPref = keyboard.nextLine();
+    System.out
+        .println("----- Enter Pet Weight in Pounds -----\nEnter: Your Pets Weight in pounds (If no pet enter '0')");
+    int petWeightpref = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("----- Seat Type -----\nEnter: 'Business' 'Economy' or 'First Class'");
     String seatTypePref = keyboard.nextLine();
+    System.out.println("----- Seat Location -----\nEnter: 'Aisle' 'Middle' or 'Window'");
+    String seatLocationPref = keyboard.nextLine();
     System.out.println("----- Airport Origin Code -----\nEnter: Airport Origin Code");
     String airportOriginCodePref = keyboard.nextLine();
 
@@ -243,12 +248,10 @@ public class MainDriver {
     String smokingAccomPref = keyboard.nextLine();
     System.out.println("----- Pet Friendly -----\nEnter: 'Yes' or 'No'");
     String petAccomPref = keyboard.nextLine();
-    /* This should be done in the register date section
     System.out.println("----- Check-In Date -----\nEnter: a date in MM/DD/YYYY format");
     String checkInDate = keyboard.nextLine();
     System.out.println("----- Check-out Date -----\nEnter: a date in MM/DD/YYYY format");
     String checkoutDate = keyboard.nextLine();
-    */
 
     // TODO store these preferences
   }
