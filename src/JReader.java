@@ -48,16 +48,17 @@ public class JReader extends DataConstants {
         boolean medicalAccom = (boolean) preferenceJSON.get(PREF_MED_ACCOM);
         String originAirport = (String) preferenceJSON.get(PREF_ORIGIN_CODE);
         String seatType = (String) preferenceJSON.get(PREF_SEAT_TYPE);
-        String numBaggage = (String) preferenceJSON.get(PREF_BAGGAGE);
+        int numBaggage = (int) preferenceJSON.get(PREF_BAGGAGE);
         String airline = (String) preferenceJSON.get(PREF_AIRLINE);
         String flightType = (String) preferenceJSON.get(PREF_FLIGHT_TYPE);
 
-        preferences.add(new Preferences())
+        preferences.add(new Preferences(id, medicalAccom, originAirport, seatType, numBaggage, airline, flightType));
       }
+      return preferences;
     } catch (Exception e) {
     e.printStackTrace();
     }
-    return preferences;
+    return null;
   }
 
   public static ArrayList<Flight> getFlights() {
