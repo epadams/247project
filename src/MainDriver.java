@@ -10,73 +10,73 @@ public class MainDriver {
 
   // TODO break this up into multiple methods
   public void run() {
-    // debugging
+    // DEBUGGING
     // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
-    displayLogin();
     boolean run = true;
     while (run) {
-      // displayMenu(); display menu is automatically displayed after the user Logs in
+      displayLoginMenu();
     }
     keyboard.close();
-
   }
 
-  public void displayLogin() {
+  public void displayLoginMenu() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
         + "\n3: Continue as guest");
     switch (keyboard.nextInt()) {
       case 1:
         keyboard.nextLine();
-        Login(); // Move to Login
+        login();
         break;
       case 2:
         keyboard.nextLine();
-        displayCreateAccount(); // Create account
+        displayCreateAccount();
         break;
       case 3:
         keyboard.nextLine();
-        displayGuestMenu(); // Display guest menu
+        displayGuestMenu();
         break;
     }
-
   }
 
   public void displayMenu() {
-    System.out.println(
-        "******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
-    switch (keyboard.nextInt()) {
-      // Search Flights
-      case 1:
-        keyboard.nextLine();
-        displaySearchFlights();
-        break;
-      // Search Hotels
-      case 2:
-        keyboard.nextLine();
-        displaySearchHotels();
-        break;
-      // View Booked Flights
-      case 3:
-        keyboard.nextLine();
-        displayBookedFlights();
-        break;
-      // View Booked Hotels
-      case 4:
-        keyboard.nextLine();
-        displayBookedHotels();
-        break;
-      // View Account Info
-      case 5:
-        keyboard.nextLine();
-        displayAccountInformationMenu();
-        break;
-      // Logout
-      case 6:
-        keyboard.nextLine();
-        fsystem.logout();
+    boolean logout = false;
+    while (!logout) {
+      System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights" 
+          + "\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
+      switch (keyboard.nextInt()) {
+        // Search Flights
+        case 1:
+          keyboard.nextLine();
+          displaySearchFlights();
+          break;
+        // Search Hotels
+        case 2:
+          keyboard.nextLine();
+          displaySearchHotels();
+          break;
+        // View Booked Flights
+        case 3:
+          keyboard.nextLine();
+          displayBookedFlights();
+          break;
+        // View Booked Hotels
+        case 4:
+          keyboard.nextLine();
+          displayBookedHotels();
+          break;
+        // View Account Info
+        case 5:
+          keyboard.nextLine();
+          displayAccountInformationMenu();
+          break;
+        // Logout
+        case 6:
+          keyboard.nextLine();
+          logout = fsystem.logout();
+      }
     }
   }
 
@@ -106,32 +106,34 @@ public class MainDriver {
     System.out.println("\nPlease Enter Your Age");
     int age = keyboard.nextInt();
     keyboard.nextLine();
-    fsystem.createAccount(usrnm, pass, email, age); // What does this do?
+    fsystem.createAccount(usrnm, pass, email, age);
 
     System.out.println("Would you like to set your preferences now?\n'yes' or 'no'");
     String prefres = keyboard.nextLine();
     if (prefres.toLowerCase().equals("yes")) {
       displayPreferenceSelection();
-    } else
+    } else {
       System.out.println("You can set your preferences later in 'Account information'");
+    }
   }
 
-  /**
+  /*
    * User Decides to Login
    */
-  public void Login() {
+  public void login() {
     System.out.println("******** Login ********\nPlease Enter Your Username");
-    String usrnm = keyboard.nextLine();
+    String username = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
-    String pass = keyboard.nextLine();
-    switch (fsystem.login(usrnm, pass)) {
+    String password = keyboard.nextLine();
+    switch (fsystem.login(username, password)) {
       case 1:
-        displayCreateAccount();
+        System.out.println("Invalid username or not found");
         break;
       case 2:
-        Login();
+        System.out.println("Invalid password or not found");
         break;
       case 3:
+        System.out.println("Successfully logged in");
         displayMenu();
         break;
     }
@@ -232,7 +234,6 @@ public class MainDriver {
     String airportOriginCodePref = keyboard.nextLine();
 
     // TODO Store these preferences
-    displayMenu();
   }
 
   public void displayHotelPreferenceSelection() {
@@ -251,13 +252,11 @@ public class MainDriver {
     String checkoutDate = keyboard.nextLine();
 
     // TODO store these preferences
-    displayMenu();
-
   }
 
   public void displaySearchAllFlights() {
     System.out.println("----- Search All Flights -----");
-    // TODO display 3 flights
+    System.out.println(fsystem.getFlights().toString());
   }
 
   public void displaySearchAllHotels() {

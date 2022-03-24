@@ -20,8 +20,9 @@ public class FSystem {
     return 3;
   }
 
-  public void logout() {
+  public boolean logout() {
     users.saveUsers();
+    return true;
   }
 
   public User getCurrentUser() {

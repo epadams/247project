@@ -39,7 +39,7 @@ public class Flights {
     return flightList;
   }
 
-  // FIX
+  // TODO FIX
   public void addFlight(String flightname) {
     if (haveFlight(flightname)) return;
     // flightList.add(new Flight(UUID.randomUUID(), );
@@ -77,7 +77,7 @@ public class Flights {
 
   public Flight searchFlightID(UUID id){
     for(Flight identity : flightList){
-      if(identity.getUUID().equals(id)){                  //Used .equals here check behind to make sure this is the best way (Added note: maybe use .compareTo)
+      if(identity.getUUID().equals(id)){  //Used .equals here check behind to make sure this is the best way (Added note: maybe use .compareTo)
         return identity;
       }
     }
@@ -127,5 +127,13 @@ public class Flights {
       }
     }
     return null;
+  }
+
+  public String toString() {
+    String ret = "";
+    for (Flight flight : flightList) {
+      ret += flight.toString() + "\n";
+    }
+    return ret;
   }
 }
