@@ -181,22 +181,18 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // username password email
       case 1:
-        keyboard.nextLine();
         displayChangeLoginInfo();
         break;
       // change preferenece
       case 2:
-        keyboard.nextLine();
         displayPreferenceSelection();
         break;
       // add passport info
       case 3:
-        keyboard.nextLine();
         displayAddPassportInfo();
         break;
       // View flight history
       case 4:
-        keyboard.nextLine();
         displayFlightHistory();
         break;
     }
@@ -313,8 +309,25 @@ public class MainDriver {
   public void displayThankYouMessage() {
     keyboard.nextLine();
     System.out.println(
-        "----- Thank YOU For Booking With Us! -----\nWhat else can we do for you?\n1: View History/Recently Booked\n2: Search Flights\n3:Search Hotels");
-    // TODO Send to desired location
+        "----- Thank YOU For Booking With Us! -----\nWhat else can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights\n3: Search Hotels\n4: Return to Menu");
+    switch (keyboard.nextInt()) {
+      // View Booked Flight
+      case 1:
+        displayBookedFlights();
+        break;
+      // Search Flights
+      case 2:
+        displaySearchFlights();
+        break;
+      // Search Hotels
+      case 3:
+        displaySearchHotels();
+        break;
+      // Display the Menu
+      case 4:
+        displayMenu();
+        break;
+    }
   }
 
   public void displayBookedFlights() {
