@@ -36,6 +36,31 @@ public class JReader extends DataConstants {
     return null;
   }
 
+  public static ArrayList<Preferences> getPreferences() {
+    ArrayList<Preferences> preferences = new ArrayList<Preferences>();
+    try {
+      FileReader reader = new FileReader(PREF_FILE_NAME);
+      JSONArray preferencesJSON = (JSONArray) new JSONParser().parse(reader);
+      for (int i =0;i < preferencesJSON.size();i++) {
+        JSONObject preferenceJSON = (JSONObject) preferencesJSON.get(i);
+
+        UUID id = UUID.fromString((String) preferenceJSON.get(USER_ID));
+        boolean medicalAccom = (boolean) preferenceJSON.get(PREF_MED_ACCOM);
+        String originAirport = (String) preferenceJSON.get(PREF_ORIGIN_CODE);
+        String seatType = (String) preferenceJSON.get(PREF_SEAT_TYPE);
+        int numBaggage = (int) preferenceJSON.get(PREF_BAGGAGE);
+        String airline = (String) preferenceJSON.get(PREF_AIRLINE);
+        String flightType = (String) preferenceJSON.get(PREF_FLIGHT_TYPE);
+
+        preferences.add(new Preferences(id, medicalAccom, originAirport, seatType, numBaggage, airline, flightType));
+      }
+      return preferences;
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
+    return null;
+  }
+
   public static ArrayList<Flight> getFlights() {
     ArrayList<Flight> flight = new ArrayList<Flight>();
     try {
