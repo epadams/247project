@@ -225,14 +225,8 @@ public class MainDriver {
     keyboard.nextLine();
     System.out.println("----- Medical Accomidation Seating -----\nEnter: 'Yes' or 'No'");
     String medicalAccomPref = keyboard.nextLine();
-    System.out
-        .println("----- Enter Pet Weight in Pounds -----\nEnter: Your Pets Weight in pounds (If no pet enter '0')");
-    int petWeightpref = keyboard.nextInt();
-    keyboard.nextLine();
     System.out.println("----- Seat Type -----\nEnter: 'Business' 'Economy' or 'First Class'");
     String seatTypePref = keyboard.nextLine();
-    System.out.println("----- Seat Location -----\nEnter: 'Aisle' 'Middle' or 'Window'");
-    String seatLocationPref = keyboard.nextLine();
     System.out.println("----- Airport Origin Code -----\nEnter: Airport Origin Code");
     String airportOriginCodePref = keyboard.nextLine();
 
