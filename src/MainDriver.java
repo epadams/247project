@@ -29,6 +29,7 @@ public class MainDriver {
         + "\n3: Continue as guest");
     switch (keyboard.nextInt()) {
       case 1:
+        keyboard.nextLine();
         Login(); // Move to Login
         break;
       case 2:
