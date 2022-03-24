@@ -37,6 +37,7 @@ public class MainDriver {
         displayCreateAccount(); // Create account
         break;
       case 3:
+        keyboard.nextLine();
         displayGuestMenu(); // Display guest menu
         break;
     }
@@ -49,26 +50,32 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
+        keyboard.nextLine();
         displaySearchFlights();
         break;
       // Search Hotels
       case 2:
+        keyboard.nextLine();
         displaySearchHotels();
         break;
       // View Booked Flights
       case 3:
+        keyboard.nextLine();
         displayBookedFlights();
         break;
       // View Booked Hotels
       case 4:
+        keyboard.nextLine();
         displayBookedHotels();
         break;
       // View Account Info
       case 5:
+        keyboard.nextLine();
         displayAccountInformationMenu();
         break;
       // Logout
       case 6:
+        keyboard.nextLine();
         fsystem.logout();
     }
   }
@@ -78,10 +85,12 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
+        keyboard.nextLine();
         displaySearchFlights();
         break;
       // Search Hotels
       case 2:
+        keyboard.nextLine();
         displaySearchHotels();
         break;
     }
@@ -96,6 +105,7 @@ public class MainDriver {
     String email = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Age");
     int age = keyboard.nextInt();
+    keyboard.nextLine();
     fsystem.createAccount(usrnm, pass, email, age); // What does this do?
 
     System.out.println("Would you like to set your preferences now?\n'yes' or 'no'");
@@ -133,14 +143,17 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
+        keyboard.nextLine();
         displaySearchAllFlights();
         break;
       // Search Flights w/ Preferences
       case 2:
+        keyboard.nextLine();
         displaySearchFlightsPref();
         break;
       // Change Preferences
       case 3:
+        keyboard.nextLine();
         displayPreferenceSelection();
         break;
     }
@@ -153,14 +166,17 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // Search Hotels
       case 1:
+        keyboard.nextLine();
         displaySearchAllHotels();
         break;
       // Search Flights w/ Preferences
       case 2:
+        keyboard.nextLine();
         displaySearchHotelPref();
         break;
       // Change Preferences
       case 3:
+        keyboard.nextLine();
         displayHotelPreferenceSelection();
         break;
     }
@@ -172,18 +188,22 @@ public class MainDriver {
     switch (keyboard.nextInt()) {
       // username password email
       case 1:
+        keyboard.nextLine();
         displayChangeLoginInfo();
         break;
       // change preferenece
       case 2:
+        keyboard.nextLine();
         displayPreferenceSelection();
         break;
       // add passport info
       case 3:
+        keyboard.nextLine();
         displayAddPassportInfo();
         break;
       // View flight history
       case 4:
+        keyboard.nextLine();
         displayFlightHistory();
         break;
     }
@@ -197,11 +217,13 @@ public class MainDriver {
     String airlinePref = keyboard.nextLine();
     System.out.println("----- Baggage Number -----\nEnter: Number of Luggage Bags (As a Number)");
     int baggageCountPref = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("----- Medical Accomidation Seating -----\nEnter: 'Yes' or 'No'");
     String medicalAccomPref = keyboard.nextLine();
     System.out
         .println("----- Enter Pet Weight in Pounds -----\nEnter: Your Pets Weight in pounds (If no pet enter '0')");
     int petWeightpref = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("----- Seat Type -----\nEnter: 'Business' 'Economy' or 'First Class'");
     String seatTypePref = keyboard.nextLine();
     System.out.println("----- Seat Location -----\nEnter: 'Aisle' 'Middle' or 'Window'");
@@ -216,6 +238,7 @@ public class MainDriver {
   public void displayHotelPreferenceSelection() {
     System.out.println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
     int bedCountPref = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("----- Bed Type -----\nEnter: 'Twin' 'Queen' or 'King'");
     String bedTypePref = keyboard.nextLine();
     System.out.println("----- Smoking Accomidation -----\nEnter: 'Yes' or 'No'");
@@ -278,6 +301,7 @@ public class MainDriver {
     String passlastName = keyboard.nextLine();
     System.out.println("\n----- Passport Number -----\nEnter: Your Passport Number (as a number)");
     int passportnum = keyboard.nextInt();
+    keyboard.nextLine();
     System.out.println("----- Date of Birth -----\nEnter: Your birth date in MM/DD/YYYY format");
     String passbirthDate = keyboard.nextLine();
     System.out.println("----- Issue Date -----\nEnter: The date your passport was issued in MM/DD/YYYY format");
