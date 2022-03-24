@@ -11,6 +11,9 @@ public abstract class DataConstants {
   protected static final String USER_ADDRESS = "address";
   protected static final String USER_FREQFLYER = "frequentFlyer";
 
+  //Preferences Constants
+  
+
   // Hotels constants
   protected static final String HOTEL_FILE_NAME = "../json/Hotels.json";
   protected static final String HOTEL_ID = "UUID";
