@@ -33,6 +33,7 @@ public class MainDriver {
         Login(); // Move to Login
         break;
       case 2:
+        keyboard.nextLine();
         displayCreateAccount(); // Create account
         break;
       case 3:
@@ -113,8 +114,17 @@ public class MainDriver {
     String usrnm = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
     String pass = keyboard.nextLine();
-    fsystem.login(usrnm, pass); // What does this do?
-    displayMenu();
+    switch (fsystem.login(usrnm, pass)) {
+      case 1:
+        displayCreateAccount();
+        break;
+      case 2:
+        Login();
+        break;
+      case 3:
+        displayMenu();
+        break;
+    }
   }
 
   public void displaySearchFlights() {
