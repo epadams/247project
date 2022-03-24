@@ -16,5 +16,5 @@ java -cp ../lib/json-simple-1.1.1.jar: MainDriver
 
 Windows:
 ```
-java -cp ../lib/json-simple-1.1.1.jar; MainDriver
+java -cp "../lib/json-simple-1.1.1.jar;" MainDriver
 ```

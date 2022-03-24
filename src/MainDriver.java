@@ -81,18 +81,21 @@ public class MainDriver {
   }
 
   public void displayGuestMenu() {
-    System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
-    switch (keyboard.nextInt()) {
-      // Search Flights
-      case 1:
-        keyboard.nextLine();
-        displaySearchFlights();
-        break;
-      // Search Hotels
-      case 2:
-        keyboard.nextLine();
-        displaySearchHotels();
-        break;
+    boolean run = true;
+    while (run) {
+      System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
+      switch (keyboard.nextInt()) {
+        // Search Flights
+        case 1:
+          keyboard.nextLine();
+          displaySearchFlights();
+          break;
+        // Search Hotels
+        case 2:
+          keyboard.nextLine();
+          displaySearchHotels();
+          break;
+      }
     }
   }
 
@@ -246,10 +249,12 @@ public class MainDriver {
     String smokingAccomPref = keyboard.nextLine();
     System.out.println("----- Pet Friendly -----\nEnter: 'Yes' or 'No'");
     String petAccomPref = keyboard.nextLine();
+    /* This should be done in the register date section
     System.out.println("----- Check-In Date -----\nEnter: a date in MM/DD/YYYY format");
     String checkInDate = keyboard.nextLine();
     System.out.println("----- Check-out Date -----\nEnter: a date in MM/DD/YYYY format");
     String checkoutDate = keyboard.nextLine();
+    */
 
     // TODO store these preferences
   }
