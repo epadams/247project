@@ -44,7 +44,15 @@ public class JReader extends DataConstants {
       for (int i =0;i < preferencesJSON.size();i++) {
         JSONObject preferenceJSON = (JSONObject) preferencesJSON.get(i);
 
-        UUID userprefID = UUID.fromString((String) preferenceJSON.get(USER_ID));
+        UUID id = UUID.fromString((String) preferenceJSON.get(USER_ID));
+        boolean medicalAccom = (boolean) preferenceJSON.get(PREF_MED_ACCOM);
+        String originAirport = (String) preferenceJSON.get(PREF_ORIGIN_CODE);
+        String seatType = (String) preferenceJSON.get(PREF_SEAT_TYPE);
+        String numBaggage = (String) preferenceJSON.get(PREF_BAGGAGE);
+        String airline = (String) preferenceJSON.get(PREF_AIRLINE);
+        String flightType = (String) preferenceJSON.get(PREF_FLIGHT_TYPE);
+
+        preferences.add(new Preferences())
       }
     } catch (Exception e) {
     e.printStackTrace();
