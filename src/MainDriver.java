@@ -75,7 +75,7 @@ public class MainDriver {
 
   public void displayGuestMenu() {
     keyboard.nextLine();
-    System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
+    System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels\n3: Return To Login");
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
@@ -85,6 +85,8 @@ public class MainDriver {
       case 2:
         displaySearchHotels();
         break;
+      case 3:
+        return;
     }
   }
 
