@@ -24,17 +24,15 @@ public class MainDriver {
 
   public void displayLoginMenu() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
-        + "\n3: Continue as guest\n4:QUIT");
+        + "\n3: Continue as guest\n4: QUIT");
     switch (keyboard.nextInt()) {
       case 1:
         login();
         break;
       case 2:
-        keyboard.nextLine();
         displayCreateAccount();
         break;
       case 3:
-        keyboard.nextLine();
         displayGuestMenu();
         break;
       case 4:
@@ -50,54 +48,48 @@ public class MainDriver {
       switch (keyboard.nextInt()) {
         // Search Flights
         case 1:
-          keyboard.nextLine();
           displaySearchFlights();
           break;
         // Search Hotels
         case 2:
-          keyboard.nextLine();
           displaySearchHotels();
           break;
         // View Booked Flights
         case 3:
-          keyboard.nextLine();
           displayBookedFlights();
           break;
         // View Booked Hotels
         case 4:
-          keyboard.nextLine();
           displayBookedHotels();
           break;
         // View Account Info
         case 5:
-          keyboard.nextLine();
           displayAccountInformationMenu();
           break;
         // Logout
         case 6:
-          keyboard.nextLine();
           logout = fsystem.logout();
       }
     }
   }
 
   public void displayGuestMenu() {
+    keyboard.nextLine();
     System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels");
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
-        keyboard.nextLine();
         displaySearchFlights();
         break;
       // Search Hotels
       case 2:
-        keyboard.nextLine();
         displaySearchHotels();
         break;
     }
   }
 
   public void displayCreateAccount() {
+    keyboard.nextLine();
     System.out.println("******** Create Account ********\nPlease Enter Your Username");
     String usrnm = keyboard.nextLine();
     System.out.println("\nPlease Enter Your Password");
@@ -142,22 +134,20 @@ public class MainDriver {
   }
 
   public void displaySearchFlights() {
+    keyboard.nextLine();
     System.out.println(
         "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Preferences\n3: Change Preferences");
     switch (keyboard.nextInt()) {
       // Search Flights
       case 1:
-        keyboard.nextLine();
         displaySearchAllFlights();
         break;
       // Search Flights w/ Preferences
       case 2:
-        keyboard.nextLine();
         displaySearchFlightsPref();
         break;
       // Change Preferences
       case 3:
-        keyboard.nextLine();
         displayPreferenceSelection();
         break;
     }
@@ -165,28 +155,27 @@ public class MainDriver {
   }
 
   public void displaySearchHotels() {
+    keyboard.nextLine();
     System.out.println(
         "******** Search Hotels ********\n1: Search all Hotels\n2: Search Based on Preferences\n3: Change Hotel Preferences");
     switch (keyboard.nextInt()) {
       // Search Hotels
       case 1:
-        keyboard.nextLine();
         displaySearchAllHotels();
         break;
       // Search Flights w/ Preferences
       case 2:
-        keyboard.nextLine();
         displaySearchHotelPref();
         break;
       // Change Preferences
       case 3:
-        keyboard.nextLine();
         displayHotelPreferenceSelection();
         break;
     }
   }
 
   public void displayAccountInformationMenu() {
+    keyboard.nextLine();
     System.out.println(
         "******** Account Information ********\n1: See/Change Username, Password, Email\n2: See/Change Preferences\n3: Add Passport Information\n4: View History");
     switch (keyboard.nextInt()) {
@@ -214,6 +203,7 @@ public class MainDriver {
   }
 
   public void displayPreferenceSelection() {
+    keyboard.nextLine();
     System.out.println(
         "******** Setting Your Preferences ********\n----- Flight Type -----\nEnter: 'One Way' 'Layover' or 'Round Trip'");
     String flightPref = keyboard.nextLine();
@@ -239,6 +229,7 @@ public class MainDriver {
   }
 
   public void displayHotelPreferenceSelection() {
+    keyboard.nextLine();
     System.out.println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
     int bedCountPref = keyboard.nextInt();
     keyboard.nextLine();
@@ -257,32 +248,37 @@ public class MainDriver {
   }
 
   public void displaySearchAllFlights() {
+    keyboard.nextLine();
     System.out.println("----- Search All Flights -----");
     System.out.println(fsystem.getFlights().toString());
   }
 
   public void displaySearchAllHotels() {
+    keyboard.nextLine();
     System.out.println("----- Search All Hotels -----");
     // TODO display 3 hotels
   }
 
   public void displaySearchFlightsPref() {
+    keyboard.nextLine();
     System.out.println("----- Search Flights Based off Preferences -----");
     // TODO display 3ish flights, based off preferences
   }
 
   public void displaySearchHotelPref() {
+    keyboard.nextLine();
     System.out.println("----- Search Hotels Based off Preferences -----");
     // TODO display 3ish Hotels, based off preferences
   }
 
   public void displayBookingHistory() {
+    keyboard.nextLine();
     System.out.println("----- Display Booking History -----");
     // TODO display booking history
   }
 
   public void displayChangeLoginInfo() {
-
+    keyboard.nextLine();
     System.out.println("----- Username/Password/Email Change -----");
     System.out.println("\n----- Username -----\nEnter: A new username or 'NEXT' to skip'");
     String newUsername = keyboard.nextLine();
@@ -295,6 +291,7 @@ public class MainDriver {
   }
 
   public void displayAddPassportInfo() {
+    keyboard.nextLine();
     System.out.println("----- Adding Passport Information -----");
     System.out.println("\n----- First Name -----\nEnter: Your First Name'");
     String passfirstName = keyboard.nextLine();
@@ -314,20 +311,24 @@ public class MainDriver {
   }
 
   public void displayThankYouMessage() {
+    keyboard.nextLine();
     System.out.println(
         "----- Thank YOU For Booking With Us! -----\nWhat else can we do for you?\n1: View History/Recently Booked\n2: Search Flights\n3:Search Hotels");
     // TODO Send to desired location
   }
 
   public void displayBookedFlights() {
+    keyboard.nextLine();
     System.out.println("DISPLAY BOOKED FLIGHTS HERE");
   }
 
   public void displayBookedHotels() {
+    keyboard.nextLine();
     System.out.println("DISPLAY BOOKED HOTELS HERE");
   }
 
   public void displayFlightHistory() {
+    keyboard.nextLine();
     System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
 
