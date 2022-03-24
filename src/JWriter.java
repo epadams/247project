@@ -38,6 +38,11 @@ public class JWriter extends DataConstants {
     return userDetails;
   }
 
+  public static void savePreferences() {
+    //Preferences preference = new Preferences();
+
+  }
+
   public static void saveFlight() {
      Flights flight = Flights.getInstance();                //commented until methods are created 
      ArrayList<Flight> flightList = flight.getFlights(); //TODO fix
