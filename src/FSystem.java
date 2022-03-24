@@ -13,10 +13,11 @@ public class FSystem {
     users.addUser(username, password, email, age);
   }
 
-  public void login(String username, String password) {
-    if (!users.haveUser(username)) return;
-    if (!users.getUser(username).getPassword().equals(password)) return;
+  public int login(String username, String password) {
+    if (!users.haveUser(username)) return 1;
+    if (!users.getUser(username).getPassword().equals(password)) return 2;
     currentUser = users.getUser(username);
+    return 3;
   }
 
   public void logout() {
