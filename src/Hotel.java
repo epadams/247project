@@ -7,15 +7,21 @@ public class Hotel extends Booking {
   private ArrayList<Room> rooms;
   private String hotelName;
   private String location;
+  private int price;
+  private double starRating;
+  private boolean hasPool;
 
   public Hotel() {
     this.rooms = new ArrayList<Room>();
   }
 
-  public Hotel(UUID id, String hotelName, String location, ArrayList<Room> rooms) {
+  public Hotel(UUID id, String hotelName, String location, int price, double starRating, boolean hasPool, ArrayList<Room> rooms) {
     this.id = id;
     this.hotelName = hotelName;
     this.location = location;
+    this.price = price;
+    this.starRating = starRating;
+    this.hasPool = hasPool;
     this.rooms = rooms;
   }
 
@@ -49,5 +55,29 @@ public class Hotel extends Booking {
 
   public String getLocation() {
     return this.location;
+  }
+
+  public void setPrice(int price) {
+    this.price = price;
+  }
+
+  public int getPrice() {
+    return this.price;
+  }
+
+  public void setStarRating(double starRating) {
+    this.starRating = starRating;
+  }
+
+  public double getStarRating() {
+    return this.starRating;
+  }
+
+  public void setHasPool(boolean hasPool) {
+    this.hasPool = hasPool;
+  }
+
+  public boolean getHasPool() {
+    return this.hasPool;
   }
 }
