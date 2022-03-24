@@ -1,86 +1,110 @@
 [
   {
     "UUID":"",
-    "hotelName":"",
-    "Location":"",
+    "hotelName":"Hyatt Place",
+    "location":"ATL - Atlanta",
+    "price":"179",
+    "starRating":"3.8",
+    "hasPool":"true",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"Sonesta",
+    "location":"ATL - Atlanta",
+    "price":"164",
+    "starRating":"4.1",
+    "hasPool":"true",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"La Quinta Inn & Suites",
+    "location":"ATL - Atlanta",
+    "price":"129",
+    "starRating":"3.3",
+    "hasPool":"true",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"Radisson Hotel",
+    "location":"ATL - Atlanta",
+    "price":"181",
+    "starRating":"3.8",
+    "hasPool":"false",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"Hilton",
+    "location":"ORD - Chicago",
+    "price":"205",
+    "starRating":"3.7",
+    "hasPool":"true",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"Best Western",
+    "location":"ORD - Chicago",
+    "price":"136",
+    "starRating":"3.6",
+    "hasPool":"false",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"Hampton Inn & Suites",
+    "location":"ORD - Chicago",
+    "price":"154",
+    "starRating":"4.5",
+    "hasPool":"true",
+    "rooms":[]
+  },
+  {
+    "UUID":"",
+    "hotelName":"The Allegro Royal Sonesta Hotel",
+    "location":"ORD - Chicago",
+    "price":"230",
+    "starRating":"4.3",
+    "hasPool":"false",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   },
   {
     "UUID":"",
     "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "Location":"",
+    "location":"",
     "rooms":[]
   }
 ]
