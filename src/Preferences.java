@@ -23,12 +23,36 @@ public class Preferences {
 
     }
     
-    public void setMedicalAccomodation() {
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setMedicalAccomodation(boolean medAccom) {
         this.medAccom = medAccom;
     }
 
-    public void setAirportOrigin() {
+    public void setAirportOrigin(String originAirportCode) {
         this.originAirportCode = originAirportCode;
+    }
+
+    public void setSeatType(String seatType) {
+        this.seatType = seatType;
+    }
+
+    public void setNumBaggage(int numOfBaggage) {
+        this.numOfBaggage = numOfBaggage;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public void setFlightType(String flightType) {
+        this.flightType = flightType;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public boolean getMedicalAccomodation() {
@@ -37,5 +61,21 @@ public class Preferences {
 
     public String getAirportOrigin() {
         return originAirportCode;
+    }
+
+    public String getSeatType() {
+        return seatType;
+    }
+
+    public int getNumBaggage() {
+        return numOfBaggage;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public String getFlightType() {
+        return flightType;
     }
 }
