@@ -12,7 +12,14 @@ public abstract class DataConstants {
   protected static final String USER_FREQFLYER = "frequentFlyer";
 
   //Preferences Constants
-  
+  protected static final String PREF_FILE_NAME = "../json/UserPreferences.josn";
+  protected static final String PREF_ID = "UUID";
+  protected static final String PREF_MED_ACCOM = "medicalAccommodation";
+  protected static final String PREF_ORIGIN_CODE = "originAirportCode";
+  protected static final String PREF_SEAT_TYPE = "seatType";
+  protected static final String PREF_BAGGAGE = "numberBaggage";
+  protected static final String PREF_AIRLINE = "airline";
+  protected static final String PREF_FLIGHT_TYPE = "flightType";
 
   // Hotels constants
   protected static final String HOTEL_FILE_NAME = "../json/Hotels.json";

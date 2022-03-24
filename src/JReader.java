@@ -39,7 +39,7 @@ public class JReader extends DataConstants {
   public static ArrayList<Preferences> getPreferences() {
     ArrayList<Preferences> preferences = new ArrayList<Preferences>();
     try {
-      FileReader reader = new FileReader(PREFERENCES_FILE_NAME);
+      FileReader reader = new FileReader(PREF_FILE_NAME);
       JSONArray preferencesJSON = (JSONArray) new JSONParser().parse(reader);
       for (int i =0;i < preferencesJSON.size();i++) {
         JSONObject preferenceJSON = (JSONObject) preferencesJSON.get(i);
