@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 public class MainDriver {
   private FSystem fsystem;
@@ -8,7 +9,6 @@ public class MainDriver {
     fsystem = new FSystem();
   }
 
-  // TODO break this up into multiple methods
   public void run() {
     // DEBUGGING
     // System.out.println(fsystem.getFlights().printAllFlights());
@@ -24,7 +24,7 @@ public class MainDriver {
 
   public void displayLoginMenu() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
-        + "\n3: Continue as guest\n4: QUIT");
+        + "\n3: Continue as guest\n4: Quit");
     switch (keyboard.nextInt()) {
       case 1:
         login();
@@ -46,27 +46,21 @@ public class MainDriver {
       System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights"
           + "\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
       switch (keyboard.nextInt()) {
-        // Search Flights
         case 1:
           displaySearchFlights();
           break;
-        // Search Hotels
         case 2:
           displaySearchHotels();
           break;
-        // View Booked Flights
         case 3:
           displayBookedFlights();
           break;
-        // View Booked Hotels
         case 4:
           displayBookedHotels();
           break;
-        // View Account Info
         case 5:
           displayAccountInformationMenu();
           break;
-        // Logout
         case 6:
           logout = fsystem.logout();
       }
@@ -77,11 +71,9 @@ public class MainDriver {
     keyboard.nextLine();
     System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels\n3: Return To Login");
     switch (keyboard.nextInt()) {
-      // Search Flights
       case 1:
         displaySearchFlights();
         break;
-      // Search Hotels
       case 2:
         displaySearchHotels();
         break;
@@ -112,9 +104,6 @@ public class MainDriver {
     }
   }
 
-  /*
-   * User Decides to Login
-   */
   public void login() {
     keyboard.nextLine();
     System.out.println("******** Login ********\nPlease Enter Your Username");
@@ -158,18 +147,15 @@ public class MainDriver {
 
   public void displaySearchHotels() {
     keyboard.nextLine();
-    System.out.println(
-        "******** Search Hotels ********\n1: Search all Hotels\n2: Search Based on Preferences\n3: Change Hotel Preferences");
+    System.out.println("******** Search Hotels ********\n1: Search all Hotels"
+        + "\n2: Search Based on Preferences\n3: Change Hotel Preferences");
     switch (keyboard.nextInt()) {
-      // Search Hotels
       case 1:
         displaySearchAllHotels();
         break;
-      // Search Flights w/ Preferences
       case 2:
         displaySearchHotelPref();
         break;
-      // Change Preferences
       case 3:
         displayHotelPreferenceSelection();
         break;
@@ -178,23 +164,24 @@ public class MainDriver {
 
   public void displayAccountInformationMenu() {
     keyboard.nextLine();
-    System.out.println(
-        "******** Account Information ********\n1: See/Change Username, Password, Email\n2: See/Change Preferences\n3: Add Passport Information\n4: View History");
+    System.out.println("******** Account Information ********\n1: Change Login info"
+        + "\n2: See/Change Preferences\n3: Add Passport Information\n4: View Passport Info"
+        + "\n5: View History");
     switch (keyboard.nextInt()) {
-      // username password email
       case 1:
         displayChangeLoginInfo();
         break;
-      // change preferenece
       case 2:
         displayPreferenceSelection();
         break;
-      // add passport info
       case 3:
         displayAddPassportInfo();
         break;
-      // View flight history
       case 4:
+        displayPassportInfo();
+        break;
+      // View flight history
+      case 5:
         displayFlightHistory();
         break;
     }
@@ -291,27 +278,39 @@ public class MainDriver {
   public void displayAddPassportInfo() {
     keyboard.nextLine();
     System.out.println("----- Adding Passport Information -----");
-    System.out.println("\n----- First Name -----\nEnter: Your First Name'");
-    String passfirstName = keyboard.nextLine();
+    System.out.println("\n----- First Name -----\nEnter: Your First Name");
+    String firstName = keyboard.nextLine();
     System.out.println("\n----- Last Name -----\nEnter: Your Last Name");
-    String passlastName = keyboard.nextLine();
+    String lastName = keyboard.nextLine();
     System.out.println("\n----- Passport Number -----\nEnter: Your Passport Number (as a number)");
-    int passportnum = keyboard.nextInt();
+    int passportNum = keyboard.nextInt();
     keyboard.nextLine();
     System.out.println("----- Date of Birth -----\nEnter: Your birth date in MM/DD/YYYY format");
-    String passbirthDate = keyboard.nextLine();
+    String dateOfBirth = keyboard.nextLine();
+    System.out.println("----- Place of Birth -----\nEnter: Your place of birth");
+    String placeOfBirth = keyboard.nextLine();
     System.out.println("----- Issue Date -----\nEnter: The date your passport was issued in MM/DD/YYYY format");
-    String passissueDate = keyboard.nextLine();
+    String issueDate = keyboard.nextLine();
     System.out.println("----- Expiration Date -----\nEnter: The date your passport will expire in MM/DD/YYYY format");
-    String passexperationDate = keyboard.nextLine();
+    String expirationDate = keyboard.nextLine();
     System.out.println("----- Sex -----\nEnter: The Sex on your Passport 'M' or 'F'");
-    String passsex = keyboard.nextLine();
+    char sex = keyboard.nextLine().charAt(0);
+    fsystem.getCurrentUser().addPassport(new Passport(UUID.randomUUID(), firstName,
+        lastName, passportNum, dateOfBirth, placeOfBirth, issueDate, expirationDate,
+        sex));
+  }
+
+  public void displayPassportInfo() {
+    for (Passport passport : fsystem.getCurrentUser().getPassports()) {
+      System.out.println(passport.toString());
+    }
   }
 
   public void displayThankYouMessage() {
     keyboard.nextLine();
-    System.out.println(
-        "----- Thank YOU For Booking With Us! -----\nWhat else can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights\n3: Search Hotels\n4: Return to Menu");
+    System.out.println("----- Thank YOU For Booking With Us! -----\nWhat else"
+        + "can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights"
+        + "\n3: Search Hotels\n4: Return to Menu");
     switch (keyboard.nextInt()) {
       // View Booked Flight
       case 1:

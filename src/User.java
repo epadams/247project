@@ -29,6 +29,7 @@ public class User {
         this.lastName = "";
         this.address = "";
         this.frequentFlyer = false;
+        this.passports = new ArrayList<Passport>();
     }
 
     public User(UUID id, String username, String password, String email, String firstName,
@@ -42,13 +43,25 @@ public class User {
         this.age = age;
         this.address = address;
         this.frequentFlyer = frequentFlyer;
+        this.passports = new ArrayList<Passport>();
     }
 
     
     public User(UUID id, String username, String password, String email, String firstName,
-        String lastName, int age, String address, boolean frequentFlyer, Passport passport) {
-
+        String lastName, int age, String address, boolean frequentFlyer,
+        Passport passport) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.address = address;
+        this.frequentFlyer = frequentFlyer;
+        this.passports = new ArrayList<Passport>();
     }
+
     public void setUsername(String username) {
         this.username = username;
     }

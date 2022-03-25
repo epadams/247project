@@ -16,8 +16,9 @@ public class Passport {
 
     }
 
-    public Passport(UUID id, String firstName, String lastName, int passportNum, String dateOfBirth, String placeOfBirth,
-            String issueDate, String expirationDate, char sex) {
+    public Passport(UUID id, String firstName, String lastName, int passportNum,
+        String dateOfBirth, String placeOfBirth, String issueDate,
+        String expirationDate, char sex) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
