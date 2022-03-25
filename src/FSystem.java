@@ -20,8 +20,9 @@ public class FSystem {
     return 3;
   }
 
+  // TODO fix
   public boolean logout() {
-    users.saveUsers();
+    // users.saveUsers();
     return true;
   }
 

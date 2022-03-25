@@ -27,8 +27,36 @@ public class JReader extends DataConstants {
         String address = (String) userJSON.get(USER_ADDRESS);
         boolean frequentFlyer = (boolean) userJSON.get(USER_FREQFLYER);
 
+        /*
+        JSONArray passportsArray = (JSONArray) userJSON.get(USER_PASSPORTS);
+        ArrayList<UUID> passportUUIDs = new ArrayList<UUID>();
+        if (passportsArray != null) {
+          for (int j = 0; j < passportsArray.size(); j++) {
+            UUID passportUUID = UUID.fromString((String) passportsArray.get(j));
+            passportUUIDs.add(seatUUID);
+          }
+        }
+        */
+        JSONArray seatsArray = (JSONArray) userJSON.get(USER_BOOKED_SEATS);
+        ArrayList<UUID> seatUUIDs = new ArrayList<UUID>();
+        if (seatsArray != null) {
+          for (int j = 0; j < seatsArray.size(); j++) {
+            UUID seatUUID = UUID.fromString((String) seatsArray.get(j));
+            seatUUIDs.add(seatUUID);
+          }
+        }
+
+        JSONArray roomsArray = (JSONArray) userJSON.get(USER_BOOKED_ROOMS);
+        ArrayList<UUID> roomUUIDs = new ArrayList<UUID>();
+        if (roomsArray != null) {
+          for (int j = 0; j < roomsArray.size(); j++) {
+            UUID roomUUID = UUID.fromString((String) roomsArray.get(j));
+            roomUUIDs.add(roomUUID);
+          }
+        }
+
         users.add(new User(id, username, password, email, firstName, lastName, age,
-              address, frequentFlyer));
+              address, frequentFlyer, new ArrayList<Passport>(), seatUUIDs, roomUUIDs));
       }
       return users;
     } catch (Exception e) {
@@ -87,7 +115,6 @@ public class JReader extends DataConstants {
             seats.add(seatID);
           }
         }
-
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
         String arrivalTime = (String) flightJSON.get(FLIGHT_ARRIVALTIME);
@@ -98,7 +125,6 @@ public class JReader extends DataConstants {
         String flightType = (String) flightJSON.get(FLIGHT_FLIGHTTYPE);
         flight.add(new Flight(id, flightName, airline, departure, destination,
               departureTime, arrivalTime, flightType, seats));
-
       }
       return flight;
     } catch (Exception e) {
@@ -107,7 +133,7 @@ public class JReader extends DataConstants {
     return null;
   }
 
-/*
+  // TODO fix getHotels, getRooms, and getSeats
   public static ArrayList<Seat> getSeats() {
     ArrayList<Seat> seats = new ArrayList<Seat>();
     try {
@@ -129,10 +155,7 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-*/
 
-/*
-  // TODO fix getHotels and getRooms
   public static ArrayList<Hotel> getHotels() {
     ArrayList<Hotel> hotels = new ArrayList<Hotel>();
     try {
@@ -144,7 +167,7 @@ public class JReader extends DataConstants {
         String hotelName = (String) hotelJSON.get(HOTEL_NAME);
         String location = (String) hotelJSON.get(HOTEL_LOCATION);
         ArrayList<Room> rooms = getRooms();
-        hotels.add(new Hotel(id, hotelName, location, rooms));
+        // hotels.add(new Hotel(id, hotelName, location, rooms));
       }
       return hotels;
     } catch (Exception e) {
@@ -152,7 +175,6 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-*/
 
   public static ArrayList<Room> getRooms() {
     ArrayList<Room> rooms = new ArrayList<Room>();

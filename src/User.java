@@ -12,6 +12,9 @@ public class User {
     private String address;
     private boolean frequentFlyer;
     private ArrayList<Passport> passports;
+    // Use UUID so you don't hold copy of object
+    private ArrayList<UUID> bookedSeats;
+    private ArrayList<UUID> bookedRooms;
     private ArrayList<Flight> flightHistory;
     private ArrayList<String> refunds;
 
@@ -49,7 +52,8 @@ public class User {
     
     public User(UUID id, String username, String password, String email, String firstName,
         String lastName, int age, String address, boolean frequentFlyer,
-        Passport passport) {
+        ArrayList<Passport> passports, ArrayList<UUID> bookedSeats,
+        ArrayList<UUID> bookedRooms) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -59,7 +63,9 @@ public class User {
         this.age = age;
         this.address = address;
         this.frequentFlyer = frequentFlyer;
-        this.passports = new ArrayList<Passport>();
+        this.passports = passports;
+        this.bookedSeats = bookedSeats;
+        this.bookedRooms = bookedRooms;
     }
 
     public void setUsername(String username) {
@@ -156,6 +162,14 @@ public class User {
         return "";
     }
 
+    public ArrayList<UUID> getBookedSeatIDs() {
+      return this.bookedSeats;
+    }
+
+    public ArrayList<UUID> getBookedRoomIDs() {
+      return this.bookedRooms;
+    }
+
     public void logout() {
 
     }
@@ -169,7 +183,8 @@ public class User {
       return "ID: " + this.id + "\nUsername: " + this.username + "\nPassword: "
           + this.password + "\nFirst Name: " + this.firstName + "\nLast Name: "
           + this.lastName + "\nAge: " + this.age + "\nAddress: "
-          + this.address + "\nFrequent Flyer: " + this.frequentFlyer;
+          + this.address + "\nFrequent Flyer: " + this.frequentFlyer + "\nSeat ids: "
+          + this.bookedSeats.toString() + "\nRoom ids: " + this.bookedRooms.toString();
     }
 
     public UUID getId() {

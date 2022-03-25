@@ -8,6 +8,8 @@
     "lastName":"Doe",
     "age": 20,
     "address":"1250 Testing Drive",
-    "frequentFlyer":false
+    "frequentFlyer":false,
+    "bookedSeats":[],
+    "bookedRooms":[]
   }
 ]

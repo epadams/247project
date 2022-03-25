@@ -1,6 +1,6 @@
 import java.util.UUID;
 
-public class Seat {
+public class Seat extends Flight {
   private UUID id;
   private int row;
   private char aisle;

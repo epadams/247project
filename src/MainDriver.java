@@ -14,7 +14,7 @@ public class MainDriver {
     // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
-    // System.out.println(fsystem.getUsers().printAllUsers());
+    System.out.println(fsystem.getUsers().printAllUsers());
     boolean run = true;
     while (run) {
       displayLoginMenu();
@@ -262,6 +262,7 @@ public class MainDriver {
     // TODO display booking history
   }
 
+
   public void displayChangeLoginInfo() {
     keyboard.nextLine();
     System.out.println("----- Username/Password/Email Change -----");
@@ -331,6 +332,7 @@ public class MainDriver {
     }
   }
 
+
   public void displayBookedFlights() {
     keyboard.nextLine();
     System.out.println("DISPLAY BOOKED FLIGHTS HERE");
@@ -345,6 +347,7 @@ public class MainDriver {
     keyboard.nextLine();
     System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
+
 
   public static void main(String[] args) {
     MainDriver mD = new MainDriver();
