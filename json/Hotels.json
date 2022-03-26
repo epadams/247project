@@ -1,6 +1,6 @@
 [
   {
-    "UUID":"",
+    "UUID":"dc950710-9727-407e-a6e6-1c7b203d9fcc",
     "hotelName":"Hyatt Place",
     "location":"ATL - Atlanta",
     "price":"179",
@@ -9,7 +9,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"0ae4823b-2a2f-4645-81d0-fe6b50a54a40",
     "hotelName":"Sonesta",
     "location":"ATL - Atlanta",
     "price":"164",
@@ -18,7 +18,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"6dd618fd-7ea6-4537-86a4-8d7fc9b905b5",
     "hotelName":"La Quinta Inn & Suites",
     "location":"ATL - Atlanta",
     "price":"129",
@@ -27,7 +27,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"933d8abc-ccd4-49a3-a92e-ef9ac75514b3",
     "hotelName":"Radisson Hotel",
     "location":"ATL - Atlanta",
     "price":"181",
@@ -36,7 +36,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"13dd068f-129b-4547-8b9c-d1b54a18dd96",
     "hotelName":"Hilton",
     "location":"ORD - Chicago",
     "price":"205",
@@ -45,7 +45,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"f57c601b-1d65-4ae1-8b41-36b69eb1a81e",
     "hotelName":"Best Western",
     "location":"ORD - Chicago",
     "price":"136",
@@ -54,7 +54,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"9476539c-24f0-4ceb-b7f0-cb863e81f983",
     "hotelName":"Hampton Inn & Suites",
     "location":"ORD - Chicago",
     "price":"154",
@@ -63,7 +63,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"ace05eff-af52-4fee-9812-afdad7716dcf",
     "hotelName":"The Allegro Royal Sonesta Hotel",
     "location":"ORD - Chicago",
     "price":"230",
@@ -72,7 +72,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"12dc51b0-9770-45b6-8831-37395943af05",
     "hotelName":"Hyatt Regency",
     "location":"DCA - Washington DC",
     "price":"297",
@@ -81,7 +81,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"382a76ff-f5ac-42c8-aeb2-faaad23b707c",
     "hotelName":"Holiday Inn",
     "location":"DCA - Washington DC",
     "price":"147",
@@ -90,7 +90,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"cde95d92-3843-4768-824d-0eb27f897dc7",
     "hotelName":"Hampton Inn & Suites",
     "location":"DCA - Washington DC",
     "price":"227",
@@ -99,7 +99,7 @@
     "rooms":[]
   },
   {
-    "UUID":"",
+    "UUID":"20c80858-fcdf-41b4-ac49-5e2817c057b9",
     "hotelName":"Courtyard by Marriott",
     "location":"DCA - Washington DC",
     "price":"227",
