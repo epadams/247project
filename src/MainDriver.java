@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.UUID;
+import java.util.ArrayList;
 
 public class MainDriver {
   private FSystem fsystem;
@@ -15,6 +16,7 @@ public class MainDriver {
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
+    System.out.println(fsystem.getFlights().searchFlights("Flight1").getSeats().get(0).toString());
     boolean run = true;
     while (run) {
       displayLoginMenu();
@@ -43,8 +45,10 @@ public class MainDriver {
   public void displayMenu() {
     boolean logout = false;
     while (!logout) {
-      System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels\n3: View Booked Flights"
-          + "\n4: View Booked Hotels\n5: View Account Information\n6: Logout");
+      System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels"
+          + "\n3: Register for Flight\n4: Register for Hotel"
+          + "\n5: View Booked Flight\n6: View Booked Hotels"
+          + "\n7: View Account Information\n8: Logout");
       switch (keyboard.nextInt()) {
         case 1:
           displaySearchFlights();
@@ -53,15 +57,21 @@ public class MainDriver {
           displaySearchHotels();
           break;
         case 3:
-          displayBookedFlights();
+          registerFlight();
           break;
         case 4:
-          displayBookedHotels();
+          registerHotel();
           break;
         case 5:
-          displayAccountInformationMenu();
+          displayBookedFlights();
           break;
         case 6:
+          displayBookedHotels();
+          break;
+        case 7:
+          displayAccountInformationMenu();
+          break;
+        case 8:
           logout = fsystem.logout();
       }
     }
@@ -147,6 +157,30 @@ public class MainDriver {
         displaySearchFlightsDepAndDest();
         break;
     }
+  }
+
+  public void registerFlight() {
+    keyboard.nextLine();
+    System.out.println("******** Register for Flight ********"
+        + "\nPlease enter the UUID of the flight you want to register for:");
+    UUID id = UUID.fromString(keyboard.nextLine());
+    System.out.println(fsystem.getFlights().searchFlightID(id).printSeatMap());
+    System.out.println("How many tickets would you like:");
+    int numTickets = keyboard.nextInt();
+    if (numTickets == 0) {
+      System.out.println("Sorry, that is not a valid number");
+      return;
+    }
+    keyboard.nextLine();
+    System.out.println("Please choose the location of your seat(s)");
+    for (int i = 0; i < numTickets; i++) {
+      String location = keyboard.nextLine();
+      fsystem.getFlights().searchFlightID(id).registerSeat(location);
+    }
+    
+  }
+
+  public void registerHotel() {
 
   }
 
@@ -335,6 +369,7 @@ public class MainDriver {
       System.out.println(passport.toString());
     }
   }
+
   /*
   public void displaySearchFlightsPref() {
     keyboard.nextLine();

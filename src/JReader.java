@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.io.FileReader;
 // import java.sql.Time;
 import java.util.UUID;
-import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -98,22 +97,16 @@ public class JReader extends DataConstants {
       for(int i = 0;i < flightsJSON.size();i++) {
         JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
         
-        // Getting seat UUIDs
-        ArrayList<UUID> seats = new ArrayList<UUID>();
-        JSONArray seatArray = (JSONArray) flightJSON.get(FLIGHT_SEATS);
-        /*
-        Iterator i = seatArray.iterator();
-        while (i.hasNext()) {
-          JSONObject seat = (JSONObject) i.next();
 
-        }
-        */
-        if (seatArray != null) {
-          for (int j = 0; j < seatArray.size(); j++) {
-            UUID seatID = UUID.fromString((String) seatArray.get(j));
-            seats.add(seatID);
+        JSONArray seatsArray = (JSONArray) flightJSON.get(FLIGHT_SEATS);
+        ArrayList<UUID> seatUUIDs = new ArrayList<UUID>();
+        if (seatsArray != null) {
+          for (int j = 0; j < seatsArray.size(); j++) {
+            UUID seatUUID = UUID.fromString((String) seatsArray.get(j));
+            seatUUIDs.add(seatUUID);
           }
         }
+
         UUID id =  UUID.fromString((String) flightJSON.get(FLIGHT_ID));
         String flightName = (String) flightJSON.get(FLIGHT_FLIGHTNAME);
         String arrivalTime = (String) flightJSON.get(FLIGHT_ARRIVALTIME);
@@ -123,7 +116,7 @@ public class JReader extends DataConstants {
         String airline = (String) flightJSON.get(FLIGHT_AIRLINE);
         String flightType = (String) flightJSON.get(FLIGHT_FLIGHTTYPE);
         flight.add(new Flight(id, flightName, airline, departure, destination,
-              departureTime, arrivalTime, flightType, seats));
+              departureTime, arrivalTime, flightType, getSeats(seatUUIDs)));
       }
       return flight;
     } catch (Exception e) {
@@ -133,7 +126,7 @@ public class JReader extends DataConstants {
   }
 
   // TODO fix getHotels, getRooms, and getSeats
-  public static ArrayList<Seat> getSeats() {
+  public static ArrayList<Seat> getSeats(ArrayList<UUID> ids) {
     ArrayList<Seat> seats = new ArrayList<Seat>();
     try {
       FileReader reader = new FileReader(SEATS_FILE_NAME);
@@ -141,12 +134,13 @@ public class JReader extends DataConstants {
       for (int i = 0; i < seatsJSON.size(); i++) {
         JSONObject seatJSON = (JSONObject) seatsJSON.get(i);
         UUID id =  UUID.fromString((String) seatJSON.get(USER_ID));
-        // treat as int/char or strings?
-        int row= ((Long) seatJSON.get(SEATS_ROW_NUM)).intValue();
-        char aisle= (char) seatJSON.get(SEATS_AISLE_NUM);
-        boolean availability = (boolean) seatJSON.get(SEATS_AVAIL);
-        SeatType type = (SeatType) seatJSON.get(USER_FIRST_NAME);
-        seats.add(new Seat(id, row, aisle, type, availability));
+        if (ids.contains(id)) {
+          int row = ((Long) seatJSON.get(SEATS_ROW_NUM)).intValue();
+          char aisle = ((String) seatJSON.get(SEATS_AISLE_NUM)).charAt(0);
+          boolean availability = Boolean.parseBoolean(((String) seatJSON.get(SEATS_AVAIL)));
+          SeatType type = ((SeatType) seatJSON.get(USER_FIRST_NAME));
+          seats.add(new Seat(id, row, aisle, type, availability));
+        }
       }
       return seats;
     } catch (Exception e) {

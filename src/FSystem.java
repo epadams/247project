@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class FSystem {
   private Users users;
   private User currentUser;
@@ -36,5 +38,14 @@ public class FSystem {
 
   public Flights getFlights() {
     return this.flights;
+  }
+
+  public String registerFlight(UUID id, String location) {
+    if (flights.searchFlightID(id).searchSeats(location).getVacancy()) {
+      flights.searchFlightID(id).registerSeat(location);
+      return "Your seat" + location + " has been booked";
+    } else {
+      return "Your seat" + location + " is taken";
+    }
   }
 }

@@ -54,4 +54,9 @@ public class Seat extends Flight {
   public SeatType getType() {
     return this.type;
   }
+
+  public String toString() {
+    return "ID: " + this.id.toString() + "\nRow: " + this.row + "\nAisle: "
+      + this.aisle + "\nType: " + this.type + "\nVacancy: " + this.vacancy;
+  }
 }

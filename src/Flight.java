@@ -14,10 +14,10 @@ public class Flight extends Booking {
   private String departureTime;
   private String arrivalTime;
   private String flightType;
-  private ArrayList<UUID> seats;
+  private ArrayList<Seat> seats;
   
   public Flight() {
-
+    seats = new ArrayList<Seat>();
   }
 
   /**
@@ -33,7 +33,7 @@ public class Flight extends Booking {
    */
   public Flight(UUID id, String flightName, String airline, String departure,
       String destination, String departureTime, String arrivalTime,
-      String flightType, ArrayList<UUID> seats) {
+      String flightType, ArrayList<Seat> seats) {
     this.id = id;
     this.flightName = flightName;
     this.airline = airline;
@@ -163,6 +163,15 @@ public class Flight extends Booking {
   public String getAirline() {
     return this.airline;
   }
+
+  public ArrayList<Seat> getSeats() {
+    return this.seats;
+  }
+
+  public void setSeats(ArrayList<Seat> seats) {
+    this.seats = seats;
+  }
+
   /**Prints the flight information 
    * @return String with id,flightname,depaturetime,arrivaltime,place of departure, place of arrival, airline, flightype
    */
@@ -172,5 +181,42 @@ public class Flight extends Booking {
       + this.arrivalTime + "\nPlace of Departure: " + this.departure
       + "\nPlace of Arrival: " + this.destination + "\nAirline: "
       + this.airline + "\nType: " + this.flightType + "\n";
+  }
+
+  public String printSeatMap() {
+    if (seats.isEmpty()) return null;
+    String ret = "";
+    int currRow = 1;
+    for (int i = 0; i < seats.size(); i++) {
+      if (currRow != seats.get(i).getRow()) {
+        ret += "\n";
+      }
+      if (seats.get(i).getVacancy()) {
+        ret += "O";
+      } else {
+        ret += "X";
+      }
+      currRow++;
+    }
+    return ret;
+  }
+
+  public Seat searchSeats(String location) {
+    for (Seat seat : seats) {
+      if (seat.getRow() == (Integer.parseInt(location.substring(0, 0)))
+          && seat.getAisle() == (location.charAt(1))) {
+        return seat;
+      }
+    }
+    return null;
+  }
+
+  public void registerSeat(String location) {
+    for (Seat seat : seats) {
+      if (seat.getRow() == (Integer.parseInt(location.substring(0, 0)))
+          && seat.getAisle() == (location.charAt(1))) {
+        seat.setVacancy(false);
+      }
+    }
   }
 }
