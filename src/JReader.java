@@ -27,16 +27,6 @@ public class JReader extends DataConstants {
         String address = (String) userJSON.get(USER_ADDRESS);
         boolean frequentFlyer = (boolean) userJSON.get(USER_FREQFLYER);
 
-        /*
-        JSONArray passportsArray = (JSONArray) userJSON.get(USER_PASSPORTS);
-        ArrayList<UUID> passportUUIDs = new ArrayList<UUID>();
-        if (passportsArray != null) {
-          for (int j = 0; j < passportsArray.size(); j++) {
-            UUID passportUUID = UUID.fromString((String) passportsArray.get(j));
-            passportUUIDs.add(seatUUID);
-          }
-        }
-        */
         JSONArray seatsArray = (JSONArray) userJSON.get(USER_BOOKED_SEATS);
         ArrayList<UUID> seatUUIDs = new ArrayList<UUID>();
         if (seatsArray != null) {
@@ -52,6 +42,15 @@ public class JReader extends DataConstants {
           for (int j = 0; j < roomsArray.size(); j++) {
             UUID roomUUID = UUID.fromString((String) roomsArray.get(j));
             roomUUIDs.add(roomUUID);
+          }
+        }
+
+        JSONArray passportsArray = (JSONArray) userJSON.get(USER_PASSPORTS);
+        ArrayList<UUID> passportUUIDs = new ArrayList<UUID>();
+        if (passportsArray != null) {
+          for (int j = 0; j < passportsArray.size(); j++) {
+            UUID passportUUID = UUID.fromString((String) passportsArray.get(j));
+            passportUUIDs.add(passportUUID);
           }
         }
 

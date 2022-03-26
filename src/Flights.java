@@ -66,13 +66,14 @@ public class Flights {
     return null;
   }
 
-  public Flight searchDestination(String destination){
-    for(Flight dest : flightList){
-      if(dest.getDestination().contains(destination)){
-        return dest;
+  public ArrayList<Flight> searchDestination(String destination){
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for(Flight flight : flightList){
+      if(flight.getDestination().contains(destination)){
+        matchedFlights.add(flight);
       }
     }
-    return null;
+    return matchedFlights;
   }
 
   public Flight searchFlightID(UUID id){
@@ -93,13 +94,26 @@ public class Flights {
     return null;
   }
 
-  public Flight searchDeparture(String departure){
-    for(Flight depart : flightList){
-      if(depart.getDeparture().contains(departure)){
-        return depart;
+  public ArrayList<Flight> searchDeparture(String departure){
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for(Flight depart : flightList) {
+      if(depart.getDeparture().contains(departure)) {
+        matchedFlights.add(depart);
       }
     }
-    return null;
+    return matchedFlights;
+  }
+
+  public ArrayList<Flight> searchDepartureAndDestination(String departure,
+      String destination){
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for(Flight flight : flightList) {
+      if(flight.getDeparture().contains(departure) &&
+          flight.getDestination().contains(destination)) {
+        matchedFlights.add(flight);
+      }
+    }
+    return matchedFlights;
   }
 
   public Flight searchDepartureTime(String departureTime){

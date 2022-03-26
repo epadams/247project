@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import java.util.UUID;
 
 public class JWriter extends DataConstants {
 
@@ -34,21 +35,46 @@ public class JWriter extends DataConstants {
     userDetails.put(USER_AGE, user.getAge());
     userDetails.put(USER_ADDRESS, user.getAddress());
     userDetails.put(USER_FREQFLYER, user.getFreqFlyerStatus());
+    userDetails.put(USER_BOOKED_SEATS, saveUserSeats(user));
+    userDetails.put(USER_BOOKED_ROOMS, saveUserRooms(user));
 
     return userDetails;
   }
 
+  public static JSONArray saveUserSeats(User user) {
+    JSONArray bookedSeats = new JSONArray();
+    ArrayList<UUID> seatUUIDs = user.getBookedSeatIDs();
+    if (seatUUIDs != null) {
+      for (int i = 0; i < seatUUIDs.size(); i++) {
+        UUID id = seatUUIDs.get(i);
+        bookedSeats.add(id.toString());
+      }
+    }
+    return bookedSeats;
+  }
+
+  public static JSONArray saveUserRooms(User user) {
+    JSONArray bookedRooms = new JSONArray();
+    ArrayList<UUID> roomUUIDs = user.getBookedSeatIDs();
+    if (roomUUIDs != null) {
+      for (int i = 0; i < roomUUIDs.size(); i++) {
+        UUID id = roomUUIDs.get(i);
+        bookedRooms.add(id.toString());
+      }
+    }
+    return bookedRooms;
+  }
+
   public static void savePreferences() {
     //Preferences preference = new Preferences();
-
   }
 
   public static void saveFlight() {
-     Flights flight = Flights.getInstance();                //commented until methods are created 
-     ArrayList<Flight> flightList = flight.getFlights(); //TODO fix
+    Flights flight = Flights.getInstance();
+    ArrayList<Flight> flightList = flight.getFlights();
     JSONArray jsonFlights = new JSONArray();
 
-    for(int i = 0;i<flightList.size();i++){
+    for(int i = 0; i<flightList.size(); i++) {
       jsonFlights.add(getFlightJSON(flightList.get(i)));
     }
     try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
@@ -58,12 +84,13 @@ public class JWriter extends DataConstants {
       e.printStackTrace();
     }
   }
-  public static JSONObject getFlightJSON(Flight flight){
+
+  public static JSONObject getFlightJSON(Flight flight) {
     JSONObject flightDetails = new JSONObject();
     flightDetails.put(FLIGHT_ID, flight.getUUID().toString());
     flightDetails.put(FLIGHT_FLIGHTNAME, flight.getFlightName().toString());
     flightDetails.put(FLIGHT_DEPARTURETIME, flight.getDepartureTime());
-    flightDetails.put(FLIGHT_ARRIVALTIME, flight.getArrivalTime());            //commented till updated 
+    flightDetails.put(FLIGHT_ARRIVALTIME, flight.getArrivalTime());
     flightDetails.put(FLIGHT_DEPARTURE, flight.getDeparture());
     flightDetails.put(FLIGHT_DESTINATION, flight.getDestination());
     flightDetails.put(FLIGHT_AIRLINE, flight.getAirline());
@@ -71,5 +98,4 @@ public class JWriter extends DataConstants {
 
     return flightDetails;
   }
-  }
-
+}

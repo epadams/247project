@@ -14,7 +14,7 @@ public class MainDriver {
     // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
-    System.out.println(fsystem.getUsers().printAllUsers());
+    // System.out.println(fsystem.getUsers().printAllUsers());
     boolean run = true;
     while (run) {
       displayLoginMenu();
@@ -95,6 +95,7 @@ public class MainDriver {
     keyboard.nextLine();
     fsystem.createAccount(usrnm, pass, email, age);
 
+    /*
     System.out.println("Would you like to set your preferences now?\n'yes' or 'no'");
     String prefres = keyboard.nextLine();
     if (prefres.toLowerCase().equals("yes")) {
@@ -102,6 +103,7 @@ public class MainDriver {
     } else {
       System.out.println("You can set your preferences later in 'Account information'");
     }
+    */
   }
 
   public void login() {
@@ -127,19 +129,22 @@ public class MainDriver {
   public void displaySearchFlights() {
     keyboard.nextLine();
     System.out.println(
-        "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Preferences\n3: Change Preferences");
+        "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Departure\n3: Search Based on Destination"
+        + " \n4: Search Based on Departure and Destination");
     switch (keyboard.nextInt()) {
-      // Search Flights
       case 1:
         displaySearchAllFlights();
         break;
-      // Search Flights w/ Preferences
+      // TODO search based on destination
       case 2:
-        displaySearchFlightsPref();
+        displaySearchFlightsDep();
         break;
-      // Change Preferences
+      // TODO search based on departure
       case 3:
-        displayPreferenceSelection();
+        displaySearchFlightsDest();
+        break;
+      case 4:
+        displaySearchFlightsDepAndDest();
         break;
     }
 
@@ -147,17 +152,16 @@ public class MainDriver {
 
   public void displaySearchHotels() {
     keyboard.nextLine();
-    System.out.println("******** Search Hotels ********\n1: Search all Hotels"
-        + "\n2: Search Based on Preferences\n3: Change Hotel Preferences");
+    System.out.println("******** Search Hotels ********\n1: Search all Hotels");
     switch (keyboard.nextInt()) {
       case 1:
         displaySearchAllHotels();
         break;
       case 2:
-        displaySearchHotelPref();
+        // displaySearchHotelPref();
         break;
       case 3:
-        displayHotelPreferenceSelection();
+        // displayHotelPreferenceSelection();
         break;
     }
   }
@@ -172,7 +176,7 @@ public class MainDriver {
         displayChangeLoginInfo();
         break;
       case 2:
-        displayPreferenceSelection();
+        // displayPreferenceSelection();
         break;
       case 3:
         displayAddPassportInfo();
@@ -187,6 +191,7 @@ public class MainDriver {
     }
   }
 
+  /*
   public void displayPreferenceSelection() {
     keyboard.nextLine();
     System.out.println(
@@ -212,7 +217,9 @@ public class MainDriver {
 
     // TODO Store these preferences
   }
+  */
 
+  /*
   public void displayHotelPreferenceSelection() {
     keyboard.nextLine();
     System.out.println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
@@ -231,6 +238,7 @@ public class MainDriver {
 
     // TODO store these preferences
   }
+  */
 
   public void displaySearchAllFlights() {
     keyboard.nextLine();
@@ -238,31 +246,52 @@ public class MainDriver {
     System.out.println(fsystem.getFlights().toString());
   }
 
+  public void displaySearchFlightsDep() {
+    keyboard.nextLine();
+    System.out.println("----- Search Flights based on Departure -----");
+    System.out.println("Enter airport code of departure location: ");
+    System.out.println(fsystem.getFlights().searchDeparture(keyboard.nextLine()).toString());
+  }
+
+  public void displaySearchFlightsDest() {
+    keyboard.nextLine();
+    System.out.println("----- Search Flights based on Destination -----");
+    System.out.println("Enter airport code of destination location: ");
+    System.out.println(fsystem.getFlights().searchDestination(keyboard.nextLine()).toString());
+  }
+
+  public void displaySearchFlightsDepAndDest() {
+    keyboard.nextLine();
+    System.out.println("----- Search Flights based on Departure and Destination -----");
+    System.out.println("Enter airport code of departure location: ");
+    String departure = keyboard.nextLine();
+    System.out.println("Enter airport code of destination location: ");
+    String destination = keyboard.nextLine();
+    System.out.println(fsystem.getFlights().searchDepartureAndDestination(departure, destination).toString());
+  }
+
   public void displaySearchAllHotels() {
     keyboard.nextLine();
     System.out.println("----- Search All Hotels -----");
-    // TODO display 3 hotels
+    // TODO display
   }
 
-  public void displaySearchFlightsPref() {
+
+  public void displayBookedFlights() {
     keyboard.nextLine();
-    System.out.println("----- Search Flights Based off Preferences -----");
-    // TODO display 3ish flights, based off preferences
+    System.out.println("DISPLAY BOOKED FLIGHTS HERE");
   }
 
-  public void displaySearchHotelPref() {
+  public void displayBookedHotels() {
     keyboard.nextLine();
-    System.out.println("----- Search Hotels Based off Preferences -----");
-    // TODO display 3ish Hotels, based off preferences
+    System.out.println("DISPLAY BOOKED HOTELS HERE");
   }
 
-  public void displayBookingHistory() {
+  public void displayFlightHistory() {
     keyboard.nextLine();
-    System.out.println("----- Display Booking History -----");
-    // TODO display booking history
+    System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
-
-
+  
   public void displayChangeLoginInfo() {
     keyboard.nextLine();
     System.out.println("----- Username/Password/Email Change -----");
@@ -306,10 +335,34 @@ public class MainDriver {
       System.out.println(passport.toString());
     }
   }
+  /*
+  public void displaySearchFlightsPref() {
+    keyboard.nextLine();
+    System.out.println("----- Search Flights Based off Preferences -----");
+    // TODO display
+  }
+  */
 
+  /*
+  public void displaySearchHotelPref() {
+    keyboard.nextLine();
+    System.out.println("----- Search Hotels Based off Preferences -----");
+    // TODO display 3ish Hotels, based off preferences
+  }
+  */
+
+  /*
+  public void displayBookingHistory() {
+    keyboard.nextLine();
+    System.out.println("----- Display Booking History -----");
+    // TODO display booking history
+  }
+  */
+
+  /*
   public void displayThankYouMessage() {
     keyboard.nextLine();
-    System.out.println("----- Thank YOU For Booking With Us! -----\nWhat else"
+    System.out.println("----- Thank you for booking with us! -----\nWhat else"
         + "can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights"
         + "\n3: Search Hotels\n4: Return to Menu");
     switch (keyboard.nextInt()) {
@@ -331,23 +384,7 @@ public class MainDriver {
         break;
     }
   }
-
-
-  public void displayBookedFlights() {
-    keyboard.nextLine();
-    System.out.println("DISPLAY BOOKED FLIGHTS HERE");
-  }
-
-  public void displayBookedHotels() {
-    keyboard.nextLine();
-    System.out.println("DISPLAY BOOKED HOTELS HERE");
-  }
-
-  public void displayFlightHistory() {
-    keyboard.nextLine();
-    System.out.println("DISPLAY FLIGHT HISTORY HERE");
-  }
-
+  */
 
   public static void main(String[] args) {
     MainDriver mD = new MainDriver();

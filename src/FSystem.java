@@ -22,7 +22,7 @@ public class FSystem {
 
   // TODO fix
   public boolean logout() {
-    // users.saveUsers();
+    users.saveUsers();
     return true;
   }
 
