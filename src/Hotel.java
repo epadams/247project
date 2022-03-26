@@ -29,7 +29,7 @@ public class Hotel {
     return this.id;
   }
 
-  public void setRooms() {
+  public void setRooms(ArrayList<Room> rooms) {
     this.rooms = rooms;
   }
 
