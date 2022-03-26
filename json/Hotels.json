@@ -73,38 +73,38 @@
   },
   {
     "UUID":"",
-    "hotelName":"",
-    "location":"",
+    "hotelName":"Hyatt Regency",
+    "location":"DCA - Washington DC",
+    "price":"297",
+    "starRating":"4.4",
+    "hasPool":"true",
     "rooms":[]
   },
   {
     "UUID":"",
-    "hotelName":"",
-    "location":"",
+    "hotelName":"Holiday Inn",
+    "location":"DCA - Washington DC",
+    "price":"147",
+    "starRating":"3.9",
+    "hasPool":"false",
     "rooms":[]
   },
   {
     "UUID":"",
-    "hotelName":"",
-    "location":"",
+    "hotelName":"Hampton Inn & Suites",
+    "location":"DCA - Washington DC",
+    "price":"227",
+    "starRating":"4.2",
+    "hasPool":"false",
     "rooms":[]
   },
   {
     "UUID":"",
-    "hotelName":"",
-    "location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "location":"",
-    "rooms":[]
-  },
-  {
-    "UUID":"",
-    "hotelName":"",
-    "location":"",
+    "hotelName":"Courtyard by Marriott",
+    "location":"DCA - Washington DC",
+    "price":"227",
+    "starRating":"4.4",
+    "hasPool":"false",
     "rooms":[]
   }
 ]
