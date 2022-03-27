@@ -1,68 +1,180 @@
 [
     {
-        "UUID":"66bf9c12-4557-41e6-a243-58105abecb5f",
-        "flightName":"Flight1",
-        "departureTime":"6:00 am",
-        "arrivalTime":"7:30 am",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"ATL - Atlanta",
-        "airline":"Delta",
-        "type":"One-way",
-        "seats":["ba37f124-43ec-49ba-856b-f81c5a75866a","76ff68b1-fdee-412f-b70a-ba4e05996bc2","ce2721f9-32bd-459a-b809-5d1f80275704","3b943e91-61d5-4c86-9f20-559d17ef7357","5e3f4de9-2fcc-44ba-97dc-04bbfd952f5b","35ed6513-d961-4f08-9685-0d30ad70a2c3","e23b0663-317e-497d-9454-631f52d9fe57","4d51d1bb-3db5-412b-bb74-79450ac45e87","0e06360c-8254-4327-bebe-65a3bd26f664"]
+        "UUID": "66bf9c12-4557-41e6-a243-58105abecb5f",
+        "flightName": "Flight1",
+        "departureTime": "6:00 am",
+        "arrivalTime": "7:30 am",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "ATL - Atlanta",
+        "airline": "Delta",
+        "type": "One-way",
+        "seats": [
+            "ba37f124-43ec-49ba-856b-f81c5a75866a",
+            "76ff68b1-fdee-412f-b70a-ba4e05996bc2",
+            "ce2721f9-32bd-459a-b809-5d1f80275704",
+            "3b943e91-61d5-4c86-9f20-559d17ef7357",
+            "5e3f4de9-2fcc-44ba-97dc-04bbfd952f5b",
+            "35ed6513-d961-4f08-9685-0d30ad70a2c3",
+            "e23b0663-317e-497d-9454-631f52d9fe57",
+            "4d51d1bb-3db5-412b-bb74-79450ac45e87",
+            "0e06360c-8254-4327-bebe-65a3bd26f664"
+        ]
     },
     {
-        "UUID":"35410857-7b95-40dc-8aae-d79f37ed2eca",
-        "flightName":"Flight2",
-        "departureTime":"6:30 am",
-        "arrivalTime":"7:54 am",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"ORD - Chicago",
-        "airline":"United",
-        "type":"Round Trip",
-        "seats":["696e58a1-95ab-4003-8c24-1afd7c9d18c0","66490c9d-95e8-463e-9e88-011f53381649","999fda45-b083-40c7-b91d-86db84c40428","88d446ce-ac94-4ff1-8826-bc9934e38831","969d6265-e627-4389-91be-6c71aa36bdd6","34d3a69d-370a-41e5-8cc9-fd661eeac355","78a3a4f1-a2fc-4bec-9c9c-99df2bb0ceee","d980367e-4959-4f25-b293-4323376c0f62","32b5bc80-c488-4f88-8adb-7bdd6d80698e"]
+        "UUID": "35410857-7b95-40dc-8aae-d79f37ed2eca",
+        "flightName": "Flight2",
+        "departureTime": "6:30 am",
+        "arrivalTime": "7:54 am",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "ORD - Chicago",
+        "airline": "United",
+        "type": "Round Trip",
+        "seats": [
+            "696e58a1-95ab-4003-8c24-1afd7c9d18c0",
+            "66490c9d-95e8-463e-9e88-011f53381649",
+            "999fda45-b083-40c7-b91d-86db84c40428",
+            "88d446ce-ac94-4ff1-8826-bc9934e38831",
+            "969d6265-e627-4389-91be-6c71aa36bdd6",
+            "34d3a69d-370a-41e5-8cc9-fd661eeac355",
+            "78a3a4f1-a2fc-4bec-9c9c-99df2bb0ceee",
+            "d980367e-4959-4f25-b293-4323376c0f62",
+            "32b5bc80-c488-4f88-8adb-7bdd6d80698e"
+        ]
     },
     {
-        "UUID":"a88c6d18-3725-4a47-a490-a766773202d5",
-        "flightName":"Flight3",
-        "departureTime":"8:31 pm",
-        "arrivalTime":"11:58 pm",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"ORD - Chicago",
-        "airline":"American",
-        "type":"Layover",
-        "seats":["1e7614e6-3de9-4c27-8057-4b0735f62455","9c40f47d-de27-4007-8961-4d5ce13a8c2d","da959ed4-0b0a-4fe2-8325-398fac2488ef","bf44f117-b7e5-4b19-aaa3-fd7d8d267e48","11fa7588-7a7c-40f8-bb06-9e14238ba813","0f695317-ca6c-4dc3-ae70-e3f2c71558be","b468a26d-449f-4e66-93c2-1d35c59c6e35","7cdaf976-2565-43bc-8fe3-e31830a6cd9d","7ace4c57-e777-4b0d-8362-ae69b56b2cd6"]
+        "UUID": "a88c6d18-3725-4a47-a490-a766773202d5",
+        "flightName": "Flight3",
+        "departureTime": "8:31 pm",
+        "arrivalTime": "11:58 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "ORD - Chicago",
+        "airline": "American",
+        "type": "Layover",
+        "seats": [
+            "1e7614e6-3de9-4c27-8057-4b0735f62455",
+            "9c40f47d-de27-4007-8961-4d5ce13a8c2d",
+            "da959ed4-0b0a-4fe2-8325-398fac2488ef",
+            "bf44f117-b7e5-4b19-aaa3-fd7d8d267e48",
+            "11fa7588-7a7c-40f8-bb06-9e14238ba813",
+            "0f695317-ca6c-4dc3-ae70-e3f2c71558be",
+            "b468a26d-449f-4e66-93c2-1d35c59c6e35",
+            "7cdaf976-2565-43bc-8fe3-e31830a6cd9d",
+            "7ace4c57-e777-4b0d-8362-ae69b56b2cd6"
+        ]
     },
     {
-        "UUID":"cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
-        "flightName":"Flight4",
-        "departureTime":"10:33 am",
-        "arrivalTime":"11:59 am",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"DCA - Washington DC",
-        "airline":"American",
-        "type":"One Way",
-        "seats":["c7397106-56f7-4adc-968a-d609e38d6312","12938382-16ae-4472-ba46-259dc4d2c301","c6f9e60a-d0b8-4394-a2f7-6cf23665dc76","d7f41bdf-d214-4e14-8736-f76daa6b8832","0801e351-2ae8-4f00-a810-047a6622bc68","7e58495c-806e-41f2-88cc-763c7422cded","75732b7c-dde5-4391-871a-5dbc3466431a","9c0eacb5-6846-4e44-b811-28ac6f9ec037","1c586984-f2ac-49fc-9584-067db0806db7"]
+        "UUID": "cd1a5d08-0955-4496-a3f7-41311dfdbf3e",
+        "flightName": "Flight4",
+        "departureTime": "10:33 am",
+        "arrivalTime": "11:59 am",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "DCA - Washington DC",
+        "airline": "American",
+        "type": "One Way",
+        "seats": [
+            "c7397106-56f7-4adc-968a-d609e38d6312",
+            "12938382-16ae-4472-ba46-259dc4d2c301",
+            "c6f9e60a-d0b8-4394-a2f7-6cf23665dc76",
+            "d7f41bdf-d214-4e14-8736-f76daa6b8832",
+            "0801e351-2ae8-4f00-a810-047a6622bc68",
+            "7e58495c-806e-41f2-88cc-763c7422cded",
+            "75732b7c-dde5-4391-871a-5dbc3466431a",
+            "9c0eacb5-6846-4e44-b811-28ac6f9ec037",
+            "1c586984-f2ac-49fc-9584-067db0806db7"
+        ]
     },
     {
-        "UUID":"c01bb245-b3a8-415b-be12-31057eb30e1f",
-        "flightName":"Flight5",
-        "departureTime":"7:32 am",
-        "arrivalTime":"8:59 am",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"DCA - Washington DC",
-        "airline":"American",
-        "type":"One Way",
-        "seats":["077c1a14-e337-4441-96e7-8452da68113f","3531aa21-2f45-4724-ae61-fdd624d57b14","f7e37871-0b2b-4f48-9408-66a17002a7fd","af2098ec-0ac9-4934-b126-6cb8c1acb745","c789c602-ce6c-4bae-b6e4-cfb1c1d22b8d","5513eca5-b4b9-42af-98d2-586d62680b16","9cd8e7b4-ee01-4a61-8590-19690ab4b5b7","04ecdd7c-805b-4ab7-a364-213df78897f3","512db1c1-7a30-4fd5-a478-ce3ad25107b5"]
+        "UUID": "c01bb245-b3a8-415b-be12-31057eb30e1f",
+        "flightName": "Flight5",
+        "departureTime": "7:32 am",
+        "arrivalTime": "8:59 am",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "DCA - Washington DC",
+        "airline": "American",
+        "type": "One Way",
+        "seats": [
+            "077c1a14-e337-4441-96e7-8452da68113f",
+            "3531aa21-2f45-4724-ae61-fdd624d57b14",
+            "f7e37871-0b2b-4f48-9408-66a17002a7fd",
+            "af2098ec-0ac9-4934-b126-6cb8c1acb745",
+            "c789c602-ce6c-4bae-b6e4-cfb1c1d22b8d",
+            "5513eca5-b4b9-42af-98d2-586d62680b16",
+            "9cd8e7b4-ee01-4a61-8590-19690ab4b5b7",
+            "04ecdd7c-805b-4ab7-a364-213df78897f3",
+            "512db1c1-7a30-4fd5-a478-ce3ad25107b5"
+        ]
     },
     {
-        "UUID":"3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
-        "flightName":"Flight6",
-        "departureTime":"2:45 pm",
-        "arrivalTime":"4:12 pm",
-        "placeOfDeparture":"CAE - Columbia",
-        "placeOfArrival":"DCA - Washington DC",
-        "airline":"United",
-        "type":"Round Trip",
-        "seats":["f8598886-59f3-421b-a126-0ba5d4566562","8327b1fe-6e37-40c2-af0a-7cb3f8f5b782","ead596d9-a548-4128-8f6b-747261b995a3","69f6fbb2-6ca6-421e-b0f2-f8afe84dc13c","cda5bc34-fd36-4437-828f-614e7c190d50","46a9ff7c-d774-4047-8426-d7e0ebe689ee","78315d1e-5849-45ab-94ba-ca29087aec37","dd1804bd-2e3b-42c2-a910-dfe003e391b9","beb3b127-f91b-4aef-ba67-345413674487"]
+        "UUID": "3ab9d258-41ca-4b5a-9bcc-2eca9995ca6c",
+        "flightName": "Flight6",
+        "departureTime": "2:45 pm",
+        "arrivalTime": "4:12 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "DCA - Washington DC",
+        "airline": "United",
+        "type": "Round Trip",
+        "seats": [
+            "f8598886-59f3-421b-a126-0ba5d4566562",
+            "8327b1fe-6e37-40c2-af0a-7cb3f8f5b782",
+            "ead596d9-a548-4128-8f6b-747261b995a3",
+            "69f6fbb2-6ca6-421e-b0f2-f8afe84dc13c",
+            "cda5bc34-fd36-4437-828f-614e7c190d50",
+            "46a9ff7c-d774-4047-8426-d7e0ebe689ee",
+            "78315d1e-5849-45ab-94ba-ca29087aec37",
+            "dd1804bd-2e3b-42c2-a910-dfe003e391b9",
+            "beb3b127-f91b-4aef-ba67-345413674487"
+        ]
+    },
+    {
+        "UUID": "",
+        "flightName": "CAE TO SEA 1",
+        "departureTime": "2:00 pm",
+        "arrivalTime": "9:12 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "SEA - Seattle",
+        "airline": "United",
+        "type": "Round Trip",
+        "seats": [
+            ""
+        ]
+    },
+    {
+        "UUID": "",
+        "flightName": "CAE TO SEA 2 (one transfer)",
+        "departureTime": "1:15 pm",
+        "arrivalTime": "9:45 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "SEA - Seattle",
+        "airline": "Spirit",
+        "type": "Layover",
+        "seats": [
+            ""
+        ]
+    },
+    {
+        "UUID": "",
+        "flightName": "CAE TO SEA 3 (one transfer)",
+        "departureTime": "1:15 pm",
+        "arrivalTime": "9:45 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "SEA - Seattle",
+        "airline": "American",
+        "type": "Layover",
+        "seats": [
+            ""
+        ]
+    },
+    {
+        "UUID": "",
+        "flightName": "CAE TO SEA 4 (two transfers)",
+        "departureTime": "12:15 pm",
+        "arrivalTime": "8:20 pm",
+        "placeOfDeparture": "CAE - Columbia",
+        "placeOfArrival": "SEA - Seattle",
+        "airline": "Breeze",
+        "type": "Layover",
+        "seats": [
+            ""
+        ]
     }
 ]
