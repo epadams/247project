@@ -134,8 +134,7 @@
         "placeOfArrival": "SEA - Seattle",
         "airline": "United",
         "type": "Round Trip",
-        "seats": [
-        ]
+        "seats": []
     },
     {
         "UUID": "ff8faa20-d663-4ef3-bb9b-051067869e3a",
@@ -147,6 +146,9 @@
         "airline": "Spirit",
         "type": "Layover",
         "seats": [
+            "1a8791f4-a48c-4624-9c2e-225ee528801b",
+            "dd90065c-f147-44b1-b855-44c1604dbbd6",
+            "dc517e66-2e9a-451a-a718-480265970c8d"
         ]
     },
     {
@@ -158,8 +160,7 @@
         "placeOfArrival": "SEA - Seattle",
         "airline": "American",
         "type": "Layover",
-        "seats": [
-        ]
+        "seats": []
     },
     {
         "UUID": "f5d74093-dc8c-4842-be7d-da8faeaa35ee",
@@ -170,7 +171,6 @@
         "placeOfArrival": "SEA - Seattle",
         "airline": "Breeze",
         "type": "Layover",
-        "seats": [
-        ]
+        "seats": []
     }
 ]
