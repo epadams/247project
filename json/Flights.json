@@ -126,7 +126,7 @@
         ]
     },
     {
-        "UUID": "",
+        "UUID": "fb320632-2b64-41a5-9993-4dbce04aa0aa",
         "flightName": "CAE TO SEA 1",
         "departureTime": "2:00 pm",
         "arrivalTime": "9:12 pm",
@@ -135,11 +135,10 @@
         "airline": "United",
         "type": "Round Trip",
         "seats": [
-            ""
         ]
     },
     {
-        "UUID": "",
+        "UUID": "ff8faa20-d663-4ef3-bb9b-051067869e3a",
         "flightName": "CAE TO SEA 2 (one transfer)",
         "departureTime": "1:15 pm",
         "arrivalTime": "9:45 pm",
@@ -148,11 +147,10 @@
         "airline": "Spirit",
         "type": "Layover",
         "seats": [
-            ""
         ]
     },
     {
-        "UUID": "",
+        "UUID": "6ba624f1-5af9-4613-b770-503ed247b048",
         "flightName": "CAE TO SEA 3 (one transfer)",
         "departureTime": "1:15 pm",
         "arrivalTime": "9:45 pm",
@@ -161,11 +159,10 @@
         "airline": "American",
         "type": "Layover",
         "seats": [
-            ""
         ]
     },
     {
-        "UUID": "",
+        "UUID": "f5d74093-dc8c-4842-be7d-da8faeaa35ee",
         "flightName": "CAE TO SEA 4 (two transfers)",
         "departureTime": "12:15 pm",
         "arrivalTime": "8:20 pm",
@@ -174,7 +171,6 @@
         "airline": "Breeze",
         "type": "Layover",
         "seats": [
-            ""
         ]
     }
 ]
