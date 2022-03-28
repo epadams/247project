@@ -13,6 +13,7 @@ public abstract class DataConstants {
   protected static final String USER_PASSPORTS = "passports";
   protected static final String USER_BOOKED_SEATS = "bookedSeats";
   protected static final String USER_BOOKED_ROOMS = "bookedRooms";
+  protected static final String USER_PREFERENCES = "preferences";
 
   //Preferences Constants
   protected static final String PREF_FILE_NAME = "../json/UserPreferences.josn";
