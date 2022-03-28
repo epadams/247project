@@ -39,6 +39,10 @@ public class MainDriver {
         break;
       case 4:
         System.exit(0);
+        break;
+      default:
+        System.out.println("Invalid input");
+        break;
     }
   }
 
@@ -73,13 +77,18 @@ public class MainDriver {
           break;
         case 8:
           logout = fsystem.logout();
+          break;
+        default:
+          System.out.println("Invalid input");
+          break;
       }
     }
   }
 
   public void displayGuestMenu() {
     keyboard.nextLine();
-    System.out.println("******** Guest Menu ********\n1: Search Flights\n2: Search Hotels\n3: Return To Login");
+    System.out.println("******** Guest Menu ********\n1: Search Flights"
+        + "\n2: Search Hotels\n3: Return To Login");
     switch (keyboard.nextInt()) {
       case 1:
         displaySearchFlights();
@@ -89,6 +98,9 @@ public class MainDriver {
         break;
       case 3:
         return;
+      default:
+        System.out.println("Invalid input");
+        break;
     }
   }
 
@@ -133,11 +145,16 @@ public class MainDriver {
         System.out.println("Successfully logged in");
         displayMenu();
         break;
+      default:
+        System.out.println("Unknown error occured");
+        break;
     }
-  } public void displaySearchFlights() {
+  }
+
+  public void displaySearchFlights() {
     keyboard.nextLine();
-    System.out.println(
-        "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Departure\n3: Search Based on Destination"
+    System.out.println("******** Search Flights ********\n1: Search all Flights"
+        + "\n2: Search Based on Departure\n3: Search Based on Destination"
         + " \n4: Search Based on Departure and Destination");
     switch (keyboard.nextInt()) {
       case 1:
@@ -153,6 +170,9 @@ public class MainDriver {
         break;
       case 4:
         displaySearchFlightsDepAndDest();
+        break;
+      default:
+        System.out.println("Invalid input");
         break;
     }
   }
@@ -170,8 +190,8 @@ public class MainDriver {
       return;
     }
     keyboard.nextLine();
-    System.out.println("Please choose the location of your seat(s)" +
-        "\nPlease enter the number of the row, followed by the letter of the aisle");
+    System.out.println("Please choose the location of your seat(s)"
+        + "\nPlease enter the number of the row, followed by the letter of the aisle");
     for (int i = 0; i < numTickets; i++) {
       int row = Integer.parseInt(keyboard.nextLine());
       char aisle = keyboard.nextLine().charAt(0);
@@ -195,6 +215,9 @@ public class MainDriver {
         displaySearchHotelsDest();
         break;
       case 3:
+        break;
+      default:
+        System.out.println("Invalid input");
         break;
     }
   }
@@ -220,6 +243,9 @@ public class MainDriver {
       // View flight history
       case 5:
         displayFlightHistory();
+        break;
+      default:
+        System.out.println("Invalid input");
         break;
     }
   }
@@ -300,7 +326,8 @@ public class MainDriver {
     String departure = keyboard.nextLine();
     System.out.println("Enter airport code of destination location: ");
     String destination = keyboard.nextLine();
-    System.out.println(fsystem.getFlights().searchDepartureAndDestination(departure, destination).toString());
+    System.out.println(fsystem.getFlights()
+        .searchDepartureAndDestination(departure, destination).toString());
   }
 
   public void displaySearchAllHotels() {
@@ -434,7 +461,7 @@ public class MainDriver {
   */
 
   public static void main(String[] args) {
-    MainDriver mD = new MainDriver();
-    mD.run();
+    MainDriver mainDriver = new MainDriver();
+    mainDriver.run();
   }
 }
