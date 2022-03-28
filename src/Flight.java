@@ -69,7 +69,7 @@ public class Flight extends Booking {
   }
 
   /**
-   * set teh place of departure to the place of departure passed
+   * set the place of departure to the place of departure passed
    * @param departure
    */
   public void setDeparture(String departure) {
