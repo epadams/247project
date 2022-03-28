@@ -1,94 +1,95 @@
 import java.util.ArrayList;
 import java.util.UUID;
+
 public class Preferences {
-    private boolean medAccom;
-    private String originAirportCode;
-    private UUID id;
-    private String seatType;
-    private int numOfBaggage;
-    private String airline;
-    private String flightType;
+  private boolean medAccom;
+  private String originAirportCode;
+  private UUID id;
+  private String seatType;
+  private int numOfBaggage;
+  private String airline;
+  private String flightType;
 
-    private static Preferences preference;
-    private ArrayList<Preferences> preferences;
+  private static Preferences preference;
+  private ArrayList<Preferences> preferences;
 
 
-    public Preferences() {
-        //TODO
-        preferences = JReader.getPreferences();
+  public Preferences() {
+    //TODO fix reading preferences
+    preferences = JReader.getPreferences();
+  }
+
+  public Preferences(UUID id, boolean medAccom, String originAirportCode,
+      String seatType, int numBaggage, String airline, String flightType) {
+    this.id = id;
+    this.medAccom = medAccom;
+    this.originAirportCode = originAirportCode;
+    this.seatType = seatType;
+    this.numOfBaggage = numBaggage;
+    this.airline = airline;
+    this.flightType = flightType;
+  }
+
+  public static Preferences getInstance() {
+    if (preference == null) {
+      preference = new Preferences();
     }
+    return preference;
+  }
+  
+  public void setId(UUID id) {
+    this.id = id;
+  }
 
-    public Preferences(UUID id, boolean medAccom, String originAirportCode, String seatType, int numBaggage, String airline, String flightType) {
-        this.id = id;
-        this.medAccom = medAccom;
-        this.originAirportCode = originAirportCode;
-        this.seatType = seatType;
-        this.numOfBaggage = numBaggage;
-        this.airline = airline;
-        this.flightType = flightType;
+  public void setMedicalAccomodation(boolean medAccom) {
+    this.medAccom = medAccom;
+  }
 
-    }
+  public void setAirportOrigin(String originAirportCode) {
+    this.originAirportCode = originAirportCode;
+  }
 
-    public static Preferences getInstance(){
-        if(preference == null){
-            preference = new Preferences();
-        }
-        return preference;
-    }
-    
-    public void setId(UUID id) {
-        this.id = id;
-    }
+  public void setSeatType(String seatType) {
+    this.seatType = seatType;
+  }
 
-    public void setMedicalAccomodation(boolean medAccom) {
-        this.medAccom = medAccom;
-    }
+  public void setNumBaggage(int numOfBaggage) {
+    this.numOfBaggage = numOfBaggage;
+  }
 
-    public void setAirportOrigin(String originAirportCode) {
-        this.originAirportCode = originAirportCode;
-    }
+  public void setAirline(String airline) {
+    this.airline = airline;
+  }
 
-    public void setSeatType(String seatType) {
-        this.seatType = seatType;
-    }
+  public void setFlightType(String flightType) {
+    this.flightType = flightType;
+  }
 
-    public void setNumBaggage(int numOfBaggage) {
-        this.numOfBaggage = numOfBaggage;
-    }
+  public UUID getId() {
+    return this.id;
+  }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
-    }
+  public boolean getMedicalAccomodation() {
+    return medAccom;
+  }
 
-    public void setFlightType(String flightType) {
-        this.flightType = flightType;
-    }
+  public String getAirportOrigin() {
+    return originAirportCode;
+  }
 
-    public UUID getId() {
-        return this.id;
-    }
+  public String getSeatType() {
+    return seatType;
+  }
 
-    public boolean getMedicalAccomodation() {
-        return medAccom;
-    }
+  public int getNumBaggage() {
+    return numOfBaggage;
+  }
 
-    public String getAirportOrigin() {
-        return originAirportCode;
-    }
+  public String getAirline() {
+    return airline;
+  }
 
-    public String getSeatType() {
-        return seatType;
-    }
-
-    public int getNumBaggage() {
-        return numOfBaggage;
-    }
-
-    public String getAirline() {
-        return airline;
-    }
-
-    public String getFlightType() {
-        return flightType;
-    }
+  public String getFlightType() {
+    return flightType;
+  }
 }

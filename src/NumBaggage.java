@@ -1,4 +1,4 @@
-public enum NumBaggage{
+public enum NumBaggage {
   zero,
   one,
   two,

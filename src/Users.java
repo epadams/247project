@@ -48,8 +48,7 @@ public class Users {
   }
 
   public void addUser(String username, String password, String email, int age) {
-    if (haveUser(username))
-      return;
+    if (haveUser(username)) return;
     userList.add(new User(UUID.randomUUID(), username, password, email, age));
   }
 

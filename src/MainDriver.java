@@ -16,7 +16,7 @@ public class MainDriver {
     // fsystem.getCurrentUser();
     // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
-    System.out.println(fsystem.getFlights().searchFlights("Flight1").getSeats().get(0).toString());
+    // System.out.println(fsystem.getFlights().searchFlights("Flight1").getSeats().get(0).toString());
     boolean run = true;
     while (run) {
       displayLoginMenu();
@@ -185,16 +185,16 @@ public class MainDriver {
 
   public void displaySearchHotels() {
     keyboard.nextLine();
-    System.out.println("******** Search Hotels ********\n1: Search all Hotels");
+    System.out.println("******** Search Hotels ********\n1: Search all Hotels"
+        + "\n2: Search hotels on location\n3: Go Back");
     switch (keyboard.nextInt()) {
       case 1:
         displaySearchAllHotels();
         break;
       case 2:
-        // displaySearchHotelPref();
+        displaySearchHotelsDest();
         break;
       case 3:
-        // displayHotelPreferenceSelection();
         break;
     }
   }
@@ -306,7 +306,15 @@ public class MainDriver {
   public void displaySearchAllHotels() {
     keyboard.nextLine();
     System.out.println("----- Search All Hotels -----");
+    System.out.println(fsystem.getHotels().toString());
+  }
+
+  public void displaySearchHotelsDest() {
+    keyboard.nextLine();
+    System.out.println("----- Search Hotels with Destination -----"
+        + "\nPlease enter the destination of the hotel");
     // TODO display
+    System.out.println(fsystem.getHotels().searchHotelLocation(keyboard.nextLine()).toString());
   }
 
 

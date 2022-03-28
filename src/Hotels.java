@@ -6,7 +6,7 @@ public class Hotels {
   private ArrayList<Hotel> hotelList;
 
   private Hotels() {
-    // hotelList = JReader.getHotels();
+    hotelList = JReader.getHotels();
   }
 
   public static Hotels getInstance() {
@@ -54,44 +54,48 @@ public class Hotels {
     }
     return ret;
   }
+
   /**
    * search for Hotel UUID
    * @param id
    * @return identity 
    */
-  public Hotel searchHotelID(UUID id){
-    for(Hotel identity : hotelList){
-      if(identity.getUUID().equals(id)){
+  public Hotel searchHotelID(UUID id) {
+    for (Hotel identity : hotelList) {
+      if (identity.getUUID().equals(id)) {
         return identity;
       }
     }
     return null;
   }
+
   /**
    * search for hotel name
    * @param hotelName
    * @return name
    */
-  public Hotel searchHotelName(String hotelName){
-    for(Hotel name : hotelList){
-      if(name.getHotelName().contains(hotelName)){
+  public Hotel searchHotelName(String hotelName) {
+    for (Hotel name : hotelList) {
+      if (name.getHotelName().contains(hotelName)) {
         return name;
       }
     }
     return null;
   }
+
   /**
    * search for hotel location 
    * @param hotelLocation
    * @return location
    */
-  public Hotel searchHotelLocation(String hotelLocation){
-    for(Hotel location : hotelList){
-      if(location.getLocation().contains(hotelLocation)){
-        return location;
+  public ArrayList<Hotel> searchHotelLocation(String hotelLocation) {
+    ArrayList<Hotel> matchedHotels = new ArrayList<Hotel>();
+    for (Hotel hotel : hotelList) {
+      if (hotel.getLocation().contains(hotelLocation)) {
+        matchedHotels.add(hotel);
       }
     }
-    return null;
+    return matchedHotels;
   }
 
   // public Hotel searchNumberOfRoom(int numOfRooms){
@@ -104,4 +108,12 @@ public class Hotels {
   // }
 
   //maybe add searchRooms method
+
+  public String toString() {
+    String ret = "";
+    for (Hotel hotel : hotelList) {
+      ret += hotel.toString() + "\n";
+    }
+    return ret;
+  }
 }

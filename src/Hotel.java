@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -8,14 +7,15 @@ public class Hotel {
   private String hotelName;
   private String location;
   private int price;
-  private double starRating;
+  private int starRating;
   private boolean hasPool;
 
   public Hotel() {
     this.rooms = new ArrayList<Room>();
   }
 
-  public Hotel(UUID id, String hotelName, String location, int price, double starRating, boolean hasPool, ArrayList<Room> rooms) {
+  public Hotel(UUID id, String hotelName, String location, int price, int starRating,
+      boolean hasPool, ArrayList<Room> rooms) {
     this.id = id;
     this.hotelName = hotelName;
     this.location = location;
@@ -65,11 +65,11 @@ public class Hotel {
     return this.price;
   }
 
-  public void setStarRating(double starRating) {
+  public void setStarRating(int starRating) {
     this.starRating = starRating;
   }
 
-  public double getStarRating() {
+  public int getStarRating() {
     return this.starRating;
   }
 
@@ -79,5 +79,11 @@ public class Hotel {
 
   public boolean getHasPool() {
     return this.hasPool;
+  }
+
+  public String toString() {
+    return "ID: " + this.id + "\nHotel Name: " + this.hotelName + "\nLocation: "
+      + this.location + "\nPrice: " + this.price + "\nStars: " + this.starRating
+      + "\nHas a pool: " + this.hasPool;
   }
 }

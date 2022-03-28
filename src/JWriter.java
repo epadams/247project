@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class JWriter extends DataConstants {
 
-  public static void saveUsers () {
+  public static void saveUsers() {
     Users users = Users.getInstance();
     ArrayList<User> userList = users.getUsers();
     JSONArray jsonUsers = new JSONArray();
@@ -82,12 +82,12 @@ public class JWriter extends DataConstants {
     //Preferences preference = new Preferences();
     JSONObject userPreferences = new JSONObject();
     userPreferences.put(PREF_ID, preference.getId().toString());
-    userPreferences.put(PREF_MED_ACCOM,preference.getMedicalAccomodation());
-    userPreferences.put(PREF_ORIGIN_CODE,preference.getAirportOrigin());
-    userPreferences.put(PREF_SEAT_TYPE,preference.getSeatType());
-    userPreferences.put(PREF_BAGGAGE,preference.getNumBaggage());
-    userPreferences.put(PREF_AIRLINE,preference.getAirline());
-    userPreferences.put(PREF_FLIGHT_TYPE,preference.getFlightType());
+    userPreferences.put(PREF_MED_ACCOM, preference.getMedicalAccomodation());
+    userPreferences.put(PREF_ORIGIN_CODE, preference.getAirportOrigin());
+    userPreferences.put(PREF_SEAT_TYPE, preference.getSeatType());
+    userPreferences.put(PREF_BAGGAGE, preference.getNumBaggage());
+    userPreferences.put(PREF_AIRLINE, preference.getAirline());
+    userPreferences.put(PREF_FLIGHT_TYPE, preference.getFlightType());
 
     return userPreferences;
 
@@ -98,7 +98,7 @@ public class JWriter extends DataConstants {
     ArrayList<Flight> flightList = flight.getFlights();
     JSONArray jsonFlights = new JSONArray();
 
-    for(int i = 0; i<flightList.size(); i++) {
+    for (int i = 0; i < flightList.size(); i++) {
       jsonFlights.add(getFlightJSON(flightList.get(i)));
     }
     try (FileWriter file = new FileWriter(USER_FILE_NAME)) {

@@ -1,15 +1,15 @@
 [
   {
     "UUID": "fda55837-e6b2-4751-bda1-cd486e4feefc",
-    "roomNumber": "",
-    "Smoking": "",
-    "numberOfBeds": "",
+    "roomNumber": 201,
+    "Smoking": false,
+    "numberOfBeds": 2,
     "bookedDates": []
   },
   {
     "UUID": "e337a554-39a1-4429-9255-80f042c9b48e",
     "roomNumber": "205",
-    "Smoking": "",
+    "Smoking": false,
     "numberOfBeds": "2",
     "bookedDates": []
   }

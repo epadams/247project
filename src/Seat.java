@@ -44,7 +44,7 @@ public class Seat extends Flight {
   }
 
   public boolean getVacancy() {
-      return this.vacancy;
+    return this.vacancy;
   }
 
   public void setType(SeatType type) {

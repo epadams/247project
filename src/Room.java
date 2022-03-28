@@ -1,18 +1,17 @@
-import java.util.Date;
+// import java.util.Date;
 import java.util.ArrayList;
 
 public class Room {
   private int numOfBeds;
   private boolean smoking;
-  private boolean vacancy;
-  private ArrayList<Date> bookedDates;
+  private ArrayList<String> bookedDates;
   private int roomNumber;
 
   public Room() {
-    this.bookedDates = new ArrayList<Date>();
+    this.bookedDates = new ArrayList<String>();
   }
 
-  public Room(int roomNumber, int numOfBeds, boolean smoking, ArrayList<Date> bookedDates) {
+  public Room(int roomNumber, int numOfBeds, boolean smoking, ArrayList<String> bookedDates) {
     this.roomNumber = roomNumber;
     this.numOfBeds = numOfBeds;
     this.smoking = smoking;
@@ -43,18 +42,17 @@ public class Room {
     this.smoking = smoking;
   }
 
-  public void addBookedDate(Date date) {
-    if (haveBookedDate(date))
-      return;
+  public void addBookedDate(String date) {
+    if (haveBookedDate(date)) return;
     this.bookedDates.add(date);
   }
 
-  public ArrayList<Date> getBookedDates() {
+  public ArrayList<String> getBookedDates() {
     return this.bookedDates;
   }
 
-  public boolean haveBookedDate(Date wantedDate) {
-    for (Date date : bookedDates) {
+  public boolean haveBookedDate(String wantedDate) {
+    for (String date : bookedDates) {
       if (date.equals(wantedDate)) {
         return true;
       }

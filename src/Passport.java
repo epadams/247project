@@ -2,105 +2,107 @@
 import java.util.UUID;
 
 public class Passport {
-    private UUID id;
-    private String firstName;
-    private String lastName;
-    private int passportNum;
-    private String dateOfBirth;
-    private String placeOfBirth;
-    private String issueDate;
-    private String expirationDate;
-    private char sex;
+  private UUID id;
+  private String firstName;
+  private String lastName;
+  private int passportNum;
+  private String dateOfBirth;
+  private String placeOfBirth;
+  private String issueDate;
+  private String expirationDate;
+  private char sex;
 
-    public Passport() {
+  public Passport() {
 
-    }
+  }
 
-    public Passport(UUID id, String firstName, String lastName, int passportNum,
-        String dateOfBirth, String placeOfBirth, String issueDate,
-        String expirationDate, char sex) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.passportNum = passportNum;
-        this.dateOfBirth = dateOfBirth;
-        this.placeOfBirth = placeOfBirth;
-        this.issueDate = issueDate;
-        this.expirationDate = expirationDate;
-        this.sex = sex;
-    }
+  public Passport(UUID id, String firstName, String lastName, int passportNum,
+      String dateOfBirth, String placeOfBirth, String issueDate,
+      String expirationDate, char sex) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.passportNum = passportNum;
+    this.dateOfBirth = dateOfBirth;
+    this.placeOfBirth = placeOfBirth;
+    this.issueDate = issueDate;
+    this.expirationDate = expirationDate;
+    this.sex = sex;
+  }
 
-    public UUID getUUID() {
-        return this.id;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+  public UUID getUUID() {
+    return this.id;
+  }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public void setPassportNum(int passportNum) {
-        this.passportNum = passportNum;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public void setDateofBirth(String dateofBirth) {
-        this.dateOfBirth = dateofBirth;
-    }
+  public void setPassportNum(int passportNum) {
+    this.passportNum = passportNum;
+  }
 
-    public void setPlaceOfBirth(String placeOfBirth) {
-        this.placeOfBirth = placeOfBirth;
-    }
+  public void setDateofBirth(String dateofBirth) {
+    this.dateOfBirth = dateofBirth;
+  }
 
-    public void setIssueDate(String issueDate) {
-        this.issueDate = issueDate;
-    }
+  public void setPlaceOfBirth(String placeOfBirth) {
+    this.placeOfBirth = placeOfBirth;
+  }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
-    }
+  public void setIssueDate(String issueDate) {
+    this.issueDate = issueDate;
+  }
 
-    public void setSex(char sex) {
-        this.sex = sex;
-    }
+  public void setExpirationDate(String expirationDate) {
+    this.expirationDate = expirationDate;
+  }
 
-    public String getFirstName() {
-        return this.firstName;
-    }
+  public void setSex(char sex) {
+    this.sex = sex;
+  }
 
-    public String getLastName() {
-        return this.lastName;
-    }
+  public String getFirstName() {
+    return this.firstName;
+  }
 
-    public int getPassportNum() {
-        return this.passportNum;
-    }
+  public String getLastName() {
+    return this.lastName;
+  }
 
-    public String getDateOfBirth() {
-        return this.dateOfBirth;
-    }
+  public int getPassportNum() {
+    return this.passportNum;
+  }
 
-    public String getPlaceOfBirth() {
-        return this.placeOfBirth;
-    }
+  public String getDateOfBirth() {
+    return this.dateOfBirth;
+  }
 
-    public String getIssueDate() {
-        return this.issueDate;
-    }
+  public String getPlaceOfBirth() {
+    return this.placeOfBirth;
+  }
 
-    public String getExpirationDate() {
-        return this.expirationDate;
-    }
+  public String getIssueDate() {
+    return this.issueDate;
+  }
 
-    public char getSex() {
-        return this.sex;
-    }
+  public String getExpirationDate() {
+    return this.expirationDate;
+  }
 
-    public String toString() {
-        return "First Name: " + this.firstName + "\nLast Name: " + this.lastName + "\nPassport Number: "
-                + this.passportNum + "\nDate of Birth: " + this.dateOfBirth.toString() + "\nPlace of Birth: "
-                + this.placeOfBirth + "\nIssue Date: " + this.issueDate.toString() + "\nExpiration Date: "
-                + this.expirationDate.toString() + "\nSex: " + this.sex;
-    }
+  public char getSex() {
+    return this.sex;
+  }
+
+  public String toString() {
+    return "First Name: " + this.firstName + "\nLast Name: " + this.lastName
+      + "\nPassport Number: " + this.passportNum + "\nDate of Birth: "
+      + this.dateOfBirth.toString() + "\nPlace of Birth: " + this.placeOfBirth
+      + "\nIssue Date: " + this.issueDate.toString() + "\nExpiration Date: "
+      + this.expirationDate.toString() + "\nSex: " + this.sex;
+  }
 }

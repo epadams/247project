@@ -4,11 +4,13 @@ public class FSystem {
   private Users users;
   private User currentUser;
   private Flights flights;
+  private Hotels hotels;
 
   public FSystem() {
     currentUser = null;
     users = Users.getInstance();
     flights = Flights.getInstance(); 
+    hotels = Hotels.getInstance();
   }
 
   public void createAccount(String username, String password, String email, int age) {
@@ -38,6 +40,10 @@ public class FSystem {
 
   public Flights getFlights() {
     return this.flights;
+  }
+
+  public Hotels getHotels() {
+    return this.hotels;
   }
 
   public String registerFlight(UUID id, int row, char aisle) {

@@ -68,7 +68,7 @@ public class JReader extends DataConstants {
     try {
       FileReader reader = new FileReader(PREF_FILE_NAME);
       JSONArray preferencesJSON = (JSONArray) new JSONParser().parse(reader);
-      for (int i =0;i < preferencesJSON.size();i++) {
+      for (int i = 0; i < preferencesJSON.size(); i++) {
         JSONObject preferenceJSON = (JSONObject) preferencesJSON.get(i);
 
         UUID id = UUID.fromString((String) preferenceJSON.get(USER_ID));
@@ -79,11 +79,12 @@ public class JReader extends DataConstants {
         String airline = (String) preferenceJSON.get(PREF_AIRLINE);
         String flightType = (String) preferenceJSON.get(PREF_FLIGHT_TYPE);
 
-        preferences.add(new Preferences(id, medicalAccom, originAirport, seatType, numBaggage, airline, flightType));
+        preferences.add(new Preferences(id, medicalAccom, originAirport,
+              seatType, numBaggage, airline, flightType));
       }
       return preferences;
     } catch (Exception e) {
-    e.printStackTrace();
+      e.printStackTrace();
     }
     return null;
   }
@@ -94,7 +95,7 @@ public class JReader extends DataConstants {
       FileReader reader = new FileReader(FLIGHT_FILE_NAME);
       JSONArray flightsJSON = (JSONArray) new JSONParser().parse(reader);
 
-      for(int i = 0;i < flightsJSON.size();i++) {
+      for (int i = 0; i < flightsJSON.size(); i++) {
         JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
         
 
@@ -125,7 +126,6 @@ public class JReader extends DataConstants {
     return null;
   }
 
-  // TODO fix getHotels, getRooms, and getSeats
   public static ArrayList<Seat> getSeats(ArrayList<UUID> ids) {
     ArrayList<Seat> seats = new ArrayList<Seat>();
     try {
@@ -138,6 +138,7 @@ public class JReader extends DataConstants {
           int row = ((Long) seatJSON.get(SEATS_ROW_NUM)).intValue();
           char aisle = ((String) seatJSON.get(SEATS_AISLE_NUM)).charAt(0);
           boolean availability = Boolean.parseBoolean(((String) seatJSON.get(SEATS_AVAIL)));
+          // TODO fix type
           SeatType type = ((SeatType) seatJSON.get(USER_FIRST_NAME));
           seats.add(new Seat(id, row, aisle, type, availability));
         }
@@ -156,11 +157,24 @@ public class JReader extends DataConstants {
       JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(reader);
       for (int i = 0; i < hotelsJSON.size(); i++) {
         JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
+
+        JSONArray roomsArray = (JSONArray) hotelJSON.get(HOTEL_ROOMS);
+        ArrayList<UUID> roomUUIDs = new ArrayList<UUID>();
+        if (roomUUIDs != null) {
+          for (int j = 0; j < roomsArray.size(); j++) {
+            UUID roomUUID = UUID.fromString((String) roomsArray.get(j));
+            roomUUIDs.add(roomUUID);
+          }
+        }
+
         UUID id =  UUID.fromString((String) hotelJSON.get(HOTEL_ID));
         String hotelName = (String) hotelJSON.get(HOTEL_NAME);
         String location = (String) hotelJSON.get(HOTEL_LOCATION);
-        ArrayList<Room> rooms = getRooms();
-        // hotels.add(new Hotel(id, hotelName, location, rooms));
+        int price = ((Long) hotelJSON.get(HOTEL_PRICE)).intValue();
+        int rating = ((Long) hotelJSON.get(HOTEL_RATING)).intValue();
+        boolean hasPool = Boolean.parseBoolean(((String) hotelJSON.get(HOTEL_POOL)));
+        ArrayList<Room> rooms = getRooms(roomUUIDs);
+        hotels.add(new Hotel(id, hotelName, location, price, rating, hasPool, rooms));
       }
       return hotels;
     } catch (Exception e) {
@@ -169,12 +183,29 @@ public class JReader extends DataConstants {
     return null;
   }
 
-  public static ArrayList<Room> getRooms() {
+  public static ArrayList<Room> getRooms(ArrayList<UUID> ids) {
     ArrayList<Room> rooms = new ArrayList<Room>();
     try {
       FileReader reader = new FileReader(ROOM_FILE_NAME);
       JSONArray roomsJSON = (JSONArray) new JSONParser().parse(reader);
       for (int i = 0; i < roomsJSON.size(); i++) {
+        JSONObject roomJSON = (JSONObject) roomsJSON.get(i);
+        UUID id = UUID.fromString((String) roomJSON.get(ROOM_ID));
+        if (ids.contains(id)) {
+          int roomNumber = ((Long) roomJSON.get(ROOM_ROOM_NUM)).intValue();
+          boolean smoking = Boolean.parseBoolean(((String) roomJSON.get(ROOM_SMOKING)));
+          int numberOfBeds = ((Long) roomJSON.get(ROOM_NUM_BED)).intValue();
+          
+          JSONArray datesArray = (JSONArray) roomJSON.get(ROOM_BOOKED_DATES);
+          ArrayList<String> roomDates = new ArrayList<String>();
+          if (datesArray != null) {
+            for (int j = 0; j < datesArray.size(); j++) {
+              String dateString = (String) datesArray.get(j);
+              roomDates.add(dateString);
+            }
+          }
+          rooms.add(new Room(roomNumber, numberOfBeds, smoking, roomDates)); 
+        }
       }
     } catch (Exception e) {
       e.printStackTrace();
