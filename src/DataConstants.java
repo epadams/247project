@@ -10,9 +10,13 @@ public abstract class DataConstants {
   protected static final String USER_AGE = "age";
   protected static final String USER_ADDRESS = "address";
   protected static final String USER_FREQFLYER = "frequentFlyer";
+<<<<<<< HEAD
   protected static final String USER_PASSPORTS = "passports";
   protected static final String USER_BOOKED_SEATS = "bookedSeats";
   protected static final String USER_BOOKED_ROOMS = "bookedRooms";
+=======
+  protected static final String USER_PREF = "preferencesUUID";
+>>>>>>> mahipref
 
   //Preferences Constants
   protected static final String PREF_FILE_NAME = "../json/UserPreferences.josn";
