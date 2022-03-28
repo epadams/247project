@@ -80,9 +80,7 @@ public class User {
         this.email = email;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -176,6 +174,13 @@ public class User {
 
     public void deleteAccount() {
 
+    }
+
+    public void addBookedSeat(UUID id) {
+      this.bookedSeats.add(id);
+    }
+    public void addBookedRoom(UUID id) {
+      this.bookedRooms.add(id);
     }
 
     // DEBUGGING ONLY

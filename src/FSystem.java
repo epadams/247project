@@ -40,12 +40,13 @@ public class FSystem {
     return this.flights;
   }
 
-  public String registerFlight(UUID id, String location) {
-    if (flights.searchFlightID(id).searchSeats(location).getVacancy()) {
-      flights.searchFlightID(id).registerSeat(location);
-      return "Your seat" + location + " has been booked";
+  public String registerFlight(UUID id, int row, char aisle) {
+    if (flights.searchFlightID(id).searchSeats(row, aisle).getVacancy()) {
+      flights.searchFlightID(id).registerSeat(row, aisle);
+      this.getCurrentUser().addBookedSeat(id);
+      return "Your seat has been booked";
     } else {
-      return "Your seat" + location + " is taken";
+      return "Your seat is taken";
     }
   }
 }

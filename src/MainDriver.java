@@ -134,9 +134,7 @@ public class MainDriver {
         displayMenu();
         break;
     }
-  }
-
-  public void displaySearchFlights() {
+  } public void displaySearchFlights() {
     keyboard.nextLine();
     System.out.println(
         "******** Search Flights ********\n1: Search all Flights\n2: Search Based on Departure\n3: Search Based on Destination"
@@ -172,12 +170,13 @@ public class MainDriver {
       return;
     }
     keyboard.nextLine();
-    System.out.println("Please choose the location of your seat(s)");
+    System.out.println("Please choose the location of your seat(s)" +
+        "\nPlease enter the number of the row, followed by the letter of the aisle");
     for (int i = 0; i < numTickets; i++) {
-      String location = keyboard.nextLine();
-      fsystem.getFlights().searchFlightID(id).registerSeat(location);
+      int row = Integer.parseInt(keyboard.nextLine());
+      char aisle = keyboard.nextLine().charAt(0);
+      fsystem.registerFlight(id, row, aisle);
     }
-    
   }
 
   public void registerHotel() {
@@ -313,7 +312,12 @@ public class MainDriver {
 
   public void displayBookedFlights() {
     keyboard.nextLine();
-    System.out.println("DISPLAY BOOKED FLIGHTS HERE");
+    ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
+    for (int i = 0; i < bookedFlights.size(); i++) {
+      System.out.println(fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
+      // System.out.println("Your booked seat is " +
+      //    fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
+    }
   }
 
   public void displayBookedHotels() {

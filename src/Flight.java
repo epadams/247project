@@ -201,21 +201,29 @@ public class Flight extends Booking {
     return ret;
   }
 
-  public Seat searchSeats(String location) {
+  public Seat searchSeats(int row, char aisle) {
     for (Seat seat : seats) {
-      if (seat.getRow() == (Integer.parseInt(location.substring(0, 0)))
-          && seat.getAisle() == (location.charAt(1))) {
+      if (seat.getRow() == row && seat.getAisle() == aisle) {
         return seat;
       }
     }
     return null;
   }
 
-  public void registerSeat(String location) {
+  public Seat getSeatByUUID(UUID id) {
     for (Seat seat : seats) {
-      if (seat.getRow() == (Integer.parseInt(location.substring(0, 0)))
-          && seat.getAisle() == (location.charAt(1))) {
+      if (seat.getUUID().equals(id)) {
+        return seat;
+      }
+    }
+    return null;
+  }
+
+  public void registerSeat(int row, char aisle) {
+    for (Seat seat : seats) {
+      if (seat.getRow() == row && seat.getAisle() == aisle) {
         seat.setVacancy(false);
+        // TODO set passport
       }
     }
   }
