@@ -80,8 +80,6 @@ public class JWriter extends DataConstants {
 
   public static JSONObject getPreferenceJSON(Preferences preference) {
     //Preferences preference = new Preferences();
-<<<<<<< HEAD
-=======
     JSONObject userPreferences = new JSONObject();
     userPreferences.put(PREF_ID, preference.getId().toString());
     userPreferences.put(PREF_MED_ACCOM,preference.getMedicalAccomodation());
@@ -93,7 +91,6 @@ public class JWriter extends DataConstants {
 
     return userPreferences;
 
->>>>>>> mahipref
   }
 
   public static void saveFlight() {
