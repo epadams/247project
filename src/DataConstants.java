@@ -10,6 +10,7 @@ public abstract class DataConstants {
   protected static final String USER_AGE = "age";
   protected static final String USER_ADDRESS = "address";
   protected static final String USER_FREQFLYER = "frequentFlyer";
+  protected static final String USER_PREF = "preferencesUUID";
 
   //Preferences Constants
   protected static final String PREF_FILE_NAME = "../json/UserPreferences.josn";

@@ -39,7 +39,30 @@ public class JWriter extends DataConstants {
   }
 
   public static void savePreferences() {
+    Preferences preferences = Preferences.getInstance();
+    JSONArray jsonUserPreferences = new JSONArray();
+    jsonUserPreferences.add(getPreferenceJSON(preferences));
+    
+    try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+      file.write(jsonUserPreferences.toJSONString());
+      file.flush();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static JSONObject getPreferenceJSON(Preferences preference) {
     //Preferences preference = new Preferences();
+    JSONObject userPreferences = new JSONObject();
+    userPreferences.put(PREF_ID, preference.getId().toString());
+    userPreferences.put(PREF_MED_ACCOM,preference.getMedicalAccomodation());
+    userPreferences.put(PREF_ORIGIN_CODE,preference.getAirportOrigin());
+    userPreferences.put(PREF_SEAT_TYPE,preference.getSeatType());
+    userPreferences.put(PREF_BAGGAGE,preference.getNumBaggage());
+    userPreferences.put(PREF_AIRLINE,preference.getAirline());
+    userPreferences.put(PREF_FLIGHT_TYPE,preference.getFlightType());
+
+    return userPreferences;
 
   }
 

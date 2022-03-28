@@ -8,6 +8,7 @@
     "lastName":"Doe",
     "age": 20,
     "address":"1250 Testing Drive",
-    "frequentFlyer":false
+    "frequentFlyer":false,
+    "preferencesUUID": "bbff1d29-fe81-4a80-9369-03e2f40e8172"
   }
 ]

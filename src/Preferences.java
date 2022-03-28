@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.UUID;
 public class Preferences {
     private boolean medAccom;
@@ -8,8 +9,13 @@ public class Preferences {
     private String airline;
     private String flightType;
 
+    private static Preferences preference;
+    private ArrayList<Preferences> preferences;
+
+
     public Preferences() {
         //TODO
+        preferences = JReader.getPreferences();
     }
 
     public Preferences(UUID id, boolean medAccom, String originAirportCode, String seatType, int numBaggage, String airline, String flightType) {
@@ -21,6 +27,13 @@ public class Preferences {
         this.airline = airline;
         this.flightType = flightType;
 
+    }
+
+    public static Preferences getInstance(){
+        if(preference == null){
+            preference = new Preferences();
+        }
+        return preference;
     }
     
     public void setId(UUID id) {
@@ -52,7 +65,7 @@ public class Preferences {
     }
 
     public UUID getId() {
-        return id;
+        return this.id;
     }
 
     public boolean getMedicalAccomodation() {
