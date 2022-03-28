@@ -99,7 +99,7 @@
     "rooms": []
   },
   {
-    "UUID": "20c80858-fcdf-41b4-ac49-5e2817c057b9",
+    "UUID": "22dcd9d4-aed8-11ec-b909-0242ac120002",
     "hotelName": "Courtyard by Marriott",
     "location": "DCA - Washington DC",
     "price": "227",
@@ -108,7 +108,7 @@
     "rooms": []
   },
   {
-    "UUID": "ADD UUID HERE",
+    "UUID": "1e1903e6-aed8-11ec-b909-0242ac120002",
     "hotelName": "Courtyard by Marriott",
     "location": "SEA - Seattle Washington",
     "price": "227",
@@ -117,7 +117,7 @@
     "rooms": []
   },
   {
-    "UUID": "ADD UUID HERE",
+    "UUID": "178ce484-aed8-11ec-b909-0242ac120002",
     "hotelName": "Fairmont Olympic Hotel",
     "location": "SEA - Seattle Washington",
     "price": "350",
@@ -126,7 +126,7 @@
     "rooms": []
   },
   {
-    "UUID": "ADD UUID HERE",
+    "UUID": "1379d618-aed8-11ec-b909-0242ac120002 ",
     "hotelName": "Best Western",
     "location": "SEA - Seattle Washington",
     "price": "175",
@@ -135,7 +135,7 @@
     "rooms": []
   },
   {
-    "UUID": "ADD UUID HERE",
+    "UUID": "0ee91c62-aed8-11ec-b909-0242ac120002",
     "hotelName": "Sheraton Grand Seattle",
     "location": "SEA - Seattle Washington",
     "price": "240",
