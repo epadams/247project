@@ -1,6 +1,8 @@
 import java.util.Scanner;
 import java.util.UUID;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.FileWriter;
 
 /**
  * The maindriver runs the Flight System & The User Interface
@@ -79,7 +81,7 @@ public class MainDriver {
           registerHotel();
           break;
         case 5:
-          displayBookedFlights();
+          System.out.println(displayBookedFlights());
           break;
         case 6:
           displayBookedHotels();
@@ -421,13 +423,16 @@ public class MainDriver {
   /**
    * Displays all flights a user has booked
    */
-  public void displayBookedFlights() {
+  public String displayBookedFlights() {
+    String ret = "";
     keyboard.nextLine();
     ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
     for (int i = 0; i < bookedFlights.size(); i++) {
-      System.out.println(fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
+      ret += (fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
+      ret += "\n";
       // System.out.println("Your booked seat is " +
       // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
+      return ret;
     }
   }
 
@@ -499,6 +504,17 @@ public class MainDriver {
       System.out.println(passport.toString());
     }
   }
+
+  /**
+   * Writes All Currently Booked Flights & Hotels To a "beautifully formatted text
+   * file"
+   */
+  public void createItinerary() {
+    File myObj = new File("Itinerary.txt");
+    FileWriter myWriter = new FileWriter("Itinerary.txt");
+    myWriter.write(displayBookedFlights());
+  }
+
   /**
    * Search flights based off flight preferences
    */
