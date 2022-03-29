@@ -15,7 +15,9 @@ public class Flight extends Booking {
   private String arrivalTime;
   private String flightType;
   private ArrayList<Seat> seats;
-  
+  /**
+   * creates a new arraylist of seats set to the seats 
+   */
   public Flight() {
     seats = new ArrayList<Seat>();
   }
@@ -163,11 +165,17 @@ public class Flight extends Booking {
   public String getAirline() {
     return this.airline;
   }
-
+/**
+ * gets the seats 
+ * @return
+ */
   public ArrayList<Seat> getSeats() {
     return this.seats;
   }
-
+/**
+ * sets the seats based on the seats passed 
+ * @param seats
+ */
   public void setSeats(ArrayList<Seat> seats) {
     this.seats = seats;
   }
@@ -182,7 +190,10 @@ public class Flight extends Booking {
       + "\nPlace of Arrival: " + this.destination + "\nAirline: "
       + this.airline + "\nType: " + this.flightType + "\n";
   }
-
+/**
+ * prints the seat map and the occupied/vacant seats 
+ * @return ret
+ */
   public String printSeatMap() {
     if (seats.isEmpty()) return null;
     String ret = "";
@@ -200,7 +211,12 @@ public class Flight extends Booking {
     }
     return ret;
   }
-
+/**
+ * searches for a specific seat based on the row and aisle 
+ * @param row
+ * @param aisle
+ * @return seat or null
+ */
   public Seat searchSeats(int row, char aisle) {
     for (Seat seat : seats) {
       if (seat.getRow() == row && seat.getAisle() == aisle) {
@@ -209,7 +225,11 @@ public class Flight extends Booking {
     }
     return null;
   }
-
+/**
+ * gets the seats UUID
+ * @param id
+ * @return seat or null
+ */
   public Seat getSeatByUUID(UUID id) {
     for (Seat seat : seats) {
       if (seat.getUUID().equals(id)) {
@@ -218,7 +238,11 @@ public class Flight extends Booking {
     }
     return null;
   }
-
+/**
+ * checks to see if a specific seat is vacant or not 
+ * @param row
+ * @param aisle
+ */
   public void registerSeat(int row, char aisle) {
     for (Seat seat : seats) {
       if (seat.getRow() == row && seat.getAisle() == aisle) {

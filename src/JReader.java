@@ -5,9 +5,15 @@ import java.util.UUID;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
+/**
+ * a class JReader that entends DataConstants and reads the JSON files and sets variables based on the contents of the respective JSON file
+ */
 public class JReader extends DataConstants {
-
+/**
+ * Gets all of the users information from the JSON file and sets it to the appropriate variable 
+ * adds and creates a new user based on these variable 
+ * @return users
+ */
   public static ArrayList<User> getUsers() {
     ArrayList<User> users = new ArrayList<User>();
     try {
@@ -62,7 +68,11 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-
+ /**
+  * Gets all of the preference information from the JSON file and sets it to the appropriate variable 
+  * adds and creates a new instance of preferences based on these variable 
+  * @return preferences 
+  */
   public static ArrayList<Preferences> getPreferences() {
     ArrayList<Preferences> preferences = new ArrayList<Preferences>();
     try {
@@ -88,7 +98,11 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-
+/**
+ *  Gets all of the flights information from the JSON file and sets it to the appropriate variable 
+ *  adds and creates a new instance of a flight based on these variable 
+ * @return flight 
+ */
   public static ArrayList<Flight> getFlights() {
     ArrayList<Flight> flight = new ArrayList<Flight>();
     try {
@@ -125,7 +139,12 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-
+/**
+ * Gets all of the seat information from the JSON file and sets it to the appropriate variable 
+ * adds and creates a new instance of a seat based on these variable 
+ * @param ids
+ * @return seats
+ */
   public static ArrayList<Seat> getSeats(ArrayList<UUID> ids) {
     ArrayList<Seat> seats = new ArrayList<Seat>();
     try {
@@ -149,7 +168,11 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-
+/**
+ * Gets all of the Hotels information from the JSON file and sets it to the appropriate variable 
+ * adds and creates a new instance of a hotel based on these variable 
+ * @return hotels 
+ */
   public static ArrayList<Hotel> getHotels() {
     ArrayList<Hotel> hotels = new ArrayList<Hotel>();
     try {
@@ -182,7 +205,12 @@ public class JReader extends DataConstants {
     }
     return null;
   }
-
+/**
+ * Gets all of the rooms information from the JSON file and sets it to the appropriate variable 
+ * adds and creates a new instance of a room based on these variable 
+ * @param ids
+ * @return rooms
+ */
   public static ArrayList<Room> getRooms(ArrayList<UUID> ids) {
     ArrayList<Room> rooms = new ArrayList<Room>();
     try {
@@ -207,6 +235,7 @@ public class JReader extends DataConstants {
           rooms.add(new Room(roomNumber, numberOfBeds, smoking, roomDates)); 
         }
       }
+      return rooms;
     } catch (Exception e) {
       e.printStackTrace();
     }
