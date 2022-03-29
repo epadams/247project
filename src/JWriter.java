@@ -5,8 +5,14 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.util.UUID;
 
+/**
+ * JWriter Class Writes to the JSON Files
+ */
 public class JWriter extends DataConstants {
 
+  /**
+   * Saves Users to the JSON files
+   */
   public static void saveUsers() {
     Users users = Users.getInstance();
     ArrayList<User> userList = users.getUsers();
@@ -24,6 +30,12 @@ public class JWriter extends DataConstants {
     }
   }
 
+  /**
+   * Gets a User From the JSON Files
+   * 
+   * @param user The user that will be accessed
+   * @return the details of the user from the JSON
+   */
   public static JSONObject getUserJSON(User user) {
     JSONObject userDetails = new JSONObject();
     userDetails.put(USER_ID, user.getId().toString());
@@ -41,6 +53,12 @@ public class JWriter extends DataConstants {
     return userDetails;
   }
 
+  /**
+   * Saves the designated seats for the listed user
+   * 
+   * @param user The user that the seats will be saved for
+   * @return the seats that the user has booked
+   */
   public static JSONArray saveUserSeats(User user) {
     JSONArray bookedSeats = new JSONArray();
     ArrayList<UUID> seatUUIDs = user.getBookedSeatIDs();
@@ -53,6 +71,12 @@ public class JWriter extends DataConstants {
     return bookedSeats;
   }
 
+  /**
+   * Saves the designated rooms for the listed user
+   * 
+   * @param user the user the rooms will be saved for
+   * @return the rooms the user has booked
+   */
   public static JSONArray saveUserRooms(User user) {
     JSONArray bookedRooms = new JSONArray();
     ArrayList<UUID> roomUUIDs = user.getBookedSeatIDs();
@@ -65,11 +89,14 @@ public class JWriter extends DataConstants {
     return bookedRooms;
   }
 
+  /**
+   * Saves the users preferences to the JSON
+   */
   public static void savePreferences() {
     Preferences preferences = Preferences.getInstance();
     JSONArray jsonUserPreferences = new JSONArray();
     jsonUserPreferences.add(getPreferenceJSON(preferences));
-    
+
     try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
       file.write(jsonUserPreferences.toJSONString());
       file.flush();
@@ -78,8 +105,14 @@ public class JWriter extends DataConstants {
     }
   }
 
+  /**
+   * Accesses preferences from the JSON
+   * 
+   * @param preference the preference that will be aquired
+   * @return the preferences of the user
+   */
   public static JSONObject getPreferenceJSON(Preferences preference) {
-    //Preferences preference = new Preferences();
+    // Preferences preference = new Preferences();
     JSONObject userPreferences = new JSONObject();
     userPreferences.put(PREF_ID, preference.getId().toString());
     userPreferences.put(PREF_MED_ACCOM, preference.getMedicalAccomodation());
@@ -93,6 +126,9 @@ public class JWriter extends DataConstants {
 
   }
 
+  /**
+   * Saves the current flight to the JSON
+   */
   public static void saveFlight() {
     Flights flight = Flights.getInstance();
     ArrayList<Flight> flightList = flight.getFlights();
@@ -109,6 +145,12 @@ public class JWriter extends DataConstants {
     }
   }
 
+  /**
+   * Gets desired flight from JSON Files
+   * 
+   * @param flight the flight to be accessed
+   * @return the details of the flight that is aquired from the JSON
+   */
   public static JSONObject getFlightJSON(Flight flight) {
     JSONObject flightDetails = new JSONObject();
     flightDetails.put(FLIGHT_ID, flight.getUUID().toString());
