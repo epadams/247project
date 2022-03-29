@@ -85,7 +85,7 @@ public class MainDriver {
           System.out.println(displayBookedFlights());
           break;
         case 6:
-          displayBookedHotels();
+          System.out.println(displayBookedHotels());
           break;
         case 7:
           displayAccountInformationMenu();
@@ -441,9 +441,9 @@ public class MainDriver {
   /**
    * displays all hotels a User has booked
    */
-  public void displayBookedHotels() {
+  public String displayBookedHotels() {
     keyboard.nextLine();
-    System.out.println("DISPLAY BOOKED HOTELS HERE");
+    return "DISPLAY BOOKED HOTELS HERE";
   }
 
   /**
@@ -515,7 +515,10 @@ public class MainDriver {
     File myObj = new File("Itinerary.txt");
     try {
       FileWriter myWriter = new FileWriter("Itinerary.txt");
+      myWriter.write("\n------- Flights -------\n");
       myWriter.write(displayBookedFlights());
+      myWriter.write("\n------- Hotels -------\n");
+      myWriter.write(displayBookedHotels());
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {
