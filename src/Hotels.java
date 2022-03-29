@@ -100,14 +100,13 @@ public class Hotels {
    * @param id
    * @return identity 
    */
-  public ArrayList<Hotel> searchHotelID(UUID id) {
-    ArrayList<Hotel> matchedHotels = new ArrayList<Hotel>();
+  public Hotel searchHotelID(UUID id) {
     for (Hotel hotel : hotelList) {
       if (hotel.getUUID().equals(id)) {
-        matchedHotels.add(hotel);
+        return hotel;
       }
     }
-    return matchedHotels;
+    return null;
   }
 
   /**

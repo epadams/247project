@@ -21,9 +21,7 @@ public class MainDriver {
    */
   public void run() {
     // DEBUGGING
-    // System.out.println(fsystem.getFlights().printAllFlights());
     // fsystem.getCurrentUser();
-    // fsystem.createAccount("testUser2", "a2df", "test2@email.com", 20);
     // System.out.println(fsystem.getUsers().printAllUsers());
     // System.out.println(fsystem.getFlights().searchFlights("Flight1").getSeats().get(0).toString());
     boolean run = true;
@@ -85,13 +83,14 @@ public class MainDriver {
           System.out.println(displayBookedFlights());
           break;
         case 6:
-          displayBookedHotels();
+          System.out.println(displayBookedHotels());
           break;
         case 7:
           displayAccountInformationMenu();
           break;
         case 8:
           createItinerary();
+          break;
         case 9:
           logout = fsystem.logout();
         default:
@@ -236,7 +235,28 @@ public class MainDriver {
    * Displays the menu to register for a Hotel
    */
   public void registerHotel() {
-
+    keyboard.nextLine();
+    System.out.println("******** Register for Hotel ********"
+        + "\nPlease enter the UUID of the hotel you want to register for:");
+    UUID id = UUID.fromString(keyboard.nextLine());
+    System.out.println(fsystem.getHotels().searchHotelID(id).getRooms());
+    System.out.println("Please enter the number of the hotel room you wish to book");
+    int hotelRoom = keyboard.nextInt();
+    // TODO check if room is booked
+    keyboard.nextLine();
+    System.out.println("Please enter the number of days you wish to stay:");
+    int numDays = keyboard.nextInt();
+    keyboard.nextLine();
+    System.out.println("Please enter dates you wish to book"
+        + "\nPlease enter in a MM/DD/YYYY format:");
+    ArrayList<String> dates = new ArrayList<String>();
+    for (int i = 0; i < numDays; i++) {
+      String entry = keyboard.nextLine();
+      // TODO check if date is booked
+      // if (fsystem.getHotels().searchHotelID(id).getRooms()
+      // dates.add(entry);
+      // fsystem.registerHotel(hotelRoom, dates);
+    }
   }
 
   /**
@@ -425,6 +445,7 @@ public class MainDriver {
   /**
    * Displays all flights a user has booked
    */
+  
   public String displayBookedFlights() {
     String ret = "";
     keyboard.nextLine();
@@ -437,13 +458,14 @@ public class MainDriver {
     }
     return ret;
   }
+  
 
   /**
    * displays all hotels a User has booked
    */
-  public void displayBookedHotels() {
+  public String displayBookedHotels() {
     keyboard.nextLine();
-    System.out.println("DISPLAY BOOKED HOTELS HERE");
+    return "DISPLAY BOOKED HOTELS HERE";
   }
 
   /**
@@ -511,11 +533,15 @@ public class MainDriver {
    * Writes All Currently Booked Flights & Hotels To a "beautifully formatted text
    * file"
    */
+  
   public void createItinerary() {
     File myObj = new File("Itinerary.txt");
     try {
-      FileWriter myWriter = new FileWriter("Itinerary.txt");
+      FileWriter myWriter = new FileWriter(myObj);
+      myWriter.write("\n------- Flights -------\n");
       myWriter.write(displayBookedFlights());
+      myWriter.write("\n------- Hotels -------\n");
+      myWriter.write(displayBookedHotels());
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {
@@ -523,6 +549,7 @@ public class MainDriver {
       e.printStackTrace();
     }
   }
+  
 
   /**
    * Search flights based off flight preferences
@@ -589,6 +616,7 @@ public class MainDriver {
    * 
    * @param args
    */
+
   public static void main(String[] args) {
     MainDriver mainDriver = new MainDriver();
     mainDriver.run();

@@ -1,16 +1,1 @@
-[
-  {
-    "UUID":"6ef03f85-a967-4ca5-8906-a0abcfd9fce3",
-    "username":"testuser",
-    "password":"abcdefg",
-    "email":"testemail@email.com",
-    "firstName":"John",
-    "lastName":"Doe",
-    "age": 20,
-    "address":"1250 Testing Drive",
-    "frequentFlyer":false,
-    "bookedSeats":[],
-    "bookedRooms":[],
-    "preferences": "bbff1d29-fe81-4a80-9369-03e2f40e8172"
-  }
-]
+[{"bookedRooms":["35410857-7b95-40dc-8aae-d79f37ed2eca","66bf9c12-4557-41e6-a243-58105abecb5f"],"firstName":"John","lastName":"Doe","password":"abcdefg","frequentFlyer":false,"address":"1250 Testing Drive","UUID":"6ef03f85-a967-4ca5-8906-a0abcfd9fce3","email":"testemail@email.com","age":20,"username":"testuser","bookedSeats":["35410857-7b95-40dc-8aae-d79f37ed2eca","66bf9c12-4557-41e6-a243-58105abecb5f"]},{"bookedRooms":[],"firstName":"","lastName":"","password":"123","frequentFlyer":false,"address":"","UUID":"ed1cabff-c26b-4fcf-820a-f146f31d7695","email":"t@gmail.com","age":22,"username":"testuser2","bookedSeats":[]}]
