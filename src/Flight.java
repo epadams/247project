@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * A class flight that extends booking 
  */
-public class Flight extends Booking {
+public class Flight {
   private UUID id;
   private String flightName;
   private String airline;
