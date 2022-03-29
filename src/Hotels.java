@@ -1,27 +1,31 @@
 import java.util.ArrayList;
 import java.util.UUID;
+
 /**
  * a class that manages the hotelList 
  */
 public class Hotels {
   private static Hotels hotels;
   private ArrayList<Hotel> hotelList;
-/**
- * loads the hotelList from JReader with information for hotels 
- */
+
+  /**
+   * loads the hotelList from JReader with information for hotels 
+   */
   private Hotels() {
     hotelList = JReader.getHotels();
   }
-/**
- * gets the instance of a hotel. if there is not one, creates a new instance of hotels 
- * @return hotels
- */
+
+  /**
+   * gets the instance of a hotel. if there is not one, creates a new instance of hotels 
+   * @return hotels
+   */
   public static Hotels getInstance() {
     if (hotels == null) {
       hotels = new Hotels();
     }
     return hotels;
   }
+
   /**
    * checks if the hotel name passed is in the hotelList 
    * @param hotelName
@@ -35,11 +39,12 @@ public class Hotels {
     }
     return false;
   }
-/**
- * gets the hotel based of the hotel name passed 
- * @param hotelName
- * @return hotel or null
- */
+
+  /**
+   * gets the hotel based of the hotel name passed 
+   * @param hotelName
+   * @return hotel or null
+   */
   public Hotel getHotel(String hotelName) {
     for (Hotel hotel : hotelList) {
       if (hotel.getHotelName().equals(hotelName)) {
@@ -48,30 +53,36 @@ public class Hotels {
     }
     return null;
   }
-/**
- * Gets the hotelList 
- * @return hotelLIst 
- */
+
+  /**
+   * Gets the hotelList 
+   * @return hotelLIst 
+   */
   public ArrayList<Hotel> getHotels() {
     return hotelList;
   }
-/**
- * adds a new hotel based on the parameters passed to the hotelList 
- * @param hotelName
- * @param password
- * @param email
- * @param age
- */
-  public void addHotel(String hotelName, String password, String email, int age) {
+
+  /**
+   * adds a new hotel based on the parameters passed to the hotelList 
+   * @param String hotelName
+   * @param int price 
+   * @param String location 
+   * @param int starRating 
+   * @param boolean hasPool 
+   */
+  public void addHotel(String hotelName, int price, String location,
+      int starRating, boolean hasPool) {
     if (haveHotel(hotelName)) return;
     // hotelList.add(new Hotel(UUID.randomUUID(), hotelName, password, email, age));
   }
-/**
- * saves the hotels 
- */
+
+  /**
+   * saves the hotels 
+   */
   public void saveHotels() {
     // JWriter.saveHotels();
   }
+
   /**
    * prints the hotelList 
    * @return ret
@@ -89,13 +100,14 @@ public class Hotels {
    * @param id
    * @return identity 
    */
-  public Hotel searchHotelID(UUID id) {
-    for (Hotel identity : hotelList) {
-      if (identity.getUUID().equals(id)) {
-        return identity;
+  public ArrayList<Hotel> searchHotelID(UUID id) {
+    ArrayList<Hotel> matchedHotels = new ArrayList<Hotel>();
+    for (Hotel hotel : hotelList) {
+      if (hotel.getUUID().equals(id)) {
+        matchedHotels.add(hotel);
       }
     }
-    return null;
+    return matchedHotels;
   }
 
   /**
@@ -103,13 +115,14 @@ public class Hotels {
    * @param hotelName
    * @return name
    */
-  public Hotel searchHotelName(String hotelName) {
-    for (Hotel name : hotelList) {
-      if (name.getHotelName().contains(hotelName)) {
-        return name;
+  public ArrayList<Hotel> searchHotelName(String hotelName) {
+    ArrayList<Hotel> matchedHotels = new ArrayList<Hotel>();
+    for (Hotel hotel : hotelList) {
+      if (hotel.getHotelName().contains(hotelName)) {
+        matchedHotels.add(hotel);
       }
     }
-    return null;
+    return matchedHotels;
   }
 
   /**
@@ -137,10 +150,10 @@ public class Hotels {
   // }
 
   //maybe add searchRooms method
-/**
- * toString method that prints the hotelList 
- * @return ret
- */
+  /**
+   * toString method that prints the hotelList 
+   * @return ret
+   */
   public String toString() {
     String ret = "";
     for (Hotel hotel : hotelList) {

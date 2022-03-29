@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.UUID;
+
 /**
  * A class that holds functionality for flights 
  */
@@ -7,22 +8,24 @@ public class Flights {
   private static Flights flights;
   private ArrayList<Flight> flightList;
  
-/**
- * loads the flights list from the Jreader with information of each flight 
- */
+  /**
+   * loads the flights list from the Jreader with information of each flight 
+   */
   private Flights() {
     flightList = JReader.getFlights();
   }
-/**
- * Gets the instance of flights and creates a new instance of flights there is not one already 
- * @return flights 
- */
+
+  /**
+   * Gets the instance of flights and creates a new instance of flights there is not one already 
+   * @return flights 
+   */
   public static Flights getInstance() {
     if (flights == null) {
       flights = new Flights();
     }
     return flights;
   }
+
   /**
    * Checks if there is a flight within the flightlist 
    * @param flightName
@@ -36,30 +39,19 @@ public class Flights {
     }
     return false;
   }
-/**
- * Gets a flight within the flight list 
- * @param flightName
- * @return flight or null
- */
-  public Flight getFlight(String flightName) {
-    for (Flight flight : flightList) {
-      if (flight.getFlightName().equals(flightName)) {
-        return flight;
-      }
-    }
-    return null;
-  }
-/**
- * Gets the flight light 
- * @return flightlist
- */
+
+  /**
+   * Gets the flight light 
+   * @return flightlist
+   */
   public ArrayList<Flight> getFlights() {
     return flightList;
   }
-/**
- * Adds a new flight to the flight list 
- * @param flightname
- */
+
+  /**
+   * Adds a new flight to the flight list 
+   * @param flightname
+   */
   public void addFlight(String flightname) {
     if (haveFlight(flightname)) {
       return;
@@ -71,6 +63,7 @@ public class Flights {
   public void saveFlights() {
     // JWriter.saveFlights();
   }
+
   /**
    * Prints all of the flights within the flight list
    * @return ret
@@ -82,24 +75,27 @@ public class Flights {
     }
     return ret;
   }
-/**
- * searches the a flight by its name in the flight list 
- * @param flightName
- * @return flight or null
- */
-  public Flight searchFlights(String flightName) {
+
+  /**
+   * searches the a flight by its name in the flight list 
+   * @param flightName
+   * @return flight or null
+   */
+  public ArrayList<Flight> searchFlights(String flightName) {
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
     for (Flight flight : flightList) {
       if (flight.getFlightName().contains(flightName)) {
-        return flight;
+        matchedFlights.add(flight);
       }
     }
-    return null;
+    return matchedFlights;
   }
-/**
- * searches for the destination that is passed wihtin the flightlist and adds it to matched flights 
- * @param destination
- * @return matchedFlights 
- */
+
+  /**
+   * searches for the destination that is passed wihtin the flightlist and adds it to matched flights 
+   * @param destination
+   * @return matchedFlights 
+   */
   public ArrayList<Flight> searchDestination(String destination) {
     ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
     for (Flight flight : flightList) {
@@ -109,11 +105,12 @@ public class Flights {
     }
     return matchedFlights;
   }
-/**
- * Searches the specific UUID for a flight in the flight list 
- * @param id
- * @return identity or null
- */
+
+  /**
+   * Searches the specific UUID for a flight in the flight list 
+   * @param id
+   * @return identity or null
+   */
   public Flight searchFlightID(UUID id) {
     for (Flight identity : flightList) {
       // Used .equals here check behind to make sure this is the best way
@@ -124,24 +121,27 @@ public class Flights {
     }
     return null;
   }
-/**
- * searches for a specific airline within the flightlist 
- * @param airline
- * @return air or null
- */
-  public Flight searchAirline(String airline) {
-    for (Flight air : flightList) {
-      if (air.getAirline().contains(airline)) {
-        return air;
+
+  /**
+   * searches for a specific airline within the flightlist 
+   * @param airline
+   * @return air or null
+   */
+  public ArrayList<Flight> searchAirline(String airline) {
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for (Flight flight : flightList) {
+      if (flight.getAirline().contains(airline)) {
+        matchedFlights.add(flight);
       }
     }
-    return null;
+    return matchedFlights;
   }
-/**
- * Searches for a specific place of departure based on the information passed  and adds it to matchedFlights 
- * @param departure
- * @return matchedFLights 
- */
+
+  /**
+   * Searches for a specific place of departure based on the information passed  and adds it to matchedFlights 
+   * @param departure
+   * @return matchedFLights 
+   */
   public ArrayList<Flight> searchDeparture(String departure) {
     ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
     for (Flight depart : flightList) {
@@ -151,12 +151,13 @@ public class Flights {
     }
     return matchedFlights;
   }
-/**
- * Searches for a specific place of departure and destination based on the departure and destination passed and adds it to machedFlights 
- * @param departure
- * @param destination
- * @return matchedFlights 
- */
+
+  /**
+   * Searches for a specific place of departure and destination based on the departure and destination passed and adds it to machedFlights 
+   * @param departure
+   * @param destination
+   * @return matchedFlights 
+   */
   public ArrayList<Flight> searchDepartureAndDestination(String departure,
       String destination) {
     ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
@@ -168,45 +169,51 @@ public class Flights {
     }
     return matchedFlights;
   }
-/**
- * searches for a specific depature time based on the time that is passed 
- * @param departureTime
- * @return departTime or null
- */
-  public Flight searchDepartureTime(String departureTime) {
-    for (Flight departTime : flightList) {
-      if (departTime.getDepartureTime().contains(departureTime)) {
-        return departTime;
+
+  /**
+   * searches for a specific depature time based on the time that is passed 
+   * @param departureTime
+   * @return departTime or null
+   */
+  public ArrayList<Flight> searchDepartureTime(String departureTime) {
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for (Flight flight : flightList) {
+      if (flight.getDepartureTime().contains(departureTime)) {
+        matchedFlights.add(flight);
       }
     }
-    return null;
-  }
-/**
- * searches for a specific arrival time based on the time passed 
- * @param arrivalTime
- * @return arrival time or null
- */
-  public Flight searchArrivalTime(String arrivalTime) {
-    for (Flight arriveTime : flightList) {
-      if (arriveTime.getArrivalTime().contains(arrivalTime)) {
-        return arriveTime;
-      }
-    }
-    return null;
+    return matchedFlights;
   }
 
-  public Flight searchFlightType(String flightType) {
-    for (Flight type : flightList) {
-      if (type.getFlightType().contains(flightType)) {
-        return type;
+  /**
+   * searches for a specific arrival time based on the time passed 
+   * @param arrivalTime
+   * @return arrival time or null
+   */
+  public ArrayList<Flight> searchArrivalTime(String arrivalTime) {
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for (Flight flight : flightList) {
+      if (flight.getArrivalTime().contains(arrivalTime)) {
+        matchedFlights.add(flight);
       }
     }
-    return null;
+    return matchedFlights;
   }
-/**
- * toString method that prints the flightList 
- * @return ret 
- */
+
+  public ArrayList<Flight> searchFlightType(String flightType) {
+    ArrayList<Flight> matchedFlights = new ArrayList<Flight>();
+    for (Flight flight : flightList) {
+      if (flight.getFlightType().contains(flightType)) {
+        matchedFlights.add(flight);
+      }
+    }
+    return matchedFlights;
+  }
+
+  /**
+   * toString method that prints the flightList 
+   * @return ret 
+   */
   public String toString() {
     String ret = "";
     for (Flight flight : flightList) {

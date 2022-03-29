@@ -1,10 +1,6 @@
 /*
  * TODO
- * make it possible to add users
- * get users
- * save users
- * see if a user exists
- * etc
+ * fix saving users' bookings
  */
 
 import java.util.ArrayList;
