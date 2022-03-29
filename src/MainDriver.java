@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.UUID;
 import java.util.ArrayList;
 
+/**
+ * The maindriver runs the Flight System & The User Interface
+ */
 public class MainDriver {
   private FSystem fsystem;
   Scanner keyboard = new Scanner(System.in);
@@ -10,6 +13,9 @@ public class MainDriver {
     fsystem = new FSystem();
   }
 
+  /**
+   * Runs the Flight System
+   */
   public void run() {
     // DEBUGGING
     // System.out.println(fsystem.getFlights().printAllFlights());
@@ -24,6 +30,9 @@ public class MainDriver {
     keyboard.close();
   }
 
+  /**
+   * Displays the Login Menu
+   */
   public void displayLoginMenu() {
     System.out.println("******** Welcome ********\n1: Login\n2: Create Account"
         + "\n3: Continue as guest\n4: Quit");
@@ -46,6 +55,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the Main Menu for a registered User
+   */
   public void displayMenu() {
     boolean logout = false;
     while (!logout) {
@@ -85,6 +97,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the main menu for a guest
+   */
   public void displayGuestMenu() {
     keyboard.nextLine();
     System.out.println("******** Guest Menu ********\n1: Search Flights"
@@ -104,6 +119,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the create account menu
+   */
   public void displayCreateAccount() {
     keyboard.nextLine();
     System.out.println("******** Create Account ********\nPlease Enter Your Username");
@@ -118,16 +136,21 @@ public class MainDriver {
     fsystem.createAccount(usrnm, pass, email, age);
 
     /*
-    System.out.println("Would you like to set your preferences now?\n'yes' or 'no'");
-    String prefres = keyboard.nextLine();
-    if (prefres.toLowerCase().equals("yes")) {
-      displayPreferenceSelection();
-    } else {
-      System.out.println("You can set your preferences later in 'Account information'");
-    }
-    */
+     * System.out.
+     * println("Would you like to set your preferences now?\n'yes' or 'no'");
+     * String prefres = keyboard.nextLine();
+     * if (prefres.toLowerCase().equals("yes")) {
+     * displayPreferenceSelection();
+     * } else {
+     * System.out.
+     * println("You can set your preferences later in 'Account information'");
+     * }
+     */
   }
 
+  /**
+   * Displays and records information for a user login
+   */
   public void login() {
     keyboard.nextLine();
     System.out.println("******** Login ********\nPlease Enter Your Username");
@@ -151,6 +174,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the search flights menu
+   */
   public void displaySearchFlights() {
     keyboard.nextLine();
     System.out.println("******** Search Flights ********\n1: Search all Flights"
@@ -177,6 +203,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the menu to register for a flight
+   */
   public void registerFlight() {
     keyboard.nextLine();
     System.out.println("******** Register for Flight ********"
@@ -199,10 +228,16 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the menu to register for a Hotel
+   */
   public void registerHotel() {
 
   }
 
+  /**
+   * Displays the menu to search for Hotels
+   */
   public void displaySearchHotels() {
     keyboard.nextLine();
     System.out.println("******** Search Hotels ********\n1: Search all Hotels"
@@ -222,6 +257,9 @@ public class MainDriver {
     }
   }
 
+  /**
+   * Displays the account information for a registered user
+   */
   public void displayAccountInformationMenu() {
     keyboard.nextLine();
     System.out.println("******** Account Information ********\n1: Change Login info"
@@ -249,62 +287,86 @@ public class MainDriver {
         break;
     }
   }
+  /**
+   * Displays Flight Preference selection for a registered user
+   */
+  /*
+   * public void displayPreferenceSelection() {
+   * keyboard.nextLine();
+   * System.out.println(
+   * "******** Setting Your Preferences ********\n----- Flight Type -----\nEnter: 'One Way' 'Layover' or 'Round Trip'"
+   * );
+   * String flightPref = keyboard.nextLine();
+   * System.out.
+   * println("----- Airline -----\nEnter: 'Delta' 'American' 'United' or 'Spirit'"
+   * );
+   * String airlinePref = keyboard.nextLine();
+   * System.out.
+   * println("----- Baggage Number -----\nEnter: Number of Luggage Bags (As a Number)"
+   * );
+   * int baggageCountPref = keyboard.nextInt();
+   * keyboard.nextLine();
+   * System.out.
+   * println("----- Medical Accomidation Seating -----\nEnter: 'Yes' or 'No'");
+   * String medicalAccomPref = keyboard.nextLine();
+   * System.out
+   * .println("----- Enter Pet Weight in Pounds -----\nEnter: Your Pets Weight in pounds (If no pet enter '0')"
+   * );
+   * int petWeightpref = keyboard.nextInt();
+   * keyboard.nextLine();
+   * System.out.
+   * println("----- Seat Type -----\nEnter: 'Business' 'Economy' or 'First Class'"
+   * );
+   * String seatTypePref = keyboard.nextLine();
+   * System.out.
+   * println("----- Seat Location -----\nEnter: 'Aisle' 'Middle' or 'Window'");
+   * String seatLocationPref = keyboard.nextLine();
+   * System.out.
+   * println("----- Airport Origin Code -----\nEnter: Airport Origin Code");
+   * String airportOriginCodePref = keyboard.nextLine();
+   * 
+   * // TODO Store these preferences
+   * }
+   */
+  /**
+   * Displays Hotel preference selection for a registered user
+   */
 
   /*
-  public void displayPreferenceSelection() {
-    keyboard.nextLine();
-    System.out.println(
-        "******** Setting Your Preferences ********\n----- Flight Type -----\nEnter: 'One Way' 'Layover' or 'Round Trip'");
-    String flightPref = keyboard.nextLine();
-    System.out.println("----- Airline -----\nEnter: 'Delta' 'American' 'United' or 'Spirit'");
-    String airlinePref = keyboard.nextLine();
-    System.out.println("----- Baggage Number -----\nEnter: Number of Luggage Bags (As a Number)");
-    int baggageCountPref = keyboard.nextInt();
-    keyboard.nextLine();
-    System.out.println("----- Medical Accomidation Seating -----\nEnter: 'Yes' or 'No'");
-    String medicalAccomPref = keyboard.nextLine();
-    System.out
-        .println("----- Enter Pet Weight in Pounds -----\nEnter: Your Pets Weight in pounds (If no pet enter '0')");
-    int petWeightpref = keyboard.nextInt();
-    keyboard.nextLine();
-    System.out.println("----- Seat Type -----\nEnter: 'Business' 'Economy' or 'First Class'");
-    String seatTypePref = keyboard.nextLine();
-    System.out.println("----- Seat Location -----\nEnter: 'Aisle' 'Middle' or 'Window'");
-    String seatLocationPref = keyboard.nextLine();
-    System.out.println("----- Airport Origin Code -----\nEnter: Airport Origin Code");
-    String airportOriginCodePref = keyboard.nextLine();
-
-    // TODO Store these preferences
-  }
-  */
-
-  /*
-  public void displayHotelPreferenceSelection() {
-    keyboard.nextLine();
-    System.out.println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
-    int bedCountPref = keyboard.nextInt();
-    keyboard.nextLine();
-    System.out.println("----- Bed Type -----\nEnter: 'Twin' 'Queen' or 'King'");
-    String bedTypePref = keyboard.nextLine();
-    System.out.println("----- Smoking Accomidation -----\nEnter: 'Yes' or 'No'");
-    String smokingAccomPref = keyboard.nextLine();
-    System.out.println("----- Pet Friendly -----\nEnter: 'Yes' or 'No'");
-    String petAccomPref = keyboard.nextLine();
-    System.out.println("----- Check-In Date -----\nEnter: a date in MM/DD/YYYY format");
-    String checkInDate = keyboard.nextLine();
-    System.out.println("----- Check-out Date -----\nEnter: a date in MM/DD/YYYY format");
-    String checkoutDate = keyboard.nextLine();
-
-    // TODO store these preferences
-  }
-  */
-
+   * public void displayHotelPreferenceSelection() {
+   * keyboard.nextLine();
+   * System.out.
+   * println("----- Number of Beds -----\nEnter: Number of Beds (As a Number)");
+   * int bedCountPref = keyboard.nextInt();
+   * keyboard.nextLine();
+   * System.out.println("----- Bed Type -----\nEnter: 'Twin' 'Queen' or 'King'");
+   * String bedTypePref = keyboard.nextLine();
+   * System.out.println("----- Smoking Accomidation -----\nEnter: 'Yes' or 'No'");
+   * String smokingAccomPref = keyboard.nextLine();
+   * System.out.println("----- Pet Friendly -----\nEnter: 'Yes' or 'No'");
+   * String petAccomPref = keyboard.nextLine();
+   * System.out.
+   * println("----- Check-In Date -----\nEnter: a date in MM/DD/YYYY format");
+   * String checkInDate = keyboard.nextLine();
+   * System.out.
+   * println("----- Check-out Date -----\nEnter: a date in MM/DD/YYYY format");
+   * String checkoutDate = keyboard.nextLine();
+   * 
+   * // TODO store these preferences
+   * }
+   */
+  /**
+   * Displays a menu of all flights in the system
+   */
   public void displaySearchAllFlights() {
     keyboard.nextLine();
     System.out.println("----- Search All Flights -----");
     System.out.println(fsystem.getFlights().toString());
   }
 
+  /**
+   * Displays flights based on departure location
+   */
   public void displaySearchFlightsDep() {
     keyboard.nextLine();
     System.out.println("----- Search Flights based on Departure -----");
@@ -312,6 +374,9 @@ public class MainDriver {
     System.out.println(fsystem.getFlights().searchDeparture(keyboard.nextLine()).toString());
   }
 
+  /**
+   * Displays flights based on destination location
+   */
   public void displaySearchFlightsDest() {
     keyboard.nextLine();
     System.out.println("----- Search Flights based on Destination -----");
@@ -319,6 +384,9 @@ public class MainDriver {
     System.out.println(fsystem.getFlights().searchDestination(keyboard.nextLine()).toString());
   }
 
+  /**
+   * Search flights based on both departure and Destination
+   */
   public void displaySearchFlightsDepAndDest() {
     keyboard.nextLine();
     System.out.println("----- Search Flights based on Departure and Destination -----");
@@ -330,12 +398,18 @@ public class MainDriver {
         .searchDepartureAndDestination(departure, destination).toString());
   }
 
+  /**
+   * displays a menu of all hotels in the system
+   */
   public void displaySearchAllHotels() {
     keyboard.nextLine();
     System.out.println("----- Search All Hotels -----");
     System.out.println(fsystem.getHotels().toString());
   }
 
+  /**
+   * Search hotels based on their location "destination"
+   */
   public void displaySearchHotelsDest() {
     keyboard.nextLine();
     System.out.println("----- Search Hotels with Destination -----"
@@ -344,27 +418,38 @@ public class MainDriver {
     System.out.println(fsystem.getHotels().searchHotelLocation(keyboard.nextLine()).toString());
   }
 
-
+  /**
+   * Displays all flights a user has booked
+   */
   public void displayBookedFlights() {
     keyboard.nextLine();
     ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
     for (int i = 0; i < bookedFlights.size(); i++) {
       System.out.println(fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
       // System.out.println("Your booked seat is " +
-      //    fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
+      // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
     }
   }
 
+  /**
+   * displays all hotels a User has booked
+   */
   public void displayBookedHotels() {
     keyboard.nextLine();
     System.out.println("DISPLAY BOOKED HOTELS HERE");
   }
 
+  /**
+   * Displays all flights a user has previously booked
+   */
   public void displayFlightHistory() {
     keyboard.nextLine();
     System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
-  
+
+  /**
+   * Displays a menu where the user can change their login information
+   */
   public void displayChangeLoginInfo() {
     keyboard.nextLine();
     System.out.println("----- Username/Password/Email Change -----");
@@ -378,6 +463,9 @@ public class MainDriver {
     // TODO check these new choices are not 'NEXT' and if so update them.
   }
 
+  /**
+   * Displays a menu to fill out passport information
+   */
   public void displayAddPassportInfo() {
     keyboard.nextLine();
     System.out.println("----- Adding Passport Information -----");
@@ -403,63 +491,79 @@ public class MainDriver {
         sex));
   }
 
+  /**
+   * Displays Passport information
+   */
   public void displayPassportInfo() {
     for (Passport passport : fsystem.getCurrentUser().getPassports()) {
       System.out.println(passport.toString());
     }
   }
+  /**
+   * Search flights based off flight preferences
+   */
+  /*
+   * public void displaySearchFlightsPref() {
+   * keyboard.nextLine();
+   * System.out.println("----- Search Flights Based off Preferences -----");
+   * // TODO display
+   * }
+   */
+  /**
+   * search hotels based off hotel preferences
+   */
+  /*
+   * public void displaySearchHotelPref() {
+   * keyboard.nextLine();
+   * System.out.println("----- Search Hotels Based off Preferences -----");
+   * // TODO display 3ish Hotels, based off preferences
+   * }
+   */
+  /**
+   * displays hotel booking history
+   */
+  /*
+   * public void displayBookingHistory() {
+   * keyboard.nextLine();
+   * System.out.println("----- Display Booking History -----");
+   * // TODO display booking history
+   * }
+   */
+  /**
+   * Displays thank you message after a sucsessfully booked flight
+   */
 
   /*
-  public void displaySearchFlightsPref() {
-    keyboard.nextLine();
-    System.out.println("----- Search Flights Based off Preferences -----");
-    // TODO display
-  }
-  */
-
-  /*
-  public void displaySearchHotelPref() {
-    keyboard.nextLine();
-    System.out.println("----- Search Hotels Based off Preferences -----");
-    // TODO display 3ish Hotels, based off preferences
-  }
-  */
-
-  /*
-  public void displayBookingHistory() {
-    keyboard.nextLine();
-    System.out.println("----- Display Booking History -----");
-    // TODO display booking history
-  }
-  */
-
-  /*
-  public void displayThankYouMessage() {
-    keyboard.nextLine();
-    System.out.println("----- Thank you for booking with us! -----\nWhat else"
-        + "can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights"
-        + "\n3: Search Hotels\n4: Return to Menu");
-    switch (keyboard.nextInt()) {
-      // View Booked Flight
-      case 1:
-        displayBookedFlights();
-        break;
-      // Search Flights
-      case 2:
-        displaySearchFlights();
-        break;
-      // Search Hotels
-      case 3:
-        displaySearchHotels();
-        break;
-      // Display the Menu
-      case 4:
-        displayMenu();
-        break;
-    }
-  }
-  */
-
+   * public void displayThankYouMessage() {
+   * keyboard.nextLine();
+   * System.out.println("----- Thank you for booking with us! -----\nWhat else"
+   * + "can we do for you?\n1: View Booked Flight(s)\n2: Search More Flights"
+   * + "\n3: Search Hotels\n4: Return to Menu");
+   * switch (keyboard.nextInt()) {
+   * // View Booked Flight
+   * case 1:
+   * displayBookedFlights();
+   * break;
+   * // Search Flights
+   * case 2:
+   * displaySearchFlights();
+   * break;
+   * // Search Hotels
+   * case 3:
+   * displaySearchHotels();
+   * break;
+   * // Display the Menu
+   * case 4:
+   * displayMenu();
+   * break;
+   * }
+   * }
+   */
+  /**
+   * Runs the Flight System
+   * 
+   * @param args
+   */
   public static void main(String[] args) {
     MainDriver mainDriver = new MainDriver();
     mainDriver.run();
