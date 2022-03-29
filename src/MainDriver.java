@@ -3,6 +3,7 @@ import java.util.UUID;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * The maindriver runs the Flight System & The User Interface
@@ -66,7 +67,7 @@ public class MainDriver {
       System.out.println("******** Main Menu ********\n1: Search Flights\n2: Search Hotels"
           + "\n3: Register for Flight\n4: Register for Hotel"
           + "\n5: View Booked Flight\n6: View Booked Hotels"
-          + "\n7: View Account Information\n8: Logout");
+          + "\n7: View Account Information\n8: Generate Itinerary\n9: Logout");
       switch (keyboard.nextInt()) {
         case 1:
           displaySearchFlights();
@@ -90,8 +91,9 @@ public class MainDriver {
           displayAccountInformationMenu();
           break;
         case 8:
+          createItinerary();
+        case 9:
           logout = fsystem.logout();
-          break;
         default:
           System.out.println("Invalid input");
           break;
@@ -432,8 +434,8 @@ public class MainDriver {
       ret += "\n";
       // System.out.println("Your booked seat is " +
       // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
-      return ret;
     }
+    return ret;
   }
 
   /**
@@ -511,8 +513,15 @@ public class MainDriver {
    */
   public void createItinerary() {
     File myObj = new File("Itinerary.txt");
-    FileWriter myWriter = new FileWriter("Itinerary.txt");
-    myWriter.write(displayBookedFlights());
+    try {
+      FileWriter myWriter = new FileWriter("Itinerary.txt");
+      myWriter.write(displayBookedFlights());
+      myWriter.close();
+      System.out.println("Successfully wrote to the file.");
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
   }
 
   /**
