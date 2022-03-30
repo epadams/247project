@@ -147,7 +147,6 @@ public class Hotels {
   //   return null;
   // }
 
-  //maybe add searchRooms method
   /**
    * toString method that prints the hotelList 
    * @return ret

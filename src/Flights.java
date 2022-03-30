@@ -219,4 +219,13 @@ public class Flights {
     }
     return ret;
   }
+
+  public Seat searchSeatsByUUID(UUID id) {
+    for (Flight flight : flightList) {
+      for (Seat seat : flight.getSeats()) {
+        if (seat.getUUID().equals(id)) return seat; 
+      }
+    }
+    return null;
+  }
 }

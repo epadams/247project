@@ -129,7 +129,7 @@ public class JWriter extends DataConstants {
   /**
    * Saves the current flight to the JSON
    */
-  public static void saveFlight() {
+  public static void saveFlights() {
     Flights flight = Flights.getInstance();
     ArrayList<Flight> flightList = flight.getFlights();
     JSONArray jsonFlights = new JSONArray();
@@ -137,7 +137,7 @@ public class JWriter extends DataConstants {
     for (int i = 0; i < flightList.size(); i++) {
       jsonFlights.add(getFlightJSON(flightList.get(i)));
     }
-    try (FileWriter file = new FileWriter(USER_FILE_NAME)) {
+    try (FileWriter file = new FileWriter(FLIGHT_FILE_NAME)) {
       file.write(jsonFlights.toJSONString());
       file.flush();
     } catch (IOException e) {
@@ -161,7 +161,62 @@ public class JWriter extends DataConstants {
     flightDetails.put(FLIGHT_DESTINATION, flight.getDestination());
     flightDetails.put(FLIGHT_AIRLINE, flight.getAirline());
     flightDetails.put(FLIGHT_FLIGHTTYPE, flight.getFlightType());
+    flightDetails.put(FLIGHT_SEATS, saveFlightSeats(flight));
 
     return flightDetails;
+  }
+  
+  public static JSONArray saveFlightSeats(Flight flight) {
+    JSONArray flightSeats = new JSONArray();
+    ArrayList<UUID> seatUUIDs = new ArrayList<UUID>();
+    for (Seat seat : flight.getSeats()) {
+      seatUUIDs.add(seat.getUUID());
+    }
+    if (seatUUIDs != null) {
+      for (int i = 0; i < seatUUIDs.size(); i++) {
+        UUID id = seatUUIDs.get(i);
+        flightSeats.add(id.toString());
+      }
+    }
+    return flightSeats;
+  }
+
+  public static void saveHotels() {
+    Hotels hotels = Hotels.getInstance();
+    ArrayList<Hotel> hotelList = hotels.getHotels();
+    JSONArray jsonHotels = new JSONArray();
+
+    for (int i = 0; i < hotelList.size(); i++) {
+      jsonHotels.add(getHotelJSON(hotelList.get(i)));
+    }
+
+    try (FileWriter file = new FileWriter(HOTEL_FILE_NAME)) {
+      file.write(jsonHotels.toJSONString());
+      file.flush();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static JSONObject getHotelJSON(Hotel hotel) {
+    JSONObject hotelDetails = new JSONObject();
+    hotelDetails.put(HOTEL_ID, hotel.getUUID().toString());
+    hotelDetails.put(HOTEL_NAME, hotel.getHotelName());
+    hotelDetails.put(HOTEL_LOCATION, hotel.getLocation());
+    hotelDetails.put(HOTEL_PRICE, hotel.getPrice());
+    hotelDetails.put(HOTEL_RATING, hotel.getStarRating());
+    hotelDetails.put(HOTEL_POOL, hotel.getHasPool());
+    hotelDetails.put(HOTEL_ROOMS, saveHotelRooms(hotel));
+
+    return hotelDetails;
+  }
+
+  public static JSONArray saveHotelRooms(Hotel hotel) {
+    JSONArray hotelRooms = new JSONArray();
+    ArrayList<UUID> roomUUIDs = new ArrayList<UUID>();
+    for (Room room : hotel.getRooms()) {
+      roomUUIDs.add(room.getUUID());
+    }
+    return hotelRooms;
   }
 }

@@ -62,8 +62,9 @@ public class User {
    * @param address the user's address
    * @param frequentFlyer true if user is frequent flyer, false if not
    */
-  public User(UUID id, String username, String password, String email, String firstName,
-      String lastName, int age, String address, boolean frequentFlyer) {
+  public User(UUID id, String username, String password, String email,
+      String firstName, String lastName, int age, String address,
+      boolean frequentFlyer) {
     this.id = id;
     this.username = username;
     this.password = password;
@@ -291,6 +292,7 @@ public class User {
    * @param id the UUID of the seat we want to add to the booked seats
    */
   public void addBookedSeat(UUID id) {
+    if (this.bookedSeats.contains(id)) return;
     this.bookedSeats.add(id);
   }
 
@@ -299,6 +301,8 @@ public class User {
    * @param id the UUID of the room we want to add to the booked seats
    */
   public void addBookedRoom(UUID id) {
+    if (this.bookedRooms.contains(id)) return;
+    // TESTING
     this.bookedRooms.add(id);
   }
 
@@ -306,7 +310,6 @@ public class User {
    * interprets data into a String value
    * @return the string with all the User's data
    */
-  // DEBUGGING ONLY
   public String toString() {
     return "ID: " + this.id + "\nUsername: " + this.username + "\nPassword: "
         + this.password + "\nFirst Name: " + this.firstName + "\nLast Name: "

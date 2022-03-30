@@ -225,7 +225,7 @@ public class MainDriver {
     for (int i = 0; i < numTickets; i++) {
       int row = Integer.parseInt(keyboard.nextLine());
       char aisle = keyboard.nextLine().charAt(0);
-      fsystem.registerFlight(id, row, aisle);
+      System.out.println(fsystem.registerFlight(id, row, aisle));
     }
   }
 
@@ -447,7 +447,7 @@ public class MainDriver {
     ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
     for (int i = 0; i < bookedFlights.size(); i++) {
       // TODO change this to be printing seats and store the uuid of seats, not the booked flights 
-      ret += (fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
+      ret += (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)).toString());
       ret += "\n";
       // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
     }
@@ -462,6 +462,10 @@ public class MainDriver {
     keyboard.nextLine();
     String ret = "";
     ArrayList<UUID> bookedRooms = fsystem.getCurrentUser().getBookedRoomIDs();
+    System.out.println(bookedRooms.toString());
+    if (bookedRooms.isEmpty()) {
+      return "You have no booked rooms";
+    }
     for (int i = 0; i < bookedRooms.size(); i++) {
       ret += (fsystem.getHotels().searchRooms(bookedRooms.get(i)).toString());
       ret += "\n";

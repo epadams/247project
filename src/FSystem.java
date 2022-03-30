@@ -92,10 +92,14 @@ public class FSystem {
   public String registerFlight(UUID id, int row, char aisle) {
     if (flights.searchFlightID(id).searchSeats(row, aisle).getVacancy()) {
       flights.searchFlightID(id).registerSeat(row, aisle);
-      this.getCurrentUser().addBookedSeat(id);
+      if (this.getCurrentUser().getBookedSeatIDs().contains(flights.searchFlightID(id).searchSeats(row, aisle).getUUID()))
+        return "This seat is already booked";
+      this.getCurrentUser().addBookedSeat(flights.searchFlightID(id)
+          .searchSeats(row, aisle).getUUID());
+      System.out.println(flights.searchFlightID(id).searchSeats(row, aisle).toString());
       return "Your seat has been booked";
     } else {
-      return "Your seat is taken";
+      return "This seat is already booked";
     }
   }
 
