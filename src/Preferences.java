@@ -3,7 +3,6 @@ import java.util.UUID;
 
 /**
  * this class is used to store and access the user's preferences
- * @author Mahi Patel, Ethan Adams, Will Columbia
  */
 public class Preferences {
   private boolean medAccom;

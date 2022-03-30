@@ -3,7 +3,7 @@ import java.util.UUID;
 
 /**
  * this class is hold information about the individual user
- * @author
+ * 
  */
 public class User {
   private UUID id;
