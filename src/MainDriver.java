@@ -93,6 +93,7 @@ public class MainDriver {
           break;
         case 9:
           logout = fsystem.logout();
+          break;
         default:
           System.out.println("Invalid input");
           break;
@@ -445,11 +446,12 @@ public class MainDriver {
     keyboard.nextLine();
     String ret = "";
     ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
+    if (bookedFlights.isEmpty()) return "You have no booked flights";
     for (int i = 0; i < bookedFlights.size(); i++) {
-      // TODO change this to be printing seats and store the uuid of seats, not the booked flights 
-      ret += (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)).toString());
-      ret += "\n";
-      // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
+      if (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)) != null) {
+        ret += (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)).toString());
+        ret += "\n";
+      }
     }
     return ret;
   }
@@ -463,12 +465,12 @@ public class MainDriver {
     String ret = "";
     ArrayList<UUID> bookedRooms = fsystem.getCurrentUser().getBookedRoomIDs();
     System.out.println(bookedRooms.toString());
-    if (bookedRooms.isEmpty()) {
-      return "You have no booked rooms";
-    }
+    if (bookedRooms.isEmpty()) return "You have no booked rooms";
     for (int i = 0; i < bookedRooms.size(); i++) {
-      ret += (fsystem.getHotels().searchRooms(bookedRooms.get(i)).toString());
-      ret += "\n";
+      if (fsystem.getHotels().searchRooms(bookedRooms.get(i)) != null) {
+        ret += (fsystem.getHotels().searchRooms(bookedRooms.get(i)).toString());
+        ret += "\n";
+      } 
     }
     return ret;
   }
@@ -540,7 +542,6 @@ public class MainDriver {
    * Writes All Currently Booked Flights and Hotels To a "beautifully formatted text
    * file"
    */
-  
   public void createItinerary() {
     keyboard.nextLine();
     File myObj = new File("Itinerary.txt");
@@ -548,9 +549,8 @@ public class MainDriver {
       FileWriter myWriter = new FileWriter(myObj);
       myWriter.write("------- Flights -------\n");
       myWriter.write(displayBookedFlights());
-      // TODO fix
-      // myWriter.write("\n------- Hotels -------\n");
-      // myWriter.write(displayBookedHotels());
+      myWriter.write("\n------- Hotels -------\n");
+      myWriter.write(displayBookedHotels());
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {
