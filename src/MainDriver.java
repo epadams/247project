@@ -20,10 +20,6 @@ public class MainDriver {
    * Runs the Flight System
    */
   public void run() {
-    // DEBUGGING
-    // fsystem.getCurrentUser();
-    // System.out.println(fsystem.getUsers().printAllUsers());
-    // System.out.println(fsystem.getFlights().searchFlights("Flight1").getSeats().get(0).toString());
     boolean run = true;
     while (run) {
       displayLoginMenu();
@@ -222,7 +218,7 @@ public class MainDriver {
     }
     keyboard.nextLine();
     System.out.println("Please choose the location of your seat(s)"
-        + "\nPlease enter the number of the row, followed by the letter of the aisle");
+        + "\nPlease enter the number of the row, hit enter, then the letter of the aisle");
     for (int i = 0; i < numTickets; i++) {
       int row = Integer.parseInt(keyboard.nextLine());
       char aisle = keyboard.nextLine().charAt(0);
@@ -345,7 +341,6 @@ public class MainDriver {
    * println("----- Airport Origin Code -----\nEnter: Airport Origin Code");
    * String airportOriginCodePref = keyboard.nextLine();
    * 
-   * // TODO Store these preferences
    * }
    */
   /**
@@ -372,7 +367,6 @@ public class MainDriver {
    * println("----- Check-out Date -----\nEnter: a date in MM/DD/YYYY format");
    * String checkoutDate = keyboard.nextLine();
    * 
-   * // TODO store these preferences
    * }
    */
   /**
@@ -434,7 +428,6 @@ public class MainDriver {
     keyboard.nextLine();
     System.out.println("----- Search Hotels with Destination -----"
         + "\nPlease enter the destination of the hotel");
-    // TODO display
     System.out.println(fsystem.getHotels().searchHotelLocation(keyboard.nextLine()).toString());
   }
 
@@ -449,6 +442,7 @@ public class MainDriver {
     if (bookedFlights.isEmpty()) return "You have no booked flights";
     for (int i = 0; i < bookedFlights.size(); i++) {
       if (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)) != null) {
+        ret += (fsystem.getFlightBySeatID(bookedFlights.get(i))) + "\n";
         ret += (fsystem.getFlights().searchSeatsByUUID(bookedFlights.get(i)).toString());
         ret += "\n";
       }
@@ -468,6 +462,7 @@ public class MainDriver {
     if (bookedRooms.isEmpty()) return "You have no booked rooms";
     for (int i = 0; i < bookedRooms.size(); i++) {
       if (fsystem.getHotels().searchRooms(bookedRooms.get(i)) != null) {
+        ret += (fsystem.getHotelByRoomID(bookedRooms.get(i))) + "\n";
         ret += (fsystem.getHotels().searchRooms(bookedRooms.get(i)).toString());
         ret += "\n";
       } 
@@ -498,7 +493,6 @@ public class MainDriver {
     System.out.println("\n----- Email -----\nEnter: A new Email or 'NEXT' to skip'");
     String newEmail = keyboard.nextLine();
 
-    // TODO check these new choices are not 'NEXT' and if so update them.
   }
 
   /**
@@ -543,7 +537,6 @@ public class MainDriver {
    * file"
    */
   public void createItinerary() {
-    keyboard.nextLine();
     File myObj = new File("Itinerary.txt");
     try {
       FileWriter myWriter = new FileWriter(myObj);
@@ -567,7 +560,6 @@ public class MainDriver {
    * public void displaySearchFlightsPref() {
    * keyboard.nextLine();
    * System.out.println("----- Search Flights Based off Preferences -----");
-   * // TODO display
    * }
    */
   /**
@@ -577,7 +569,6 @@ public class MainDriver {
    * public void displaySearchHotelPref() {
    * keyboard.nextLine();
    * System.out.println("----- Search Hotels Based off Preferences -----");
-   * // TODO display 3ish Hotels, based off preferences
    * }
    */
   /**
@@ -587,7 +578,6 @@ public class MainDriver {
    * public void displayBookingHistory() {
    * keyboard.nextLine();
    * System.out.println("----- Display Booking History -----");
-   * // TODO display booking history
    * }
    */
   /**

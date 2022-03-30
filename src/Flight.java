@@ -251,4 +251,12 @@ public class Flight {
       }
     }
   }
+
+  public ArrayList<UUID> getSeatUUIDs() {
+    ArrayList<UUID> seatUUIDs = new ArrayList<UUID>();
+    for (Seat seat : seats) {
+      seatUUIDs.add(seat.getUUID());
+    }
+    return seatUUIDs;
+  }
 }

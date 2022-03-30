@@ -108,6 +108,24 @@ public class FSystem {
       hotels.searchHotelID(id).getRoomByNum(roomNumber).addBookedDate(date);
     }
     this.getCurrentUser().addBookedRoom(hotels.searchHotelID(id).getRoomByNum(roomNumber).getUUID());
-    return "Your dates have been booked";
+    return "Your date has been booked";
+  }
+
+  public Flight getFlightBySeatID(UUID id) {
+    for (Flight flight : flights.getFlights()) {
+      if (flight.getSeatUUIDs().contains(id)) {
+        return flight;
+      }
+    }
+    return null;
+  }
+
+  public Hotel getHotelByRoomID(UUID id) {
+    for (Hotel hotel : hotels.getHotels()) {
+      if (hotel.getRoomUUIDs().contains(id)) {
+        return hotel;
+      }
+    }
+    return null;
   }
 }

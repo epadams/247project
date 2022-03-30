@@ -217,6 +217,12 @@ public class JWriter extends DataConstants {
     for (Room room : hotel.getRooms()) {
       roomUUIDs.add(room.getUUID());
     }
+    if (roomUUIDs != null) {
+      for (int i = 0; i < roomUUIDs.size(); i++) {
+        UUID id = roomUUIDs.get(i);
+        hotelRooms.add(id.toString());
+      }
+    }
     return hotelRooms;
   }
 }

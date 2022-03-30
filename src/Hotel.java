@@ -189,4 +189,12 @@ public class Hotel {
     }
     return null;
   }
+
+  public ArrayList<UUID> getRoomUUIDs() {
+    ArrayList<UUID> roomUUIDs = new ArrayList<UUID>();
+    for (Room room : rooms) {
+      roomUUIDs.add(room.getUUID());
+    }
+    return roomUUIDs;
+  }
 }

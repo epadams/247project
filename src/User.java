@@ -19,6 +19,8 @@ public class User {
   // Use UUID so you don't hold copy of object
   private ArrayList<UUID> bookedSeats;
   private ArrayList<UUID> bookedRooms;
+  private ArrayList<UUID> bookedFlights;
+  private ArrayList<UUID> bookedHotels;
   private ArrayList<Flight> flightHistory;
   private ArrayList<String> refunds;
 
@@ -302,10 +304,18 @@ public class User {
    */
   public void addBookedRoom(UUID id) {
     if (this.bookedRooms.contains(id)) return;
-    // TESTING
     this.bookedRooms.add(id);
   }
 
+  public void addBookedFlight(UUID id) {
+    if (this.bookedFlights.contains(id)) return;
+    this.bookedFlights.add(id);
+  }
+
+  public void addBookedHotel(UUID id) {
+    if (this.bookedHotels.contains(id)) return;
+    this.bookedRooms.add(id);
+  }
   /**
    * interprets data into a String value
    * @return the string with all the User's data
