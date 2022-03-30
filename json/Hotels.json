@@ -6,7 +6,7 @@
     "price": 179,
     "starRating": 4,
     "hasPool": "true",
-    "rooms": []
+    "rooms": ["fda55837-e6b2-4751-bda1-cd486e4feefc", "e337a554-39a1-4429-9255-80f042c9b48e"]
   },
   {
     "UUID": "0ae4823b-2a2f-4645-81d0-fe6b50a54a40",

@@ -56,8 +56,7 @@ public class Hotels {
 
   /**
    * Gets the hotelList 
-   * @return hotelLIst 
-   */
+   * @return hotelLIst */
   public ArrayList<Hotel> getHotels() {
     return hotelList;
   }
@@ -159,5 +158,14 @@ public class Hotels {
       ret += hotel.toString() + "\n";
     }
     return ret;
+  }
+
+  public Room searchRooms(UUID id) {
+    for (Hotel hotel : hotelList) {
+      for (Room room : hotel.getRooms()) {
+        if (room.getUUID().equals(id)) return room; 
+      }
+    }
+    return null;
   }
 }

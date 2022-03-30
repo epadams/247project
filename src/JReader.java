@@ -232,7 +232,7 @@ public class JReader extends DataConstants {
               roomDates.add(dateString);
             }
           }
-          rooms.add(new Room(roomNumber, numberOfBeds, smoking, roomDates)); 
+          rooms.add(new Room(id, roomNumber, numberOfBeds, smoking, roomDates)); 
         }
       }
       return rooms;

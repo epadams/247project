@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * The maindriver runs the Flight System & The User Interface
+ * The maindriver runs the Flight System and The User Interface
  */
 public class MainDriver {
   private FSystem fsystem;
@@ -189,11 +189,9 @@ public class MainDriver {
       case 1:
         displaySearchAllFlights();
         break;
-      // TODO search based on destination
       case 2:
         displaySearchFlightsDep();
         break;
-      // TODO search based on departure
       case 3:
         displaySearchFlightsDest();
         break;
@@ -239,10 +237,9 @@ public class MainDriver {
     System.out.println("******** Register for Hotel ********"
         + "\nPlease enter the UUID of the hotel you want to register for:");
     UUID id = UUID.fromString(keyboard.nextLine());
-    System.out.println(fsystem.getHotels().searchHotelID(id).getRooms());
+    System.out.println(fsystem.getHotels().searchHotelID(id).printRooms());
     System.out.println("Please enter the number of the hotel room you wish to book");
-    int hotelRoom = keyboard.nextInt();
-    // TODO check if room is booked
+    int roomNumber = keyboard.nextInt();
     keyboard.nextLine();
     System.out.println("Please enter the number of days you wish to stay:");
     int numDays = keyboard.nextInt();
@@ -252,10 +249,12 @@ public class MainDriver {
     ArrayList<String> dates = new ArrayList<String>();
     for (int i = 0; i < numDays; i++) {
       String entry = keyboard.nextLine();
-      // TODO check if date is booked
-      // if (fsystem.getHotels().searchHotelID(id).getRooms()
-      // dates.add(entry);
-      // fsystem.registerHotel(hotelRoom, dates);
+      if (fsystem.getHotels().searchHotelID(id).getRoomByNum(roomNumber).getBookedDates().contains(entry)) {
+        System.out.println("That date is already booked, sorry");
+      } else {
+        dates.add(entry);
+      }
+      System.out.println(fsystem.registerHotel(id, roomNumber, dates));
     }
   }
 
@@ -287,8 +286,7 @@ public class MainDriver {
   public void displayAccountInformationMenu() {
     keyboard.nextLine();
     System.out.println("******** Account Information ********\n1: Change Login info"
-        + "\n2: See/Change Preferences\n3: Add Passport Information\n4: View Passport Info"
-        + "\n5: View History");
+        + "\n2: See/Change Preferences\n3: Add Passport Information\n4: View Passport Info");
     switch (keyboard.nextInt()) {
       case 1:
         displayChangeLoginInfo();
@@ -302,15 +300,12 @@ public class MainDriver {
       case 4:
         displayPassportInfo();
         break;
-      // View flight history
-      case 5:
-        displayFlightHistory();
-        break;
       default:
         System.out.println("Invalid input");
         break;
     }
   }
+
   /**
    * Displays Flight Preference selection for a registered user
    */
@@ -447,13 +442,13 @@ public class MainDriver {
    */
   
   public String displayBookedFlights() {
-    String ret = "";
     keyboard.nextLine();
+    String ret = "";
     ArrayList<UUID> bookedFlights = fsystem.getCurrentUser().getBookedSeatIDs();
     for (int i = 0; i < bookedFlights.size(); i++) {
+      // TODO change this to be printing seats and store the uuid of seats, not the booked flights 
       ret += (fsystem.getFlights().searchFlightID(bookedFlights.get(i)).toString());
       ret += "\n";
-      // System.out.println("Your booked seat is " +
       // fsystem.getFlights().searchFlightID(bookedFlights.get(i)).getSeatByUUID(id)
     }
     return ret;
@@ -465,16 +460,24 @@ public class MainDriver {
    */
   public String displayBookedHotels() {
     keyboard.nextLine();
-    return "DISPLAY BOOKED HOTELS HERE";
+    String ret = "";
+    ArrayList<UUID> bookedRooms = fsystem.getCurrentUser().getBookedRoomIDs();
+    for (int i = 0; i < bookedRooms.size(); i++) {
+      ret += (fsystem.getHotels().searchRooms(bookedRooms.get(i)).toString());
+      ret += "\n";
+    }
+    return ret;
   }
 
   /**
    * Displays all flights a user has previously booked
    */
+  /*
   public void displayFlightHistory() {
     keyboard.nextLine();
     System.out.println("DISPLAY FLIGHT HISTORY HERE");
   }
+  */
 
   /**
    * Displays a menu where the user can change their login information
@@ -530,18 +533,20 @@ public class MainDriver {
   }
 
   /**
-   * Writes All Currently Booked Flights & Hotels To a "beautifully formatted text
+   * Writes All Currently Booked Flights and Hotels To a "beautifully formatted text
    * file"
    */
   
   public void createItinerary() {
+    keyboard.nextLine();
     File myObj = new File("Itinerary.txt");
     try {
       FileWriter myWriter = new FileWriter(myObj);
-      myWriter.write("\n------- Flights -------\n");
+      myWriter.write("------- Flights -------\n");
       myWriter.write(displayBookedFlights());
-      myWriter.write("\n------- Hotels -------\n");
-      myWriter.write(displayBookedHotels());
+      // TODO fix
+      // myWriter.write("\n------- Hotels -------\n");
+      // myWriter.write(displayBookedHotels());
       myWriter.close();
       System.out.println("Successfully wrote to the file.");
     } catch (IOException e) {

@@ -238,11 +238,11 @@ public class Flight {
     }
     return null;
   }
-/**
- * checks to see if a specific seat is vacant or not 
- * @param row
- * @param aisle
- */
+  /**
+   * checks to see if a specific seat is vacant or not 
+   * @param row
+   * @param aisle
+   */
   public void registerSeat(int row, char aisle) {
     for (Seat seat : seats) {
       if (seat.getRow() == row && seat.getAisle() == aisle) {

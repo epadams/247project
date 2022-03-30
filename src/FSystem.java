@@ -1,4 +1,6 @@
 import java.util.UUID;
+import java.util.ArrayList;
+
 /**
  * A class that manages the flights, hotels, and users 
  */
@@ -39,7 +41,6 @@ public class FSystem {
     return 3;
   }
 
-  // TODO fix
   /**
    * logs the user out of their account 
    * @return true 
@@ -48,41 +49,46 @@ public class FSystem {
     users.saveUsers();
     return true;
   }
-/**
- * Gets the current user  
- * @return currentUser 
- */
+
+  /**
+   * Gets the current user  
+   * @return currentUser 
+   */
   public User getCurrentUser() {
     return currentUser;
   }
-/**
- * gets the username for the current user  
- * @return this.user
- */
+
+  /**
+   * gets the username for the current user  
+   * @return this.user
+   */
   public Users getUsers() {
     return this.users;
   }
-/**
- * get the flight for the user 
- * @return this.flight 
- */
+
+  /**
+   * get the flight for the user 
+   * @return this.flight 
+   */
   public Flights getFlights() {
     return this.flights;
   }
-/**
- * get the hotel of the user 
- * @return this.hotels
- */
+
+  /**
+   * get the hotel of the user 
+   * @return this.hotels
+   */
   public Hotels getHotels() {
     return this.hotels;
   }
-/**
- * checks if a specific seat has been booked or not and books the seat if it is vacant 
- * @param id
- * @param row
- * @param aisle
- * @return "Your seat has been booked" or "your seat is taken"
- */
+
+  /**
+   * checks if a specific seat has been booked or not and books the seat if it is vacant 
+   * @param id
+   * @param row
+   * @param aisle
+   * @return "Your seat has been booked" or "your seat is taken"
+   */
   public String registerFlight(UUID id, int row, char aisle) {
     if (flights.searchFlightID(id).searchSeats(row, aisle).getVacancy()) {
       flights.searchFlightID(id).registerSeat(row, aisle);
@@ -91,5 +97,13 @@ public class FSystem {
     } else {
       return "Your seat is taken";
     }
+  }
+
+  public String registerHotel(UUID id, int roomNumber, ArrayList<String> bookedDates) {
+    for (String date : bookedDates) {
+      hotels.searchHotelID(id).getRoomByNum(roomNumber).addBookedDate(date);
+    }
+    this.getCurrentUser().addBookedRoom(hotels.searchHotelID(id).getRoomByNum(roomNumber).getUUID());
+    return "Your dates have been booked";
   }
 }

@@ -1,10 +1,12 @@
 // import java.util.Date;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * this class gets and stored data for the hotel room
  */
 public class Room {
+  private UUID id;
   private int numOfBeds;
   private boolean smoking;
   private ArrayList<String> bookedDates;
@@ -24,7 +26,8 @@ public class Room {
    * @param smoking true if smoking is allowed in room, false if not
    * @param bookedDates the dates the room is booked
    */
-  public Room(int roomNumber, int numOfBeds, boolean smoking, ArrayList<String> bookedDates) {
+  public Room(UUID id, int roomNumber, int numOfBeds, boolean smoking, ArrayList<String> bookedDates) {
+    this.id = id;
     this.roomNumber = roomNumber;
     this.numOfBeds = numOfBeds;
     this.smoking = smoking;
@@ -92,6 +95,14 @@ public class Room {
     return this.bookedDates;
   }
 
+  public UUID getUUID() {
+    return this.id;
+  }
+
+  public void setUUID(UUID id) {
+    this.id = id;
+  }
+
   /**
    * check if the room is booked at the date we want
    * @param wantedDate the date we want to book a room
@@ -104,5 +115,10 @@ public class Room {
       }
     }
     return false;
+  }
+
+  public String toString() {
+    return "ID: " + this.id + "\nRoom Number: " + this.roomNumber
+      + "\nNumber of Beds: " + this.numOfBeds + "\nSmoking: " + this.smoking;
   }
 }

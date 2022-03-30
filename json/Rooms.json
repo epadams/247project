@@ -8,9 +8,9 @@
   },
   {
     "UUID": "e337a554-39a1-4429-9255-80f042c9b48e",
-    "roomNumber": "205",
+    "roomNumber": 205,
     "Smoking": false,
-    "numberOfBeds": "2",
+    "numberOfBeds": 2,
     "bookedDates": []
   }
 ]
