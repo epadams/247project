@@ -113,8 +113,6 @@ public class Flights {
    */
   public Flight searchFlightID(UUID id) {
     for (Flight identity : flightList) {
-      // Used .equals here check behind to make sure this is the best way
-      // (Added note: maybe use .compareTo)
       if (identity.getUUID().equals(id)) {
         return identity;
       }
