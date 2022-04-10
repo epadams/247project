@@ -23,5 +23,36 @@ public class UsersTester {
 
   }
 
-  //@Test
+  @Test
+  public void testHaveUser_True() {
+    Users testUsers = Users.getInstance();
+    assertTrue(testUsers.haveUser("testuser"), "testuser is a valid user in the system.");
+  }
+
+  @Test
+  public void testHaveUser_True() {
+    Users testUsers = Users.getInstance();
+    assertFalse(testUsers.haveUser("tesssssstussssser"), "tesssssstussssser is not a valid user in the system.");
+  }
+
+  @Test
+  public void testGetUser() {
+    Users testUsers = Users.getInstance();
+    User expectedUser = new User();
+    expectedUser.setFirstName("John");
+    assertEquals(expectedUser.getFirstName(), testUsers.getUser("testuser").getFirstName(), "test user not found");
+  }
+
+  @Test
+  public void testArrayListNotNull() {
+    Users testUsers = Users.getInstance();
+    assertNotNull(testUsers.getUsers(), "User List should be initialized");
+  }
+
+  @Test
+  public void testAddUser() {
+    Users testUsers = Users.getInstance();
+    testUsers.addUser("username", "password", "email", 1);
+    assertTrue(testUsers.haveUser("username"), "Test User not found");
+  }
 }
