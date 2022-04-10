@@ -1,6 +1,8 @@
 import org.junit.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.UUID;
+
 public class UserTester {
 
   @BeforeClass
@@ -23,5 +25,12 @@ public class UserTester {
 
   }
 
-  //@Test
+  @Test
+  public void testUser_DEFConstructor() {
+    UUID uuid = UUID.randomUUID();
+    User testUser = new User(uuid, "test user", "test pass", "test email", "test first", "test last", 1, "test addy",
+        false);
+    assertNotNull(testUser.getId(), "UUID should not be null if user is created");
+
+  }
 }
