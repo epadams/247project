@@ -42,6 +42,14 @@ public class Seat extends Flight {
   }
 
   /**
+   * will set the Seats UUID to the given parameter
+   * @param id UUID we want for the seat
+   */
+  public void setUUID(UUID id) {
+    this.id = id;
+  }
+
+  /**
    * sets the row for the seat in the flight
    * @param row the row in the flight the seat is on
    */
