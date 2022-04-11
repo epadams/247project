@@ -1,6 +1,8 @@
 import org.junit.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.UUID;
+
 public class FlightsTester {
 
   @BeforeClass
@@ -47,4 +49,36 @@ public class FlightsTester {
     testFlights.addFlight("Test: CAE to ATL");
     assertTrue(testFlights.haveFlight("Test: CAE to ATL"), "Test flight no found");
   }
+
+  @Test
+  public void testSearchFlights() {
+
+  }
+
+  @Test 
+  public void testSearchDestination(){
+
+  }
+
+  @Test
+  public void testSearchFlightID() {
+    Flights testFlights = Flights.getInstance();
+    UUID expectedUUID = UUID.fromString("66bf9c12-4557-41e6-a243-58105abecb5f");
+    assertEquals(expectedUUID, testFlights.searchFlightID(expectedUUID).getUUID(), "CAE to ATL flight not found");
+  }
+
+  @Test
+  public void testSearchAirline() {
+
+  }
+
+  @Test
+  public void testSearchSeats() {
+    Flights testFlights = Flights.getInstance();
+    Seat expectedSeat = new Seat();
+    UUID testUUID = UUID.randomUUID();
+    //expectedSeat.setUUID(testUUID);
+    assertEquals(expectedSeat.getUUID(), testFlights.searchSeatsByUUID(testUUID).getUUID(), "Seat: "+testUUID+" not found");
+  }
+
 }
